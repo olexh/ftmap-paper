@@ -1,0 +1,255 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_local_deputies_boiarka.csv
+  sha256: b7d7a0a8c01d4ecfea796432a5d3794394e5a9f6d3519f0d1ea973d2290da456
+  sheet: ""
+
+subject:
+  answer: Person
+  accept: []
+  why: One row is one deputy of the Боярка city council.
+
+entities:
+  - key: deputy
+    schema: Person
+    accept: []
+    keys: [c0]
+    instances: 34
+    why: >-
+      The publisher fills id (1 to 34, distinct) and votingIdentifier; the id
+      is the key, the name the property.
+  - key: party
+    schema: Organization
+    accept: [LegalEntity]
+    keys: [c9]
+    instances: 5
+    why: >-
+      Five parties, one misspelled by the publisher («Європейська
+      Солодірність»); the misspelling is the file's and stays.
+  - key: faction
+    schema: Organization
+    accept: [LegalEntity]
+    keys: [c15]
+    instances: 5
+    why: >-
+      Five factions, one per party, one with a line break inside the cell
+      («Фракція політичної партії \n"Європейська Солідарність"»).
+  - key: commission
+    schema: Organization
+    accept: [LegalEntity, PublicBody]
+    keys: [c17]
+    instances: 9
+    why: Nine standing commissions, named cleanly; the post is in c18.
+  - key: council
+    schema: PublicBody
+    accept: [Organization, LegalEntity]
+    keys: [c30]
+    scope: table
+    instances: 1
+    why: >-
+      «Боярська міська рада», named on every row in addressLocatorName as the
+      reception venue; the one body every deputy sits in. Producible, because
+      a column carries its name on every row.
+  - key: reception
+    schema: Address
+    accept: []
+    keys: [c27, c28]
+    instances: 1
+    why: One reception address for the whole council, Михайла Грушевського 39.
+
+edges:
+  - key: party_member
+    kind: link
+    schema: Membership
+    source: deputy
+    target: party
+    why: Party membership on every row.
+  - key: faction_member
+    kind: link
+    schema: Membership
+    source: deputy
+    target: faction
+    why: Faction membership, with c16 as the role.
+  - key: commission_member
+    kind: link
+    schema: Membership
+    source: deputy
+    target: commission
+    why: Commission membership, with c18 as the role.
+  - key: seat
+    kind: link
+    schema: Membership
+    source: deputy
+    target: council
+    why: The seat in the council.
+  - key: receives_at
+    kind: property
+    prop: Person:addressEntity
+    source: deputy
+    target: reception
+    why: The reception address.
+
+columns:
+  - id: c0
+    header: id
+    role: key
+    why: A row number 1–34, the deputy's id in this file only.
+  - id: c1
+    header: votingIdentifier
+    role: property
+    answer: Person:idNumber
+    accept_decline: true
+    why: The voting-system number, an identifier inside the council's system.
+  - id: c2
+    header: familyName
+    role: property
+    answer: Person:lastName
+    why: Surname.
+  - id: c3
+    header: name
+    role: property
+    answer: Person:firstName
+    why: Given name.
+  - id: c4
+    header: additionalName
+    role: property
+    answer: Person:fatherName
+    why: Patronymic.
+  - id: c5
+    header: gender
+    role: property
+    answer: Person:gender
+    why: 1 and 2.
+  - id: c6
+    header: birthDate
+    role: property
+    answer: Person:birthDate
+    why: ISO dates.
+  - id: c7
+    header: image
+    role: unmappable
+    why: A photo URL.
+  - id: c8
+    header: biography
+    role: property
+    answer: Person:sourceUrl
+    why: >-
+      Mislabelled: the column holds the URL of the deputy's page on the
+      council site, not a biography.
+  - id: c9
+    header: partyName
+    role: key+property
+    answer: Organization:name
+    why: The party.
+  - id: c10
+    header: partyId
+    role: not-data
+    why: The literal `null`.
+  - id: c11
+    header: email
+    role: property
+    answer: Person:email
+    why: Personal e-mail addresses.
+  - id: c12
+    header: telephone
+    role: property
+    answer: Person:phone
+    why: Mobile numbers.
+  - id: c13
+    header: homepage
+    role: not-data
+    why: The literal `null`.
+  - id: c14
+    header: account
+    role: not-data
+    why: The literal `null`.
+  - id: c15
+    header: factionName
+    role: key+property
+    answer: Organization:name
+    why: The faction.
+  - id: c16
+    header: factionPost
+    role: property
+    answer: Membership:role
+    why: «член фракції» or «голова».
+  - id: c17
+    header: commissionName
+    role: key+property
+    answer: Organization:name
+    why: The commission, named cleanly.
+  - id: c18
+    header: commissionPost
+    role: property
+    answer: Membership:role
+    why: «член комісії», «голова», «заступник голови комісії».
+  - id: c19
+    header: areaId
+    role: not-data
+    why: The literal `null`.
+  - id: c20
+    header: CATUTTC
+    role: unmappable
+    why: The КАТОТТГ code, constant, with a stray space inside it.
+  - id: c21
+    header: addressPostCode
+    role: property
+    answer: Address:postalCode
+    why: «08150», constant.
+  - id: c22
+    header: addressAdminUnitL1
+    role: property
+    answer: Address:country
+    accept_decline: true
+    why: «Україна», constant.
+  - id: c23
+    header: addressAdminUnitL2
+    role: property
+    answer: Address:region
+    why: «Київська область», constant.
+  - id: c24
+    header: addressAdminUnitL3
+    role: unmappable
+    why: The raion.
+  - id: c25
+    header: addressAdminUnitL4
+    role: unmappable
+    why: The hromada.
+  - id: c26
+    header: addressPostName
+    role: property
+    answer: Address:city
+    why: «Боярка», constant.
+  - id: c27
+    header: addressThoroughfare
+    role: key+property
+    answer: Address:street
+    why: «Михайла Грушевського», constant.
+  - id: c28
+    header: addressLocatorDesignator
+    role: key+property
+    answer: Address:full
+    accept: [Address:street, Address:summary]
+    why: The building number, constant.
+  - id: c29
+    header: addressLocatorBuilding
+    role: not-data
+    why: Constant filler.
+  - id: c30
+    header: addressLocatorName
+    role: key+property
+    answer: PublicBody:name
+    accept: [Address:summary]
+    why: >-
+      «Боярська міська рада» on every row: the council, named as the venue.
+      The field is the format's venue name, so keeping it on the Address as
+      its summary is also right.
+  - id: c31
+    header: openingHours
+    role: not-data
+    why: The literal `null`.
+  - id: c32
+    header: availabilityRestriction
+    role: not-data
+    why: The literal `null`.

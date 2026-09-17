@@ -1,0 +1,96 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_state_owned_enterprises_2026-04-01.csv
+  sha256: 5811f3e83beea143705466b5790f42c22c0672561969a63e138074f411099383
+  sheet: ""
+
+subject:
+  answer: Company
+  accept: [Organization, LegalEntity]
+  why: >-
+    One row is one суб'єкт господарювання of the state sector: a state
+    enterprise (ДП, 2 710 rows) or a company the state holds over 50 % of (ГТ,
+    299 rows). An economic entity with a legal form is what Company is for;
+    the alternatives drop the commercial side.
+
+entities:
+  - key: enterprise
+    schema: Company
+    accept: [Organization, LegalEntity]
+    keys: []
+    why: >-
+      No identifier, only the name: 3 009 rows hold 3 005 distinct names and
+      (c1, c2) yields 3 005 too, so no key exists. Keying on c1 would merge
+      four repeated names (ДП "СВІТАНОК" among them), so one entity per row is
+      right. The alternatives are not Assets.
+  - key: manager
+    schema: PublicBody
+    accept: [Organization, LegalEntity]
+    keys: [c2]
+    instances: 79
+    why: >-
+      3 009 rows name 79 managing bodies, and c2 and c3 are exactly 1:1 once
+      six trailing spaces in c3 are stripped, so c2 is a real key collapsing 3
+      009 mentions to 79 nodes (ФДМУ alone is 1 874). PublicBody: 77 of 79 are
+      ministries, agencies or administrations.
+
+edges:
+  - key: state_control
+    kind: link
+    schema: Ownership
+    source: manager
+    target: enterprise
+    why: >-
+      Every row asserts that this body exercises the state's rights over this
+      enterprise, which is what the register publishes, and Ownership (owner
+      to asset) is FtM's slot for it: a >50 % stake for the 299 ГТ rows, the
+      founder's right for the 2 710 ДП rows.
+
+columns:
+  - id: c0
+    header: "№ з/п"
+    role: not-data
+    why: >-
+      The export's row ordinal, 1…3009, strictly sequential, no gaps, 3 009
+      distinct. It says nothing about the enterprise and will not survive the
+      next reissue of the file.
+  - id: c1
+    header: "Повне найменування"
+    role: property
+    answer: Company:name
+    why: >-
+      The full official name of the enterprise, 100 % filled, 3 005 distinct,
+      and the only thing that identifies the row subject. Nothing else is
+      packed in; the legal form up front (ДЕРЖАВНЕ ПІДПРИЄМСТВО, ТОВ, ПАТ) is
+      how Ukrainian names are written.
+  - id: c2
+    header: "Код суб'єкта управління"
+    role: key+property
+    answer: PublicBody:registrationNumber
+    accept: [PublicBody:classification]
+    accept_decline: true
+    why: >-
+      The managing body's identity and the file's only key. As a property it
+      is the least-bad slot: 61 of 79 codes are 5-digit СПОДУ-style
+      administration codes, 16 are 7-digit local-authority codes, one an
+      ЄДРПОУ. classification also fits; declining is fine.
+  - id: c3
+    header: "Назва суб'єкта управління"
+    role: property
+    answer: PublicBody:name
+    why: >-
+      The official name of the managing body, 79 distinct, 1:1 with c2 in both
+      directions on the raw strings: no code carries two names and no name two
+      codes. It belongs to the second entity in the row, not the subject, so
+      Company:name would conflate two things.
+  - id: c4
+    header: "Організаційна форма cуб'єкта господарювання (зокрема державні підприємства - ДП, господарські товариства з КПД >50% - ГТ)"
+    role: property
+    answer: Company:legalForm
+    accept: [Company:classification]
+    why: >-
+      Two values over 3 009 rows, ДП × 2 710 and ГТ × 299, and the header says
+      they are the організаційна форма of the enterprise. legalForm is FtM's
+      "company or organization type" and this is one; classification, "as
+      provided by the data source", also fits.

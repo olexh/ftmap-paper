@@ -1,0 +1,169 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_nazk_corruption_register_2026-09-04.xlsx
+  sha256: 2000a6d46c86f0445397c2a301e63580c37900468139e18148653e6f997588d5
+  sheet: COURT_SENTENCE
+
+subject:
+  answer: Person
+  accept: [CourtCase]
+  why: >-
+    One row is one court sentence against one named natural person for a
+    corruption offence: three columns name the person, two name where they
+    worked, seven describe the case. The register is of persons by its own
+    title; the case is the other honest reading.
+
+entities:
+  - key: person
+    schema: Person
+    accept: []
+    keys: [c0, c1, c2]
+    why: >-
+      The name is split across three columns (surname, given name, patronymic)
+      and nothing else identifies the person: no tax number, no birth date. 31
+      351 distinct names over 34 194 rows, so the name is the only key on
+      offer, and it merges homonyms.
+  - key: employer
+    schema: Organization
+    accept: [LegalEntity, Company, PublicBody]
+    keys: [c3]
+    why: >-
+      The workplace at the time of the offence, free text: 23 592 distinct
+      over 32 963 filled rows, mostly state bodies and institutions with no
+      legal form in the text, hence Organization; any LegalEntity reading is
+      fine. 1 045 rows hold «-» and must not mint one.
+  - key: case
+    schema: CourtCase
+    accept: []
+    keys: [c10]
+    why: >-
+      The case number is on 32 055 rows, 29 187 distinct: several sentences
+      share a case, which is what a case number is for. 138 rows hold «-», and
+      a row without a case number produces no case.
+
+edges:
+  - key: employment
+    kind: link
+    schema: Employment
+    source: person
+    target: employer
+    why: >-
+      The register names where the person worked and as what when the offence
+      was committed; the position column is the role of that employment. FtM's
+      Employment ranges Person to Organization.
+  - key: party
+    kind: link
+    schema: CourtCaseParty
+    source: person
+    target: case
+    why: >-
+      The person is the defendant of the case the row cites. FtM's
+      CourtCaseParty ranges LegalEntity to CourtCase.
+
+columns:
+  - id: c0
+    header: CORRUPTIONER_LAST_NAME
+    role: key+property
+    answer: Person:lastName
+    why: 100 % filled, 17 884 distinct surnames.
+  - id: c1
+    header: CORRUPTIONER_FIRST_NAME
+    role: key+property
+    answer: Person:firstName
+    why: 813 distinct given names.
+  - id: c2
+    header: CORRUPTIONER_SURNAME
+    role: key+property
+    answer: Person:fatherName
+    why: >-
+      Mislabelled by the publisher: the column holds the patronymic
+      («Миколайович», «Іванович»), not a surname. Judged by content.
+  - id: c3
+    header: CORR_WORK_PLACE
+    role: key+property
+    answer: Organization:name
+    why: The employer's name, free text; «-» on 1 045 rows is a null.
+  - id: c4
+    header: CORR_WORK_POS
+    role: property
+    answer: Employment:role
+    accept: [Person:position]
+    why: >-
+      The position held at the employer («депутат», «завідувач відділення»), 9
+      549 distinct. It belongs to the employment, since a person recurs with
+      different posts; Person:position is the flat reading and is fine.
+  - id: c5
+    header: ACTIVITY_SPH_NAME
+    role: unmappable
+    why: >-
+      The offender's legal category under the anti-corruption law («Депутат
+      місцевої ради», «Посадові особи місцевого самоврядування»), 40 values.
+      FtM has no slot on Person for it, and it is neither the employment's
+      role nor the case's category.
+  - id: c6
+    header: OFFENSE_NAME
+    role: property
+    answer: CourtCase:description
+    accept: [CourtCase:summary]
+    why: The offence as prose, 8 796 distinct; what the case was about.
+  - id: c7
+    header: PUNISHMENT
+    role: property
+    answer: CourtCase:summary
+    accept: [CourtCase:description, CourtCase:status]
+    why: >-
+      The sentence as prose on 38 % of rows («визнано винним … штраф 850
+      гривень»), with «-» and «Відсутні» as nulls on 2 288; the case's
+      outcome.
+  - id: c8
+    header: COURT_NAME
+    role: property
+    answer: CourtCase:court
+    why: >-
+      The court that sentenced, 2 757 distinct. CourtCase:court is a string
+      property, so the court is named on the case rather than made a
+      PublicBody of its own.
+  - id: c9
+    header: PUN_START
+    role: property
+    answer: CourtCase:closeDate
+    accept: [CourtCase:fileDate]
+    why: >-
+      The date the punishment took effect, dd.mm.yy, 98 % filled; the end of
+      the case's life as this register sees it.
+  - id: c10
+    header: COURT_CASE_NUM
+    role: key+property
+    answer: CourtCase:caseNumber
+    why: The court's case number, 29 187 distinct; the case's identity.
+  - id: c11
+    header: SENTENCE_DATE
+    role: property
+    answer: CourtCase:fileDate
+    accept: [CourtCase:closeDate]
+    why: >-
+      The sentence date, dd.mm.yy, 100 % filled. Neither CourtCase date means
+      decision date; fileDate is the earlier and the register has no filing
+      date, so the sentence date is the case's first date. closeDate is fine
+      for the same reason PUN_START answers it.
+  - id: c12
+    header: SENTENCE_NUMBER
+    role: unmappable
+    why: >-
+      The sentence's own number, 26 431 distinct on 83 % of rows, often
+      identical to the case number. A record identifier of the decision
+      document; CourtCase carries no recordId, and a Document per sentence
+      would hold nothing but this number.
+  - id: c13
+    header: CODEX_ARTICLES_LIST_CODEX_ART_NUMBER
+    role: property
+    answer: CourtCase:category
+    accept: [CourtCase:type]
+    why: The article charged («ч. 1 ст. 172-6 КУпАП»), 69 values on 52 % of rows.
+  - id: c14
+    header: CODEX_ARTICLES_LIST_CODEX_TYPE_NAME
+    role: property
+    answer: CourtCase:type
+    accept: [CourtCase:category]
+    why: Which code the article belongs to, two values (administrative, criminal).

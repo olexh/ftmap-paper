@@ -1,0 +1,266 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_rada_mps_ix_2026-09-03.csv
+  sha256: cd1a1b111c338683502ba5eb8731547b951ad6c722c624ff74a67667f0488079
+  sheet: ""
+
+subject:
+  answer: Person
+  accept: []
+  why: >-
+    One row is one mandate of one member of parliament of the ninth
+    convocation: who they are, when the mandate began and ended, which party
+    nominated them and which they belong to. The person is what the table is
+    of; the mandate is a dated interval on them.
+
+entities:
+  - key: mp
+    schema: Person
+    accept: []
+    keys: [c0]
+    instances: 463
+    why: >-
+      The Rada's own person id, 463 distinct over 469 rows: six people hold
+      two rows because their mandate was interrupted and resumed. Keyed on the
+      id rather than the name because the id is what the publisher uses across
+      its other tables.
+  - key: party
+    schema: Organization
+    accept: [LegalEntity]
+    keys: [c18]
+    why: >-
+      The party the MP is a member of, keyed on the publisher's party id and
+      named in c19. 15 distinct values, one of which is «Безпартійний» (id 50)
+      on 325 rows: a null, not a party, and an organisation called
+      «Безпартійний» would be a misreading. 14 real parties.
+  - key: nominator
+    schema: Organization
+    accept: [LegalEntity]
+    keys: [c17]
+    why: >-
+      The nominating party as the questionnaire writes it («ПОЛІТИЧНА ПАРТІЯ
+      "СЛУГА НАРОДУ"»), 7 distinct over 436 filled rows; «безпартійний» on 149
+      rows is a null. Keyed on the name since no id is given. Nominator and
+      membership party differ on most rows.
+  - key: position
+    schema: Position
+    accept: []
+    keys: []
+    scope: table
+    producible: false
+    why: >-
+      «Народний депутат України IX скликання», one Position for the whole
+      file. It exists only as the constant `convocation = 9` and the file's
+      own name; no column carries the position's name, so keys: [] is the only
+      answer and it is not producible from a column.
+
+edges:
+  - key: member_of
+    kind: link
+    schema: Membership
+    source: mp
+    target: party
+    why: Party membership, on the 144 rows that name a party; none on the 325 «Безпартійний» rows.
+  - key: nominated_by
+    kind: link
+    schema: Membership
+    source: mp
+    target: nominator
+    why: >-
+      Nomination by a party is a relation FtM has no closer schema for than
+      Membership; the role would say «висунутий». On the 287 rows whose
+      nominator is a party.
+  - key: mandate
+    kind: link
+    schema: Occupancy
+    source: mp
+    target: position
+    why: >-
+      The mandate: startDate from c10, endDate from c11, the reason for an
+      early end from c34. Its target Position is not producible from any
+      column, so this edge is not either.
+
+columns:
+  - id: c0
+    header: id
+    role: key+property
+    answer: Person:idNumber
+    accept_decline: true
+    why: >-
+      The Rada's person id (`21253`), the join key of the publisher's other
+      tables. An identifier in the publisher's system, not a state one;
+      declining it as an export artefact is also right.
+  - id: c1
+    header: rada_id
+    role: not-data
+    why: A second internal id, 1:1 with c0.
+  - id: c2
+    header: nreg
+    role: not-data
+    why: The publisher's page slug (`mp-d11_1_skl9`).
+  - id: c3
+    header: convocation
+    role: not-data
+    why: The constant 9.
+  - id: c4
+    header: full_name
+    role: property
+    answer: Person:name
+    why: The full name, 463 distinct.
+  - id: c5
+    header: first_name
+    role: property
+    answer: Person:firstName
+    why: Given name.
+  - id: c6
+    header: second_name
+    role: property
+    answer: Person:fatherName
+    why: Patronymic, mislabelled second_name.
+  - id: c7
+    header: last_name
+    role: property
+    answer: Person:lastName
+    why: Surname.
+  - id: c8
+    header: short_name
+    role: unmappable
+    why: Initials («М.І.»), not a name and not an alias anyone would search.
+  - id: c9
+    header: other_name
+    role: property
+    answer: Person:alias
+    why: A former or alternative name on 3 % of rows.
+  - id: c10
+    header: date_begin
+    role: property
+    answer: Occupancy:startDate
+    accept_decline: true
+    why: >-
+      The mandate's start, 29.08.2019 on 91 % of rows. It belongs to the
+      Occupancy, whose target Position is not producible, so declining is the
+      only reachable answer.
+  - id: c11
+    header: date_end
+    role: property
+    answer: Occupancy:endDate
+    accept_decline: true
+    why: The mandate's end on 72 rows; the same ceiling as c10.
+  - id: c12
+    header: district_text
+    role: unmappable
+    why: >-
+      «Виборчий округ № 11, Вінницька область», the constituency. FtM has
+      Occupancy:constituency, but the Occupancy is not producible here, and
+      Person has no seat property.
+  - id: c13
+    header: district_name
+    role: not-data
+    why: c12 without the region.
+  - id: c14
+    header: district_num
+    role: not-data
+    why: The number inside c12.
+  - id: c15
+    header: region_id
+    role: not-data
+    why: A code for c16.
+  - id: c16
+    header: region_name
+    role: unmappable
+    why: The oblast of the constituency; no sub-national region on Person.
+  - id: c17
+    header: party_text
+    role: key+property
+    answer: Organization:name
+    why: The nominating party as written; «безпартійний» is a null.
+  - id: c18
+    header: party_id
+    role: key+property
+    answer: Organization:idNumber
+    accept_decline: true
+    why: The publisher's party id; 50 means «Безпартійний».
+  - id: c19
+    header: party_name
+    role: property
+    answer: Organization:name
+    why: The party of membership; «Безпартійний» on 325 rows is a null.
+  - id: c20
+    header: num_in_party
+    role: unmappable
+    why: The position on the party list at the election; no FtM home.
+  - id: c21
+    header: anketa_data
+    role: property
+    answer: Person:summary
+    accept: [Person:description]
+    why: The questionnaire line (education, post, party, criminal record, nominator) as one string.
+  - id: c22
+    header: anketa_url
+    role: property
+    answer: Person:sourceUrl
+    why: The MP's page on itd.rada.gov.ua.
+  - id: c23
+    header: photo
+    role: unmappable
+    why: A photo URL; FtM has no image property on Person.
+  - id: c24
+    header: photo_id
+    role: not-data
+    why: A file stem.
+  - id: c25
+    header: gender
+    role: property
+    answer: Person:gender
+    why: 1 and 2, coded; 78 % male.
+  - id: c26
+    header: birthday
+    role: property
+    answer: Person:birthDate
+    why: dd.mm.yyyy, 100 % filled.
+  - id: c27
+    header: education
+    role: property
+    answer: Person:education
+    why: «Вища» on 97 % of rows.
+  - id: c28
+    header: college
+    role: property
+    answer: Person:education
+    accept_decline: true
+    why: An institution on 5 % of rows; a second education value.
+  - id: c29
+    header: academic
+    role: unmappable
+    why: An academic post («ректор») on 5 % of rows; not a person property.
+  - id: c30
+    header: old_profession
+    role: property
+    answer: Person:position
+    accept_decline: true
+    why: >-
+      The profession before the mandate («директор», «народний депутат
+      України»), a previous position. Declining is also right: it is not the
+      person's position now.
+  - id: c31
+    header: old_post
+    role: unmappable
+    why: >-
+      «ректор, Вінницький кооперативний інститут», a role and an employer
+      packed into one cell. The employer would make an Employment, but it
+      cannot be separated from the role without parsing prose.
+  - id: c32
+    header: old_member
+    role: not-data
+    why: A yes/no flag (was an MP before).
+  - id: c33
+    header: new_member
+    role: not-data
+    why: A yes/no flag, the complement of c32.
+  - id: c34
+    header: resignation_text
+    role: property
+    answer: Occupancy:summary
+    accept_decline: true
+    why: Why the mandate ended early, on 72 rows; the same ceiling as c10.

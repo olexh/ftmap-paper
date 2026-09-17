@@ -1,0 +1,141 @@
+{
+ "_about": "Role words a register writes in the header of a party column, and the FollowTheMoney relation each one states. A header that says «Власник» has told the reader who owns the row's asset; this file lets the pipeline read it the same way, deterministically, instead of asking the model what connects two entities it has never seen on one row. Keys are edge schemata (`Ownership`) or entity-typed properties (`Vessel:operator`); `source`/`target` say which endpoint the ROLE column's entity is — for an edge, FollowTheMoney's source and target properties; for an entity-typed property, `target` means the role column's entity is the property's value and the holder is the counterpart.",
+ "_spellings_policy": "Spellings are header forms observed in the corpora, in their observed inflections and their observed misspellings («фрактувальник» is how the ship register writes it in its group header), or the English a bilingual register writes beside them. Not synonyms: a role word no header uses is a guess wearing a lexicon's clothes. 2026-09-05: the inflected level words «роты», «взвода», «отд», «подр» are the headers of a regiment's establishment table («До роты/взвода», «До взвода/отд», «Подр-е», «действительное подр-ие»), and «действительное подр» names the unit a person ACTUALLY serves in as against the establishment — an Employment beside the establishment's Membership.",
+ "_order": "Entries are read in this order. One word may name two relations — «підрозділ» is the branch whose parent is the row's organisation AND the unit the row's person is a member of — and `plan.roles.roles_in` keeps both, first the one listed first; `derive_relations` tries the next only when the first cannot be stated on the row. Organization:parent stands above Membership so a subunit column beside an organisation is its branch, and beside a person the unit the person is in. The Organization:parent source words are also the LEVEL words `plan.hierarchy` reads: two organisations nest only when each is keyed on a column such a word heads and the values of one name the values of the other.",
+ "_levels": [
+  "в/ч",
+  "войсковая часть",
+  "військова частина",
+  "підрозділ",
+  "подразделение",
+  "подр",
+  "батальон",
+  "батальйон",
+  "рота",
+  "роты",
+  "взвод",
+  "взвода",
+  "отделение",
+  "відділення",
+  "отд"
+ ],
+ "_levels_about": "The level words of Organization:parent's source side, coarsest first: a unit holds subunits, a subunit companies, a company platoons, a platoon sections. `plan.hierarchy` reads this order to tell which of two level columns is the finer when their values cannot — a relative designation («1 взвод» in every company) nests by value in nothing, and is keyed on the nearest coarser level it is written under. Domain structure, not an observed header; the spellings themselves are the observed ones above.",
+ "Ownership": {
+  "source": [
+   "власник",
+   "власники",
+   "судновласник",
+   "owner",
+   "owners",
+   "балансоутримувач",
+   "суб'єкт управління",
+   "суб'єкта управління"
+  ]
+ },
+ "Directorship": {
+  "source": [
+   "керівник",
+   "директор",
+   "chief",
+   "director"
+  ]
+ },
+ "ContractAward": {
+  "target": [
+   "учасник",
+   "постачальник",
+   "supplier",
+   "з ким укладено договір",
+   "переможець"
+  ]
+ },
+ "Representation": {
+  "source": [
+   "provider",
+   "service_provider",
+   "посередник",
+   "представник"
+  ]
+ },
+ "CourtCaseParty": {
+  "source": [
+   "judge",
+   "суддя"
+  ]
+ },
+ "Organization:parent": {
+  "source": [
+   "філія",
+   "філії",
+   "підрозділ",
+   "підрозділу",
+   "branch",
+   "subunit",
+   "subdivision",
+   "подразделение",
+   "рота",
+   "отделение",
+   "войсковая часть",
+   "роты",
+   "взвода",
+   "отд",
+   "подр",
+   "в/ч",
+   "действительное подр"
+  ]
+ },
+ "Membership": {
+  "target": [
+   "партія",
+   "партії",
+   "фракція",
+   "фракції",
+   "комісія",
+   "комісії",
+   "party",
+   "faction",
+   "commission",
+   "member_of",
+   "членство",
+   "підрозділ",
+   "подразделение",
+   "рота",
+   "отделение",
+   "войсковая часть",
+   "роты",
+   "взвода",
+   "отд",
+   "подр",
+   "в/ч"
+  ]
+ },
+ "Employment": {
+  "source": [
+   "employee",
+   "emp_",
+   "працівник",
+   "співробітник"
+  ],
+  "target": [
+   "місце роботи",
+   "work_place",
+   "workplace",
+   "роботодавець",
+   "employer",
+   "действительное подр"
+  ]
+ },
+ "Vessel:operator": {
+  "target": [
+   "фрахтувальник",
+   "фрактувальник",
+   "charterer"
+  ]
+ },
+ "Vehicle:operator": {
+  "target": [
+   "експлуатант",
+   "operator"
+  ]
+ }
+}

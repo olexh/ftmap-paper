@@ -1,0 +1,144 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_annual_procurement_plan_2023q3.xlsx
+  sha256: f23e4d0a6e42af640b7ef18b3d76dd4ac744b0fd79e65cb35bfb23f0144eb486
+  sheet: "Лист1"
+
+subject:
+  answer: Contract
+  accept: [ContractAward]
+  why: >-
+    One row is one concluded procurement contract: what was bought, by which
+    procedure, for how much and with whom (column F is "з ким укладено
+    договір"). ContractAward is the same row from the award side;
+    CallForTenders is not, as 42 of 45 rows had no tender.
+
+entities:
+  - key: contract
+    schema: Contract
+    accept: []
+    keys: []
+    why: >-
+      No column identifies a contract: no number, no date beyond a month word,
+      no lot. Two pairs of rows agree on month, name, CPV and supplier and
+      differ only in the sum (rows 12/13, АТ "Полтаваобленерго"; rows 15/25,
+      ФО-П Лисенко Ю.В.), so a key would merge them.
+
+  - key: supplier
+    schema: LegalEntity
+    accept: []
+    keys: [c5]
+    instances: 25
+    why: >-
+      The counterparty column has 10 companies (ТОВ, АТ, ПП) and 15 sole
+      traders (ФО-П / ФОП with surname and initials), so only LegalEntity
+      covers both. Keyed on the name, the only handle: 25 entities for 24
+      counterparties, as Літовченко Ю.М. is spelled twice.
+
+  - key: buyer
+    schema: PublicBody
+    accept: [Organization, LegalEntity]
+    scope: table
+    producible: false
+    why: >-
+      Крюківська районна адміністрація Кременчуцької міської ради buys all 45
+      contracts and appears only in the merged title cell A1. One entity for
+      the whole sheet, carried by no column, so it has no key; omitting it
+      would say the file records purchases by nobody.
+
+edges:
+  - key: award
+    kind: link
+    schema: ContractAward
+    source: contract
+    target: supplier
+    why: >-
+      The point of the sheet. ContractAward is FtM's Contract to LegalEntity
+      link and the only schema here that can hold the ДК 021:2015 code (c3),
+      since Contract has no cpvCode. Every row names a counterparty, so the
+      edge exists 45 times with no missing endpoint.
+
+  - key: authority_of
+    kind: property
+    prop: Contract:authority
+    source: contract
+    target: buyer
+    why: >-
+      FtM models the contracting authority as an entity-typed property on
+      Contract, not a link, so this relation is a property edge. It is real in
+      the file (cell A1) and cannot be produced from a per-column binding.
+
+columns:
+  - id: c0
+    header: "місяць"
+    role: property
+    answer: Contract:contractDate
+    accept: [ContractAward:date]
+    accept_decline: true
+    why: >-
+      The month of purchase as a Ukrainian word: липень (11), серпень (14),
+      вересень (20), 45/45 filled. contractDate is the semantic home, but the
+      cell alone is not a date: the year is only in the title (III квартал
+      2023року). Declining is equally right.
+
+  - id: c1
+    header: "процедура"
+    role: property
+    answer: Contract:procedure
+    accept: [Contract:method]
+    why: >-
+      How the purchase was conducted, 4 distinct: "закупівля без використання
+      електронної системи" 42×, "відкриті торги" 1×, and two one-off strings
+      packing a cancellation into the procedure. procedure and method fit; the
+      cancellation belongs in Contract:status.
+
+  - id: c2
+    header: "назва закупівлі"
+    role: property
+    answer: Contract:name
+    accept: [Contract:title, Contract:description]
+    why: >-
+      What was bought, as the administration names it: 28 distinct over 45
+      rows, 11 to 172 characters, from "Папір для друку" to a full description
+      of design work with a street address inside. The caption of the
+      contract, so Contract:name; title and description fit.
+
+  - id: c3
+    header: "Код по ДК 021:2015"
+    role: property
+    answer: ContractAward:cpvCode
+    accept: []
+    why: >-
+      ДК 021:2015 (Єдиний закупівельний словник) is the Ukrainian adoption of
+      the EU CPV, and the values are CPV codes: 31 distinct, 44 of 45 in the
+      8-digit plus check-digit shape (50110000-9 ×7), one malformed
+      (3936000-3). Contract has no cpvCode; the award does.
+
+  - id: c4
+    header: "Сума, грн."
+    role: property
+    answer: Contract:amount
+    accept: [ContractAward:amount]
+    why: >-
+      The contract sum, numeric in all 45 cells (35 integers, 10 with
+      kopecks), 66.00 to 119400.00, total 444116.72. The currency is not a
+      column, "грн." is only in the header, so Contract:currency has no source
+      cell.
+
+  - id: c5
+    header: "з ким укладено договір"
+    role: key+property
+    answer: LegalEntity:name
+    accept: []
+    why: >-
+      The counterparty's name and the supplier's only identity, so it is the
+      key and a fact worth emitting: 25 distinct over 45 rows. The legal form
+      is packed in as a prefix in three notations (АТ "Полтаваобленерго", ФО-П
+      Альпідовський В.М., ФОП Літовченко Ю.М.).
+
+notes: >-
+  Sheet Лист1 of a two-sheet workbook, A1:F47. Row 1 is a merged title
+  (A1:F1); the header is row 2; data is rows 3–47, 45 rows, 100 % filled in
+  all six columns, no blank or trailer rows, no formulas, no hidden rows or
+  columns. Лист2 is dimensioned A1:A1 and contains no cells.

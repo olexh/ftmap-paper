@@ -1,0 +1,91 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_transport_licences_2024-08-02.xlsx
+  sha256: 93552a1c5ffda5756c6c61f9d9c7c17c964be155b321b00aba27be0c0b58651f
+  sheet: "Аркуш1"
+
+subject:
+  answer: License
+  accept: [Contract]
+  why: >-
+    One row is one road-transport carrier licence: a permission held by a
+    named carrier, with its start date, end date and administrative state.
+    Contract is the generalisation License extends; the carrier is the other
+    endpoint of the row, not what the row is.
+
+entities:
+  - key: carrier
+    schema: LegalEntity
+    accept: [Company, Organization, Person]
+    keys: [c0]
+    instances: 71313
+    why: >-
+      78 243 rows, 71 313 distinct carrier strings, and the name is the only
+      identifying content. 59 406 rows are a bare three-token ПІБ and 18 837
+      are companies, farms, schools and military units, so LegalEntity covers
+      all; Company, Organization, Person fit parts.
+
+  - key: licence
+    schema: License
+    accept: [Contract]
+    keys: [c0, c1]
+    instances: 78165
+    why: >-
+      The file carries no licence number, so holder plus start date is the
+      only natural key: 78 165 distinct over 78 243 rows, and collapsing on it
+      removes the 14 exactly duplicated rows the file really contains.
+
+edges:
+  - key: holding
+    kind: link
+    schema: Ownership
+    source: carrier
+    target: licence
+    why: >-
+      License descends from Asset, and Ownership (owner to asset) is the
+      relation FtM declares from a LegalEntity to an Asset; every row says
+      this carrier holds this licence over this interval. ContractAward would
+      make the holder a supplier of a procured contract.
+
+columns:
+  - id: c0
+    header: "Перевізник"
+    role: key+property
+    answer: LegalEntity:name
+    why: >-
+      The carrier's own name, 100 % filled, with no code, address or
+      legal-form field beside it. It is also the only handle on identity in
+      the file, so it must be a key too: without it there would be 78 243
+      carriers for at most 71 313.
+
+  - id: c1
+    header: "Дата початку дії"
+    role: key+property
+    answer: Ownership:startDate
+    accept: [License:contractDate]
+    why: >-
+      The date the licence took effect. FtM puts intervals on Interest edges,
+      and Ownership:startDate is documented as the date a document was issued
+      or a relationship started, which this is. License:contractDate is the
+      licence-side reading; also half the key.
+
+  - id: c2
+    header: "Дата закінчення дії"
+    role: property
+    answer: Ownership:endDate
+    why: >-
+      The date the licence stopped, filled on 19 051 of 78 243 rows and empty
+      on every 'Чинна' row. Ownership:endDate is documented as the date of
+      expiry of a document; License has no end-of-validity slot, and its
+      reviewDate is a string meant for something else.
+
+  - id: c3
+    header: "Стан"
+    role: property
+    answer: License:status
+    why: >-
+      The licence's administrative state, 8 distinct values over 78 243 rows
+      ('Чинна' 57 067, 'Анульована' 13 461, 'Недійсна' 7 673 and five rarer
+      procedural states). status is the free-text state slot on License and
+      holds all eight; cancelled would cover only some.

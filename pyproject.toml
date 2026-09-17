@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ftmap"
+version = "0.1.0"
+description = "Heterogeneous record tables to one FollowTheMoney entity stream"
+requires-python = ">=3.13"
+dependencies = [
+    "followthemoney>=4.10",
+    "rigour>=2.3",
+    "openpyxl>=3.1",
+    "xlrd>=2.0",
+    "rapidfuzz>=3.0",
+    "httpx>=0.28",
+    "typer>=0.15",
+    "PyYAML>=6",
+]
+
+[dependency-groups]
+# PEP 735 rather than an optional extra: `uv run` installs the default groups
+# without being told to, so the suite runs from a bare `uv run --frozen pytest`.
+# An extra would need `--extra dev` on every invocation, and the day someone
+# forgets it the suite runs against a half-installed environment and says
+# nothing.
+dev = ["pytest>=8", "jsonschema>=4", "pytest-cov>=7"]
+
+[project.scripts]
+ftmap = "ftmap.cli:app"
+
+[tool.coverage.run]
+source = ["ftmap"]
+branch = true
+
+[tool.coverage.report]
+exclude_also = [
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+    "\\.\\.\\.",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ftmap = ["*.toml", "vocab/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "live: needs a running llama-server",
+    # Resource benchmarks. Each runs a fresh subprocess and some allocate
+    # hundreds of megabytes, which is not a cost every `pytest -q` should pay.
+    # The ceilings they enforce are registered in the scale-ceilings
+    # measurement note.
+    "slow: a resource benchmark, deselected by default",
+    # The gold standard checked against the files it was written from. Reads
+    # hundreds of megabytes under corpus-external/, which a clean checkout
+    # does not have. Run them with `-m corpus`.
+    "corpus: needs corpus-external on this machine",
+]
+# The default suite is offline. `live` tests reach a llama-server on this
+# machine, so leaving them selected made a clean checkout fail for a reason
+# that has nothing to do with the checkout. Deselecting rather than skipping is
+# the point: a skip is invisible, and `-m live` on the command line replaces
+# this expression, so the explicit live run still FAILS loudly when no server
+# is up instead of reporting a green no-op.
+addopts = ["-m", "not live and not slow and not corpus"]
+filterwarnings = [
+    "error",
+    # openpyxl cannot parse the header/footer of two real workbooks in
+    # corpus-external and says so with a warning it raises INSIDE its own
+    # except clause, so promoting it to an error surfaces as an
+    # AttributeError from openpyxl's regex. Nothing this project reads lives
+    # in a sheet header, and the `corpus` tests are the only ones that open
+    # those files.
+    "ignore:Cannot parse header or footer:UserWarning",
+]

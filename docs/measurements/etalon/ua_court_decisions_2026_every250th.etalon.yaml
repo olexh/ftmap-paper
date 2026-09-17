@@ -1,0 +1,176 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_court_decisions_2026_every250th.csv
+  sha256: 3a6551e12422beb18c38d5a6e341225514b9f55db4344c1b4e9d4dd71bc47f7c
+  sheet: ""
+
+subject:
+  answer: Document
+  accept: [CourtCase]
+  why: >-
+    One row is one decision document, not one case: doc_id is unique over all
+    23 807 rows and doc_url resolves to one .rtf per row, while cause_num
+    repeats (131 case numbers carry more than one row, one of them 40).
+    CourtCase would make each row a separate case.
+
+entities:
+  - key: decision
+    schema: Document
+    keys: [c0]
+    instances: 23807
+    why: >-
+      The decision itself: its register number, URL, and when it was issued,
+      received and published. 23 807 rows, 23 807 distinct doc_id, so the key
+      is exact and deduplicates nothing, which is the correct outcome.
+  - key: case
+    schema: CourtCase
+    keys: [c5]
+    instances: 23632
+    why: >-
+      The proceeding the decision belongs to: 23 632 distinct cause_num over
+      23 807 rows. Keying on it collapses the 40 decisions of 447/2493/17 into
+      one case; keying on doc_id would assert 23 807 separate cases, which the
+      file contradicts.
+  - key: judge
+    schema: Person
+    keys: [c1, c8]
+    instances: 4314
+    why: >-
+      The judge who signed the decision: 4 257 distinct name strings, 4 314
+      distinct (court_code, judge) pairs. The court scopes the name because 57
+      names appear under more than one court and the file gives no evidence
+      they are one person.
+
+edges:
+  - key: documents_case
+    kind: link
+    schema: Documentation
+    source: decision
+    target: case
+    why: >-
+      Documentation (Document to Thing) is the relation FtM declares between a
+      document and the thing it evidences, and the register knows the case
+      only through its decisions. CourtCase:proof says the same as an
+      entity-typed property but could not be produced.
+  - key: judge_of_case
+    kind: link
+    schema: CourtCaseParty
+    source: judge
+    target: case
+    why: >-
+      The only relation FtM declares between a person and a CourtCase, with
+      `role` carrying the capacity. A judge is not a party in the legal sense,
+      but no other person-to-case relation exists and dropping the edge would
+      leave 4 257 judges attached to nothing.
+
+columns:
+  - id: c0
+    header: doc_id
+    role: key
+    why: >-
+      The register's document number, 9 digits, 23 807/23 807 distinct, the
+      decision's citation handle. Document has no identifier-typed slot that
+      fits (programId, messageId, contentHash mean other things), so consuming
+      it as the key and emitting nothing is right.
+  - id: c1
+    header: court_code
+    role: property
+    answer: CourtCase:court
+    accept_decline: true
+    why: >-
+      A 4-character court code, 589 distinct, each a valid key into the
+      sibling courts.csv that is not in this file. CourtCase:court is a string
+      that wants the court's name, so binding stores "4857". Mapping keeps the
+      fact that a court is named; declining is fine.
+  - id: c2
+    header: judgment_code
+    role: unmappable
+    why: >-
+      The form of the ruling (8 codes, 5 on 16 774 rows), a fact about this
+      document, not the case: it varies inside 30 of the 131 repeated case
+      numbers. Document has no type or classification property; CourtCase:type
+      is the kind of proceeding (justice_kind).
+  - id: c3
+    header: justice_kind
+    role: property
+    answer: CourtCase:type
+    accept_decline: true
+    why: >-
+      The branch of justice, 5 codes (1 on 10 552 rows … 3 on 1 377), and the
+      one column that never varies inside a repeated case number (0/131), so a
+      property of the proceeding. `type` is FtM's slot for the kind of case;
+      the label is in an absent lookup.
+  - id: c4
+    header: category_code
+    role: property
+    answer: CourtCase:category
+    accept_decline: true
+    why: >-
+      The cause-category code, 633 distinct, 23 704/23 807 filled (103 empty,
+      no sentinel). `category` is the exact word FtM uses for a
+      source-provided case classification. As opaque as c1 and c3, a 5-digit
+      key into a taxonomy this file lacks, so declining is fine.
+  - id: c5
+    header: cause_num
+    role: key+property
+    answer: CourtCase:caseNumber
+    why: >-
+      The Ukrainian unified case number (260/7098/24), 100 % filled, 23 632
+      distinct. It identifies the case entity and is itself the citable number
+      of that case, which is what key+property means. 147 values pack a
+      second, ancillary case number in brackets.
+  - id: c6
+    header: adjudication_date
+    role: property
+    answer: Document:authoredAt
+    accept: [Document:date]
+    why: >-
+      The date the ruling was made, when this document was authored. It varies
+      inside 122 of the 131 repeated case numbers and reaches back to
+      2011-04-04, so it is not the case's closeDate: most of these decisions
+      close nothing.
+  - id: c7
+    header: receipt_date
+    role: property
+    answer: Document:retrievedAt
+    accept: [Document:createdAt, Document:date]
+    why: >-
+      The date the register received the decision from the court, 100 %
+      filled, 2026-01-01 to 2026-08-18, always on or after the adjudication
+      date. The register gathers, so retrievedAt is the closest slot; not
+      CourtCase:fileDate, as 2011 decisions arrived in 2026.
+  - id: c8
+    header: judge
+    role: key+property
+    answer: Person:name
+    accept: [Document:author]
+    why: >-
+      The judge's name, 100 % filled, 4 257 distinct: 20 860 rows as surname
+      plus initials, 2 947 as full ПІБ, 489 with initials first ('Н.Ю.
+      Алєксєєва'). The only name the file carries for the person.
+      Document:author, "the original author", is a fair flattening.
+  - id: c9
+    header: doc_url
+    role: property
+    answer: Document:sourceUrl
+    why: >-
+      A deep link to the decision's .rtf on od.reyestr.court.gov.ua, 23 181/23
+      807 filled and every one distinct. sourceUrl is FtM's documented "deep
+      link to a source website".
+  - id: c10
+    header: status
+    role: unmappable
+    why: >-
+      A publication flag, 1 on 23 181 rows and 0 on 626, agreeing exactly with
+      whether doc_url is present. Document has no status property;
+      processingStatus is Aleph's own ingest state, and CourtCase's `status`
+      belongs to the proceeding, not this document.
+  - id: c11
+    header: date_publ
+    role: property
+    answer: Document:publishedAt
+    why: >-
+      The date the decision text was made public, 100 % filled, never earlier
+      than the receipt date. publishedAt is exact, the one date column in the
+      file with an unambiguous FtM home.

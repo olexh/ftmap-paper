@@ -1,0 +1,5994 @@
+{
+  ".snapshots/15/156bba8c3903d1691458eea37227249892ed64f75ff9b19ef604f972cba029b2.csv": {
+    "bytes": 405,
+    "content_addressed": true,
+    "mode": "0o600"
+  },
+  ".snapshots/31/31307b36b25e94e5c54af8d2a7adb619aa239c00e2c73ec53ba34b0453887efe.csv": {
+    "bytes": 37848,
+    "content_addressed": true,
+    "mode": "0o600"
+  },
+  ".snapshots/59/59150f8c32bb478fb663a9f6f433cdd7a63c5c1e5f89258620462cac5048d805.xlsx": {
+    "bytes": 60823,
+    "content_addressed": true,
+    "mode": "0o600"
+  },
+  ".snapshots/5e/5edff882ea530afde03babc1e978ded6c74d7a54cf8c50f956dddba225f71612.xlsx": {
+    "bytes": 12289,
+    "content_addressed": true,
+    "mode": "0o600"
+  },
+  ".snapshots/be/be7cc1b8ae63a2820a41f51a63e64a1d1bcd114d7fa3d088efd382cec2e21082.xlsx": {
+    "bytes": 14557,
+    "content_addressed": true,
+    "mode": "0o600"
+  },
+  "aggregates/<gen>/entities.ftm.json": {
+    "bytes": 151516,
+    "entity_ids": [
+      [
+        "Address",
+        "041626e49120261d7d967f9e7385506deb9b6f71"
+      ],
+      [
+        "Address",
+        "06c591dc142bdd61f224f3ec01b62ba35ea43829"
+      ],
+      [
+        "Address",
+        "0a28e609df23f982015c45d645c6724f86c5ee3d"
+      ],
+      [
+        "Address",
+        "0c53f4ced86a33648ab50d1ecc30f95eceb486fb"
+      ],
+      [
+        "Address",
+        "19b494f133e07478240e7196b751caf0975dce35"
+      ],
+      [
+        "Address",
+        "1bcc10e9f5977f6ee22bb737990e50e3e35e0395"
+      ],
+      [
+        "Address",
+        "1d8e64521d69f1cc5cb5c4597e234c9d037fd800"
+      ],
+      [
+        "Address",
+        "219a40eba720d41428d2b6fdb020464409d3eced"
+      ],
+      [
+        "Address",
+        "28fef2383a730043554ae3d5388c90e89691ca80"
+      ],
+      [
+        "Address",
+        "2d58b01442699b919644b4c71ee9dbe10d9cea9c"
+      ],
+      [
+        "Address",
+        "2e7f98a37f34a23a91ad75b3bf9a1bad48e75618"
+      ],
+      [
+        "Address",
+        "3417ad19ea029b50dea611f6a675f93fc4340e49"
+      ],
+      [
+        "Address",
+        "3b1a66bd19a6e6e03fc05f504087568066ca13b6"
+      ],
+      [
+        "Address",
+        "3ff906c140da52c5ddf383502b50ba3bd3ac37c4"
+      ],
+      [
+        "Address",
+        "437d0c593ce91abe3d21cd74eed4923de3a6b360"
+      ],
+      [
+        "Address",
+        "443c03f6c0002c5435332dfb3f80b57048370893"
+      ],
+      [
+        "Address",
+        "448ef21c5f216209b6724ddc01096aa710fe4f0c"
+      ],
+      [
+        "Address",
+        "44e09931e42eec2f5bf7a92c88d41af0dc99e869"
+      ],
+      [
+        "Address",
+        "56287ff25bb4b5d54fe58960d85c1a8c3162b6ef"
+      ],
+      [
+        "Address",
+        "5b3c1776616b0e9d7d1faba0af852a7d4689952f"
+      ],
+      [
+        "Address",
+        "5c54bfa136c3a7f81fb635b3ea88f0a9a7ee38fa"
+      ],
+      [
+        "Address",
+        "60a2391d680fcb8ad4e9798e7e6421c9dc339122"
+      ],
+      [
+        "Address",
+        "60c002ef4ed6173e6ff3432dd818a69c4a1527df"
+      ],
+      [
+        "Address",
+        "60c2825c4ac0bd8d4f139994d0f9ee7c771c8941"
+      ],
+      [
+        "Address",
+        "7a2199ec4b177d7040ddc99fc875c5a08276ffe0"
+      ],
+      [
+        "Address",
+        "89fa6c480b0c646370028de861a6e463e853d904"
+      ],
+      [
+        "Address",
+        "947f8ec930d6b531ab8010e3b99a64ad3411393a"
+      ],
+      [
+        "Address",
+        "9943712ba8fd2597c93706b146d68b670b073c8b"
+      ],
+      [
+        "Address",
+        "9e3add7e4e53826cd60823933e33e1aaa601976f"
+      ],
+      [
+        "Address",
+        "ab720f881a3ce40c32d505d4c69088482e4777bd"
+      ],
+      [
+        "Address",
+        "b160beb8eaeea38edecf353d3dd139d60a5cc5c0"
+      ],
+      [
+        "Address",
+        "b76de8d2187ad7dbd40bbdb5fc04ac6d520bce53"
+      ],
+      [
+        "Address",
+        "b8608c948b8b40c31c497c0ccde9a2da08d55120"
+      ],
+      [
+        "Address",
+        "b87a7f2c6cfd130d6660fb5b5902b418b20da178"
+      ],
+      [
+        "Address",
+        "b8bdc2a85c9428e7b7921605728fa0052b878d12"
+      ],
+      [
+        "Address",
+        "ba23acd8badd5cca4c8aaa8aea6a04ebd240d014"
+      ],
+      [
+        "Address",
+        "bb9583c2bd07069eb95a0ab23500a9c6dac3ff18"
+      ],
+      [
+        "Address",
+        "be48aa994c6bac5abd3b437a5d134ff35070a743"
+      ],
+      [
+        "Address",
+        "c05d4202f6c7365d13da3922d922af30da7d8022"
+      ],
+      [
+        "Address",
+        "c075883cf85f225f27737bc76ff0795d31e5da40"
+      ],
+      [
+        "Address",
+        "d01dc5b741e3bd187baa46ad591d45efff5509f7"
+      ],
+      [
+        "Address",
+        "dcf8b2784a0cf2eb3c337d2d5f5ba63b04ade895"
+      ],
+      [
+        "Address",
+        "e028bbcbd47a3d06f4de6671bb42b258721ffcc5"
+      ],
+      [
+        "Address",
+        "e217ce235e2ad2cd2b2773b7db8598b2e29ae84f"
+      ],
+      [
+        "Address",
+        "e459c1fbb29223fa6387780f10557d8425d58fd3"
+      ],
+      [
+        "Address",
+        "f1eb58229f711875c2fb7c841f4f8bbe7b80bb62"
+      ],
+      [
+        "Address",
+        "f72c725523ccd62130a65df06bb5fb7008883bda"
+      ],
+      [
+        "Address",
+        "fd4b2961e8055948f6d14a8f127550699b83810d"
+      ],
+      [
+        "Address",
+        "fdb09314c5c4cc2a2def02713bf86bed3cc75fd7"
+      ],
+      [
+        "Address",
+        "fdb83c6d62f0a024e25a22eb185e284c10d4bebd"
+      ],
+      [
+        "Debt",
+        "0ca51d24081abf06f1c5ed46e2b1a4a2b28353da"
+      ],
+      [
+        "Debt",
+        "40a356d9df6cca625301a80e1089be7b2334ed38"
+      ],
+      [
+        "Membership",
+        "0b35f4c9b714223491f21b10f49d51745e270c40"
+      ],
+      [
+        "Membership",
+        "0d7af5e072c0d103db229314c5103ca76a716222"
+      ],
+      [
+        "Membership",
+        "0f2c7d2fbd47309b006f98993ee6c1d9c470898e"
+      ],
+      [
+        "Membership",
+        "140b15e8fad85c25dd9c4622c07fba3d18f4ee94"
+      ],
+      [
+        "Membership",
+        "2d892350a922b82e16d56a4405ed80b74315058f"
+      ],
+      [
+        "Membership",
+        "3223a3d871e00d54826567b0204dfb892f2c7dc1"
+      ],
+      [
+        "Membership",
+        "413c8427eb98db8f285badadb5a5f893760f766b"
+      ],
+      [
+        "Membership",
+        "4d078c358029275b1d99cc8adeb0eaa4f09cf313"
+      ],
+      [
+        "Membership",
+        "4d495fcb751216289cbba1b90aa88d98554c6bea"
+      ],
+      [
+        "Membership",
+        "5bfe3147d720f8ac992121f3c32b2770f58ac328"
+      ],
+      [
+        "Membership",
+        "5c094abf5f74efa8096a68409545ea1ba434f760"
+      ],
+      [
+        "Membership",
+        "5d0c91c66bc835ea401f63ef8189bff757023f85"
+      ],
+      [
+        "Membership",
+        "5e34093e91cb8c458c00c706135109d7584abb93"
+      ],
+      [
+        "Membership",
+        "5e59321e26035722cc080f17629c9653e2ea07a2"
+      ],
+      [
+        "Membership",
+        "61baf3a64bb5f7a5e6efceb35235210e7b2d15f7"
+      ],
+      [
+        "Membership",
+        "6378c605fda48058471944eabc4fcc56c7ab657d"
+      ],
+      [
+        "Membership",
+        "6949506ae2bde9c81f23236517f7a21987cf9343"
+      ],
+      [
+        "Membership",
+        "6cb0a5e4ff3bb1833155509362d8935259c5194d"
+      ],
+      [
+        "Membership",
+        "82c8206af911971d2f8b46236512899b16797934"
+      ],
+      [
+        "Membership",
+        "8c8745ce6eead1fedc10848928b33f182fc8af27"
+      ],
+      [
+        "Membership",
+        "93ea025f5fbcf2c8925327adf516011003bc95bb"
+      ],
+      [
+        "Membership",
+        "95d54f0b184b7494106723842fb6d0928eb90e72"
+      ],
+      [
+        "Membership",
+        "9fb0be71da65d44385af665167edafba3b4cd2e4"
+      ],
+      [
+        "Membership",
+        "bae9cd1b348fe7bc1d21b8e7204c5317d7d1c1ca"
+      ],
+      [
+        "Membership",
+        "bf457b58a63333233b696fa1922effe48c8afef9"
+      ],
+      [
+        "Membership",
+        "c453aaa97a65ac778dda91e1fb318595a674aee9"
+      ],
+      [
+        "Membership",
+        "d4e90eea79f550426179c2d022c241a2cdb344ca"
+      ],
+      [
+        "Membership",
+        "df3cce071c25bdc1ef0b972193d4a2ea75e9cc69"
+      ],
+      [
+        "Membership",
+        "e032992695788dc4bff78f7a82fb3bb6c498f88b"
+      ],
+      [
+        "Membership",
+        "e4dc81166457bb0af7197e5f085d78bf6c9bb55f"
+      ],
+      [
+        "Membership",
+        "e9efc903209904bd58c4597e90333ed103585540"
+      ],
+      [
+        "Membership",
+        "f2b13036ca7a1d16f69db6672e26404ca3f2585d"
+      ],
+      [
+        "Membership",
+        "f57a3ad4e51801234c23582c7a40d5b5df0dc7a3"
+      ],
+      [
+        "Membership",
+        "facef6e94aef3fd432512d4cb13cf372f4240133"
+      ],
+      [
+        "Membership",
+        "fb4378d6bb870a5cf4e081a4f94d44e852f43d75"
+      ],
+      [
+        "Membership",
+        "ffee5261aa1b68509890820644bcc4c79a3ff711"
+      ],
+      [
+        "Organization",
+        "01ce230659fc614ce2f2795d2e7f84ecd535e482"
+      ],
+      [
+        "Organization",
+        "04baa38c728a5f69c89ab9efa1ac2166ded6c5b3"
+      ],
+      [
+        "Organization",
+        "08d74bc6afb37890b5dbf99861b6453415f614ea"
+      ],
+      [
+        "Organization",
+        "0da81397efb4bfd105d3cdd3f90e67e4035b1ee9"
+      ],
+      [
+        "Organization",
+        "128e350cf2d17e32fad303768752c6b59e9265bc"
+      ],
+      [
+        "Organization",
+        "13dfcdab769db46cd278726d63aeaafe9006d9b4"
+      ],
+      [
+        "Organization",
+        "168b7d3d7a47acb7b4965f7635038d9c483bb202"
+      ],
+      [
+        "Organization",
+        "199530f60791be0f8bf80a5c57356c1efb6d57dc"
+      ],
+      [
+        "Organization",
+        "1e2d6e959e1e633cbad3c3e599df5319691db6d2"
+      ],
+      [
+        "Organization",
+        "1ea7fe6bfb3dd8a4be6d4cbf39bcd96dbdd9e8fe"
+      ],
+      [
+        "Organization",
+        "232e3a78b1f6e53c6030081ede073d3e71a447f4"
+      ],
+      [
+        "Organization",
+        "236bbe06fb436d0e35301e56c53e68a9b71d17e3"
+      ],
+      [
+        "Organization",
+        "26ad1c152e071868785505386665a788e201ecfb"
+      ],
+      [
+        "Organization",
+        "26fbefa27d676952858106359201d1f5ddd77eca"
+      ],
+      [
+        "Organization",
+        "288e07d43d4596d3a211c4944e5ab10d948f65f6"
+      ],
+      [
+        "Organization",
+        "2c1814e5bb6fa600cfc366d91d9c595e716a1eb9"
+      ],
+      [
+        "Organization",
+        "33901dbc25ca9ed3e2df87afae18b02e8ef0ed8d"
+      ],
+      [
+        "Organization",
+        "35f076edf8c141bd6f4c93d856cfa26578e06481"
+      ],
+      [
+        "Organization",
+        "3d6f169054e4740d47a4b00383f0b0e533ad4b9f"
+      ],
+      [
+        "Organization",
+        "4251d43760a086c064858f0144645d3412559eb8"
+      ],
+      [
+        "Organization",
+        "44a765c52a44ecc2ab538aed26356168b69d0571"
+      ],
+      [
+        "Organization",
+        "47c4fd5ca8928dcb10d9bd5f5860ac28916bea12"
+      ],
+      [
+        "Organization",
+        "4cc144ea4f9c5bf02958ac6feb37cde529f6985d"
+      ],
+      [
+        "Organization",
+        "4e453ac15d43bdb950400814f222ca38a9131b2f"
+      ],
+      [
+        "Organization",
+        "564a65dbf62003d83eee24a22570731006eb294a"
+      ],
+      [
+        "Organization",
+        "5e63cb6f46879c4cea837188ef476d634a9f64ee"
+      ],
+      [
+        "Organization",
+        "655a3f0e9fe99503e2b4170afa5a652f94098371"
+      ],
+      [
+        "Organization",
+        "6b1d1e7471dc764ca09846f1a6acf97dc239439a"
+      ],
+      [
+        "Organization",
+        "6b438ad26564d3cc73735d4ac68d7b61a5525229"
+      ],
+      [
+        "Organization",
+        "6c1476890fdc475c2c036e546d0fb31aa83caaef"
+      ],
+      [
+        "Organization",
+        "6dc07231fd7cdfbf0a903be3ab0d2e0ff98ead43"
+      ],
+      [
+        "Organization",
+        "6f502cb0db2c50c11d5fc8b14d8f5bb781dd8885"
+      ],
+      [
+        "Organization",
+        "6f6f193da9e8b99418fee75ea14ca03dbd5ec77a"
+      ],
+      [
+        "Organization",
+        "7018885bf2493f3ffe78cbd78e6b9ccc58cb43fc"
+      ],
+      [
+        "Organization",
+        "70e72287db4249445db88d01bbec688ad6c57f64"
+      ],
+      [
+        "Organization",
+        "76e79efbd9550ed9a6714a66d0d2ac25779f81bb"
+      ],
+      [
+        "Organization",
+        "7a7e732a3d18cbf4a5099cd63b62ff911744cf9f"
+      ],
+      [
+        "Organization",
+        "7a7eda7ff5fdf6a5561c052a143b10014f5c1f88"
+      ],
+      [
+        "Organization",
+        "7e5ba209e7c94f0e597b234e0909a52e16a86289"
+      ],
+      [
+        "Organization",
+        "8352b0b2ac8b5c128825a4507397773c28eb4dc7"
+      ],
+      [
+        "Organization",
+        "83fde504f5e8c8de3a034ff4410a9ef9bbabe1ee"
+      ],
+      [
+        "Organization",
+        "8527919e932bb44bd882f57751bca0c8556c0848"
+      ],
+      [
+        "Organization",
+        "8843fb6de7c56681d7b65af9f43ad5f6a600da50"
+      ],
+      [
+        "Organization",
+        "8ad8d26ea8a8561b62ebb2b8292fc8e5d08edadc"
+      ],
+      [
+        "Organization",
+        "8d3825fbd74304115eb7c968a472a749a544bc5e"
+      ],
+      [
+        "Organization",
+        "8e50c96b75cfa3cace654f97729e1294547b4e0f"
+      ],
+      [
+        "Organization",
+        "8ffeae9e34d940fd7121ac1a22c92e27c618f963"
+      ],
+      [
+        "Organization",
+        "90adf639d28606d5481ea20869bd8cbbbc8d6641"
+      ],
+      [
+        "Organization",
+        "9506d3d1f319b98741d5c05ac32102f7ef4c928d"
+      ],
+      [
+        "Organization",
+        "9523d279e7bc0e3e84ca6e949de2788dd270f1f5"
+      ],
+      [
+        "Organization",
+        "9889dc4253b8bde20d1dcf5768245e323541ce22"
+      ],
+      [
+        "Organization",
+        "9893c6f1300e096354b8b3c220147da8d41f7cbb"
+      ],
+      [
+        "Organization",
+        "98da44df65715cfaf333d0d6dcb86c538b447fb0"
+      ],
+      [
+        "Organization",
+        "9cac1ff8eec03bd93907c6c6ae1e52b077a6a1c6"
+      ],
+      [
+        "Organization",
+        "9d25f5978cb8f681341367ee4008f8a4e9f55132"
+      ],
+      [
+        "Organization",
+        "9eb558a7542958ba5609b74be7cccfa7f52fc967"
+      ],
+      [
+        "Organization",
+        "9ed4f53689ce629d247eb3ff7f798f2ed89fff23"
+      ],
+      [
+        "Organization",
+        "a689ac4eb0e52373c3fbc8cddff66c3d96134a43"
+      ],
+      [
+        "Organization",
+        "a99e501f8ca35bfc991da85d4787731612a64536"
+      ],
+      [
+        "Organization",
+        "ab685e1c1d7666497597c8924eb278b015dc8ec2"
+      ],
+      [
+        "Organization",
+        "ae5a628bbd287b54ed0df80e3d69f5d3ef541077"
+      ],
+      [
+        "Organization",
+        "b128135cdaa1b262c68182897385943974acca95"
+      ],
+      [
+        "Organization",
+        "b405325d9ea1120449d9c76f9fc0db5c99330ae8"
+      ],
+      [
+        "Organization",
+        "b91f2dbff56b5967cb9b83c59b70b0e52db78492"
+      ],
+      [
+        "Organization",
+        "b9a0a35cbce51118c2c97c96e9b05e9874510d7d"
+      ],
+      [
+        "Organization",
+        "bbb006e828e0e5b500890843ca12bb6f833a3654"
+      ],
+      [
+        "Organization",
+        "bc9dc2812bcf646627e053e9c429b0e3a284fcc4"
+      ],
+      [
+        "Organization",
+        "bd852d9732f4057e12d97398244baefa6e62cbcf"
+      ],
+      [
+        "Organization",
+        "be678f8103e4c4a6dda34458d2098e14de893fff"
+      ],
+      [
+        "Organization",
+        "bff84c7b90510559c41e205a47d30f58096662b6"
+      ],
+      [
+        "Organization",
+        "c271868c451304d0fbf586fdd43aa835f162f22d"
+      ],
+      [
+        "Organization",
+        "c43756260be732bb7b337fcebacbe37fb46761c4"
+      ],
+      [
+        "Organization",
+        "c889a7a267c7c3a217e2f9d7610bb4ff011b4e06"
+      ],
+      [
+        "Organization",
+        "ce9c8bbceb52df1759fd6ede04efac5c42928f8c"
+      ],
+      [
+        "Organization",
+        "d215896562e5d8b3617ff7b306c4634215ded174"
+      ],
+      [
+        "Organization",
+        "d3b9c2ce68b5f51d436b7693c57b417fe4d54cc0"
+      ],
+      [
+        "Organization",
+        "d5495299e8c2db8aa168d52e42b3e2d56a816f71"
+      ],
+      [
+        "Organization",
+        "dca3550e2d1ed84582a592d8fa27144930f0c397"
+      ],
+      [
+        "Organization",
+        "df10df56867aeb3c6d946ce5eb0630e8674b0728"
+      ],
+      [
+        "Organization",
+        "e38a7639ae415bd7a1e6358aeabc86d5f9b9ba00"
+      ],
+      [
+        "Organization",
+        "e5c526a974baa50d651b36b4905f686bf8081f0d"
+      ],
+      [
+        "Organization",
+        "ea81a928b58445ec1aeef14ee156debb8bac0294"
+      ],
+      [
+        "Organization",
+        "ecaf8901ea93eef104d9d0612f8ec6660de748cc"
+      ],
+      [
+        "Organization",
+        "ee2bab83f0126b8fa7676945439f9c1daa5562a5"
+      ],
+      [
+        "Organization",
+        "f1cdc81e735ff1f84fa6bd3de12382e6b5dcf4da"
+      ],
+      [
+        "Organization",
+        "f389048f63be7e86558f27e71b68d2ff8d823e6f"
+      ],
+      [
+        "Organization",
+        "f4061fdd1693aa97e63fd9a0561189ecbca764cc"
+      ],
+      [
+        "Organization",
+        "f7e9f6f5853a575f84822548b607bf0cfac30216"
+      ],
+      [
+        "Organization",
+        "fd9db755760ca308908c6ab1aa9d46c6779dd461"
+      ],
+      [
+        "Person",
+        "00945df7d72e7b526e8dc72ebbd4c8d9af985536"
+      ],
+      [
+        "Person",
+        "04cc39540b608b70d9242e6bf225645d521d72a5"
+      ],
+      [
+        "Person",
+        "09cd220da9e2c7937ab261bba848aba04e708979"
+      ],
+      [
+        "Person",
+        "0e3128b9da49f56ce9d3cbb898ab0a86c6300d05"
+      ],
+      [
+        "Person",
+        "0ff3d2c723f61cde86159c793b9474659f61cb95"
+      ],
+      [
+        "Person",
+        "1183f0821105c19937c35b45d1aa27866224c729"
+      ],
+      [
+        "Person",
+        "11926a69b8185ac4b1109f402232ab3ec15b624b"
+      ],
+      [
+        "Person",
+        "129f2131a415f05d1ee7d4ddfeff64e003db369e"
+      ],
+      [
+        "Person",
+        "1396a08de2c044f2a2abb1d707d1ba328a3c4ffa"
+      ],
+      [
+        "Person",
+        "1661b1be0537d8aea5cc9a9bca08526a22ceddeb"
+      ],
+      [
+        "Person",
+        "1700ae1f7651ba14af9a8a13ab3dc1d8b108354c"
+      ],
+      [
+        "Person",
+        "188d1993bb2cc3754880e9cda0856661d0064da7"
+      ],
+      [
+        "Person",
+        "19c7e078d74f4c0a31b344fe902ef9b82d5dfdf9"
+      ],
+      [
+        "Person",
+        "21a67da50edfadf18009e7b02b2b9ccade179cb9"
+      ],
+      [
+        "Person",
+        "22641ab3633d402e2bf9a020f99b0d4ebeb5d48d"
+      ],
+      [
+        "Person",
+        "2549083b2043c264154189c8fde666fde860c850"
+      ],
+      [
+        "Person",
+        "262093f02d3cbe4e19999fde2307f03855734a23"
+      ],
+      [
+        "Person",
+        "2ae0568c73c1d725da4d3b6117e2485d944d8019"
+      ],
+      [
+        "Person",
+        "345f37787e4bd42c2f717b621153a90cf70411e5"
+      ],
+      [
+        "Person",
+        "37aa484f019d82c6dba100b0819c845bea8a01be"
+      ],
+      [
+        "Person",
+        "383af5c46f985c5fc00f9516f7b6a02a84ee9e2e"
+      ],
+      [
+        "Person",
+        "3ce18a969b4081d8ae5599723e5044b33897d03e"
+      ],
+      [
+        "Person",
+        "3e970a98f2ddaf3f820cc747a80e0f402e2f9661"
+      ],
+      [
+        "Person",
+        "47b5406efa712c682539eaeb75534b1ed6b5a679"
+      ],
+      [
+        "Person",
+        "4b99b1f7df6305480ebd49adbbad4c5b00c32795"
+      ],
+      [
+        "Person",
+        "4e7e2f63a0a6acfb0db0e61f79236539575207d1"
+      ],
+      [
+        "Person",
+        "4f80f3f3d8a0c8555db61fa6f4220806b443cfd3"
+      ],
+      [
+        "Person",
+        "50da83e22e33bac6be4aa17a23f257a4118c066a"
+      ],
+      [
+        "Person",
+        "50e326e4a49177f55ee1714b53296dd2b72b63ad"
+      ],
+      [
+        "Person",
+        "5204e007a998244b79c769bda0825acaacc82bc0"
+      ],
+      [
+        "Person",
+        "5241995bd511912e272988ae5babe6b528f80de2"
+      ],
+      [
+        "Person",
+        "525a974b57004076fa040bf8292746d04298eef6"
+      ],
+      [
+        "Person",
+        "56bd1dc526d1924f4dc9ad44477bbf4119d61aa9"
+      ],
+      [
+        "Person",
+        "5b71c0831b97ac319eb53ae57a6e0b9ac3a67192"
+      ],
+      [
+        "Person",
+        "5cdff6363a2d8afdf8ef9219a9383145571eae44"
+      ],
+      [
+        "Person",
+        "5dc6fb85bd73e5e55bea043f92483f154bf2c465"
+      ],
+      [
+        "Person",
+        "5fa675734576e1647240d5588f39653589dbe07d"
+      ],
+      [
+        "Person",
+        "616b0d84b2f2f04ffd638cec4c8182c44c8e9a71"
+      ],
+      [
+        "Person",
+        "62c336ed81d678b7f34ba0672aabf329b5f02fc5"
+      ],
+      [
+        "Person",
+        "6338058b1667abb2557e32aa08fb4268710df038"
+      ],
+      [
+        "Person",
+        "64f14700faab64c99ef96afc5cd83d77b8ac86fb"
+      ],
+      [
+        "Person",
+        "65af1b7ef1cadb47881642e515119035384b2db3"
+      ],
+      [
+        "Person",
+        "65d6c04aecb0a4f5d7503cc4f7618cf24f895b11"
+      ],
+      [
+        "Person",
+        "660cdb90fd894a5a6a3d5eba173834fdec04ad6d"
+      ],
+      [
+        "Person",
+        "668840577729914066c77b56ccb9829f2633552f"
+      ],
+      [
+        "Person",
+        "70f7a8628aa7ecb186a9810de3239b44ab1b535d"
+      ],
+      [
+        "Person",
+        "712de1e8d3805bf609bb2b8ba8bfcf381f9f0fd4"
+      ],
+      [
+        "Person",
+        "73e60ebf849a4f44d7357049e0c914dfffb4b781"
+      ],
+      [
+        "Person",
+        "74268a36f85857402270a24c7cae68ef41183ce8"
+      ],
+      [
+        "Person",
+        "756307556d77e86b55aacc51deed882ca049f8c0"
+      ],
+      [
+        "Person",
+        "79d8d1a62216a7304c7fb7b28d28ba0fa818bf43"
+      ],
+      [
+        "Person",
+        "7c76d9ec03ceb485fd9c5e531ff49f806b6651fc"
+      ],
+      [
+        "Person",
+        "7dc53469917d50dcc4fa14ae8825caad25f32954"
+      ],
+      [
+        "Person",
+        "7de4458295a5e776681c7778f908c63c623ede7a"
+      ],
+      [
+        "Person",
+        "7ee8a2f16bd030eec6ffa4f3797b5878ed0843bc"
+      ],
+      [
+        "Person",
+        "809d0ef2b05a742dc208d33116cbdf93829b4e11"
+      ],
+      [
+        "Person",
+        "81d64905329e3f34c63613be046bdf93c37dc82e"
+      ],
+      [
+        "Person",
+        "85c679a2f448284dde131bf7677ad308bbd4c209"
+      ],
+      [
+        "Person",
+        "87f687f7dd4e815bb6f6bb13938acbda805fddbf"
+      ],
+      [
+        "Person",
+        "8bdf4f026ce082e7d112145cd4926eb0299a58ca"
+      ],
+      [
+        "Person",
+        "8c236b422fc7e0b07f99c04bd1242b431add554b"
+      ],
+      [
+        "Person",
+        "8c5d3341e10f14a4bb65b1b8d4550eb0cdf5c80b"
+      ],
+      [
+        "Person",
+        "8e2f5007c087e8f5885e05bde3ea6de9acf27ef5"
+      ],
+      [
+        "Person",
+        "8e7769b4ac8b1d33ba4079da6b0ae18566cd22b0"
+      ],
+      [
+        "Person",
+        "92426eea88749c2667aad6af8f6540a0068163bc"
+      ],
+      [
+        "Person",
+        "9411b2bf67ce7db28b5e7a43dea947198eb03311"
+      ],
+      [
+        "Person",
+        "9448a86361b390818ba1a9efa70e779083a58420"
+      ],
+      [
+        "Person",
+        "9532df53d7146e8d1ec2bbf65fee6b912d4b08eb"
+      ],
+      [
+        "Person",
+        "9546d091da0443f009ee483db1fc07f15492e2a5"
+      ],
+      [
+        "Person",
+        "95d08ddf7bc54f1c0e1db64f53ba8d3c296794de"
+      ],
+      [
+        "Person",
+        "9cb7b04929a7661864511a7f0867bc345222f5ba"
+      ],
+      [
+        "Person",
+        "9f424f828c313dc38a6cec63d438e36343bcfbd7"
+      ],
+      [
+        "Person",
+        "a0123696738bf749a47e6d391fa1c7ce74ca9fc8"
+      ],
+      [
+        "Person",
+        "a0335966eaa0add6199728709c190a4214ef6547"
+      ],
+      [
+        "Person",
+        "a9d5df99d3bdc117d98c5ff4f1f5f64e0f554612"
+      ],
+      [
+        "Person",
+        "aaf09f1c2ebe42a6b3e95b8bb6e2f1b6cdc14939"
+      ],
+      [
+        "Person",
+        "ab67ca4781e87ac736491116d052724a05495aa6"
+      ],
+      [
+        "Person",
+        "abb662d7436ecae7b206fb357b953bdbafec9492"
+      ],
+      [
+        "Person",
+        "ad1051aa5a360d6abbd6fc60242812414b13acf5"
+      ],
+      [
+        "Person",
+        "ad8c3ce5390e5ac009afc4a78461b42148a19c25"
+      ],
+      [
+        "Person",
+        "afbf6c51035f05ce4c0197703177280696156351"
+      ],
+      [
+        "Person",
+        "b280598b2f00214c89d55b45ce8fbb5ee4658517"
+      ],
+      [
+        "Person",
+        "b3affbcdec0d86ff02853d6f6567a6e31bab5b3f"
+      ],
+      [
+        "Person",
+        "b4663edfe142d2a1d86bb3ed63ca3f7e6e8c9b17"
+      ],
+      [
+        "Person",
+        "b63d3d7ad69a325b9c04d46bfd49d8d8ece360a3"
+      ],
+      [
+        "Person",
+        "b66201cdb0936af5c66bd7105e850420633812c1"
+      ],
+      [
+        "Person",
+        "b71d22e95ac8961dc7ef67c7aa9419c4e35bacbc"
+      ],
+      [
+        "Person",
+        "b72e88d29dd0175712cb1d66be46f853865d6318"
+      ],
+      [
+        "Person",
+        "ba2877ce97a173b6df27ddca938ad4fe013d4d63"
+      ],
+      [
+        "Person",
+        "ba30e2ac69c3680d8eff0fbc5fa01cf310942d58"
+      ],
+      [
+        "Person",
+        "bf8e1c82210b29715856be1bc885f24c281c36af"
+      ],
+      [
+        "Person",
+        "c1512af526de5fc67d8a9137110ca89b5899bed4"
+      ],
+      [
+        "Person",
+        "c3666342d6ef31c28fcbf94388fb8aabbff95f98"
+      ],
+      [
+        "Person",
+        "c84b872238505b886794e5c2d501c849644f9c9c"
+      ],
+      [
+        "Person",
+        "c96fb5f36779c146c4e5b6818cad3f420ac9c860"
+      ],
+      [
+        "Person",
+        "ca9780c91780ea4a4a584b74ae044eb763d58765"
+      ],
+      [
+        "Person",
+        "ca9c9331b6f00876b3d77b518eb48ec1ce055019"
+      ],
+      [
+        "Person",
+        "cb4a4cf8ce1233d469a0fd4b8f2598168fc1ef8a"
+      ],
+      [
+        "Person",
+        "ce858359a81687cc328a65c7c61d91f45babebed"
+      ],
+      [
+        "Person",
+        "cf82baa00684c78665f82b8ed5ad80af7c82d1ca"
+      ],
+      [
+        "Person",
+        "d32a83661689ce7ffe0d731b35633a72f8b60b64"
+      ],
+      [
+        "Person",
+        "d7d63cc573d2887343ca091e1f57af4ae8d74f2d"
+      ],
+      [
+        "Person",
+        "d821711196b4ab960c3f7a6d51025fdc3b51ebe6"
+      ],
+      [
+        "Person",
+        "d925fc34a9863d01cd61f8b803a00d306234d516"
+      ],
+      [
+        "Person",
+        "d92771fec80d42345de45c6314d4fba0c060e3d3"
+      ],
+      [
+        "Person",
+        "d95752100c6ceb87a62bd0abd989b3bdcb4749b7"
+      ],
+      [
+        "Person",
+        "d96fcccbd13aa4f210375306dddb748fd5a238cb"
+      ],
+      [
+        "Person",
+        "db0d0d1df79bbebc4eeee33148884247dcff85e5"
+      ],
+      [
+        "Person",
+        "db4916c7544efeaba8ac5c643eaa0cde614d0291"
+      ],
+      [
+        "Person",
+        "db564fc7ff49a5d1d1399d1314d188262d9ad540"
+      ],
+      [
+        "Person",
+        "db7aaeb38eadaea83cd5b56419cea505dddd927a"
+      ],
+      [
+        "Person",
+        "dbdcf18365a1eccc8de1fe8021adc8d815d9b496"
+      ],
+      [
+        "Person",
+        "dc6be4848007523f3b24181e7ac0fe9cf319337f"
+      ],
+      [
+        "Person",
+        "ddc8a4f174cab5e26f4272f194a6d51d0936dff9"
+      ],
+      [
+        "Person",
+        "df719fa3575c65a9a5e81047d75e3679cf1c366a"
+      ],
+      [
+        "Person",
+        "e0adefba711fe8664333907df54c87ba0707bd24"
+      ],
+      [
+        "Person",
+        "e1f4af1f6b1481a37dd5d8113b062fe8e3cfa275"
+      ],
+      [
+        "Person",
+        "e24bb883854f1e77d9a49341d7e6aa06ff3be140"
+      ],
+      [
+        "Person",
+        "e311d028fead75b980fc3f0f4f901f20bd61bb66"
+      ],
+      [
+        "Person",
+        "e32d2dc28d39cca3b522e760a28953c3e3d4e214"
+      ],
+      [
+        "Person",
+        "f00569531d6bef8e988f64bb17c7b40f0b170b40"
+      ],
+      [
+        "Person",
+        "f53fe06bd2d4c53af9bf6071363bbf92293af961"
+      ],
+      [
+        "Person",
+        "f877f75aa8469f757c8742d9691157ab17ad9226"
+      ],
+      [
+        "Person",
+        "f8944a8fa48991e0e37f00d967aa08f1eb960165"
+      ],
+      [
+        "Person",
+        "fa1d13912249337f992db520dc7d0152f107b2d7"
+      ],
+      [
+        "Person",
+        "fa30e231580e9ddd3bd928147a224501390819b2"
+      ],
+      [
+        "Person",
+        "fb127e1bb25d469c7bd3d71796e06d815d9f004e"
+      ],
+      [
+        "Person",
+        "fe8795f22ec6f59a262d8d0ad60cec8234eea4ef"
+      ]
+    ],
+    "mode": "0o600",
+    "sha256": "545ea18a1852cfdb3386885ddb5a27e0e19cb3bb074d4f04aa4f5c4db6d982b0"
+  },
+  "aggregates/<gen>/run.json": {
+    "content": {
+      "accounting_valid": true,
+      "cache_hits": null,
+      "cancelled": false,
+      "columns": {
+        "mapped": 49,
+        "total": 69
+      },
+      "config": {
+        "etalon": {
+          "instance_tolerance": 0.05
+        },
+        "layout": {
+          "drop_furniture": false,
+          "header_margin": 0.2,
+          "header_score_floor": 0.55
+        },
+        "limits": {
+          "compression_ratio": 200,
+          "delimited_bytes": 1073741824,
+          "member_bytes": 1073741824,
+          "members": 2000,
+          "merges_per_sheet": 100000,
+          "shared_strings_bytes": 536870912,
+          "uncompressed_bytes": 2147483648
+        },
+        "model": {
+          "enable_thinking": false,
+          "grammar": true,
+          "identity": "",
+          "live_stages": [
+            "structure",
+            "split",
+            "edge",
+            "binding",
+            "repair"
+          ],
+          "max_tokens": 3000,
+          "revision": "",
+          "seed": 20260810,
+          "temperature": 0.0,
+          "url": "http://127.0.0.1:8080"
+        },
+        "plan": {
+          "binding_mode": "model",
+          "bloc_key_distinct": 0.99,
+          "chunk_size": 20,
+          "identifier_values_per_key": 2,
+          "kind_max_values": 12,
+          "kind_min_fill": 0.9,
+          "lexical_floor": 0.6,
+          "lexicon_path": null,
+          "nesting_floor": 0.9,
+          "refinement": "rules",
+          "sample_size": 5,
+          "shortlist_size": 24,
+          "stray_column_fill": 0.01,
+          "structure_mode": "model"
+        },
+        "run": {
+          "disclosure": "local-model-may-see-values",
+          "work_dir": "work"
+        },
+        "serve": {
+          "roots": []
+        },
+        "validate": {
+          "accept_thresholds": {
+            "address": 0.0,
+            "checksum": 0.8,
+            "country": 0.9,
+            "date": 0.9,
+            "email": 0.9,
+            "entity": 0.0,
+            "gender": 0.9,
+            "html": 0.0,
+            "identifier": 0.8,
+            "ip": 0.9,
+            "json": 0.0,
+            "language": 0.9,
+            "mimetype": 0.9,
+            "name": 0.0,
+            "number": 0.0,
+            "phone": 0.9,
+            "string": 0.0,
+            "text": 0.0,
+            "topic": 0.9,
+            "url": 0.9
+          },
+          "key_distinct_floor": 0.5,
+          "key_fill_floor": 0.9
+        }
+      },
+      "coverage": {
+        "accounting_valid": true,
+        "claims": {
+          "claims": 49,
+          "emitted": 1916,
+          "expected": 1916,
+          "over_emission": 0,
+          "rejected": 0,
+          "shortfall": 0
+        },
+        "columns": 69,
+        "declined": 422,
+        "offered": 1916,
+        "outside_selection": 0,
+        "rejected": 39,
+        "statuses": {
+          "bound": 49,
+          "dropped": 6,
+          "structural": 1,
+          "undecided": 0,
+          "unmapped": 13
+        },
+        "structural": 36,
+        "unaccounted": 215,
+        "values": 2628
+      },
+      "coverage_schema": 2,
+      "declined": 1,
+      "declined_sources": [
+        {
+          "path": "<volatile>",
+          "safe_id": "5edff882ea53_Аркуш1-1a2a612d",
+          "sheet": "Аркуш1"
+        }
+      ],
+      "duplicate_sources": [],
+      "duplicates": 0,
+      "entities": {
+        "Address": 50,
+        "Debt": 2,
+        "Membership": 36,
+        "Organization": 89,
+        "Person": 128
+      },
+      "failed": 0,
+      "failures": [],
+      "finished_at": "<volatile>",
+      "followthemoney_version": "<volatile>",
+      "ftmap_version": "<volatile>",
+      "incomplete": false,
+      "model_calls": 19,
+      "model_id": "not_applicable",
+      "model_revision": "not_applicable",
+      "model_server": "not_applicable",
+      "prompts": {
+        "binding": "e05a72025ef6",
+        "edge": "12972ab0b5ff",
+        "structure": "4915ffeb980f"
+      },
+      "root": "<volatile>",
+      "run_id": "<volatile>",
+      "sources": 5,
+      "stages": null,
+      "started_at": "<volatile>",
+      "statements": 2150,
+      "summaries": [
+        "31307b36b25e-b207b067",
+        "59150f8c32bb_Organizations-f801829d",
+        "156bba8c3903-fbd359c5",
+        "be7cc1b8ae63_Лист1-fc5c89b3",
+        "5edff882ea53_Аркуш1-1a2a612d"
+      ]
+    },
+    "mode": "0o644"
+  },
+  "aggregates/<gen>/statements.csv": {
+    "bytes": 708983,
+    "mode": "0o600",
+    "sha256": "46f0e360cafbe0912731bc23535b971eb75f00f275e3edbc52a7bc806daf2ff4"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/decisions.jsonl": {
+    "bytes": 1126,
+    "mode": "0o600",
+    "sha256": "2db498e7edfca03368304df680fdfa00c349d293d34bfc92b77a028070d16da7"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/entities.ftm.json": {
+    "bytes": 1566,
+    "entity_ids": [
+      [
+        "Debt",
+        "0ca51d24081abf06f1c5ed46e2b1a4a2b28353da"
+      ],
+      [
+        "Debt",
+        "40a356d9df6cca625301a80e1089be7b2334ed38"
+      ],
+      [
+        "Organization",
+        "0da81397efb4bfd105d3cdd3f90e67e4035b1ee9"
+      ],
+      [
+        "Organization",
+        "6c1476890fdc475c2c036e546d0fb31aa83caaef"
+      ],
+      [
+        "Person",
+        "79d8d1a62216a7304c7fb7b28d28ba0fa818bf43"
+      ],
+      [
+        "Person",
+        "fb127e1bb25d469c7bd3d71796e06d815d9f004e"
+      ]
+    ],
+    "mode": "0o600",
+    "sha256": "97c0ce4616b48f913e4057acec717ff8ee0650fd32cb71dec0bd636f9e9e8629"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/mapping.yml": {
+    "content": "156bba8c3903/:\n  queries:\n  - csv_url: file://<out>/sources/156bba8c3903-fbd359c5/<gen>/normalized.csv\n    entities:\n      debt:\n        key_literal: \"debt\\0\"\n        keys:\n        - __ck_debt\n        properties:\n          creditor:\n            entity: org\n          debtor:\n            entity: person\n        schema: Debt\n      org:\n        key_literal: \"org\\0\"\n        keys:\n        - __ck_org\n        properties:\n          name:\n            column: c1\n            split: ;\n        schema: Organization\n      person:\n        key_literal: \"person\\0\"\n        keys:\n        - c0__key\n        properties:\n          birthPlace:\n            column: c2\n          position:\n            column: c0\n        schema: Person\n",
+    "mode": "0o600"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/normalized.csv": {
+    "bytes": 2086,
+    "mode": "0o600",
+    "sha256": "ffd771ee80bc961b689446138257f461112dae40bbd2f7b400e1ae309bebf986"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/plan.json": {
+    "bytes": 3075,
+    "mode": "0o600",
+    "sha256": "3d51c9c46431005acfd8ee172a2db0d1593d134ea80d10be4fb9702fd0432dc6"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/plan.validated.json": {
+    "bytes": 2415,
+    "mode": "0o600",
+    "sha256": "59e0dca81f57d97f95adb1d52f0675b1d1d3f6a1f509b774fafba529d01fd4a0"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/profile.json": {
+    "bytes": 2355,
+    "mode": "0o600",
+    "sha256": "d02112aaa17b4cd6504a58b3acea5c8d0ade79dacf9bae327b7ea71ef21c796a"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/rejects.jsonl": {
+    "bytes": 0,
+    "mode": "0o600",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/statements.csv": {
+    "bytes": 4080,
+    "mode": "0o600",
+    "sha256": "a3eb84d626857e8fcf0721d3a41786c96a43dd0b12ad3520259d95fa94e97a96"
+  },
+  "sources/156bba8c3903-fbd359c5/<gen>/summary.json": {
+    "content": {
+      "claims": [
+        {
+          "canonical_type": "string",
+          "column": "c0",
+          "emitted": 2,
+          "expected": 2,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:position",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c1",
+          "emitted": 2,
+          "expected": 2,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Organization:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c2",
+          "emitted": 2,
+          "expected": 2,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:birthPlace",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        }
+      ],
+      "columns": {
+        "mapped": 3,
+        "total": 3,
+        "unmapped": 0,
+        "verdicts": {
+          "accepted": 7
+        }
+      },
+      "config": {
+        "etalon": {
+          "instance_tolerance": 0.05
+        },
+        "layout": {
+          "drop_furniture": false,
+          "header_margin": 0.2,
+          "header_score_floor": 0.55
+        },
+        "limits": {
+          "compression_ratio": 200,
+          "delimited_bytes": 1073741824,
+          "member_bytes": 1073741824,
+          "members": 2000,
+          "merges_per_sheet": 100000,
+          "shared_strings_bytes": 536870912,
+          "uncompressed_bytes": 2147483648
+        },
+        "model": {
+          "enable_thinking": false,
+          "grammar": true,
+          "identity": "",
+          "live_stages": [
+            "structure",
+            "split",
+            "edge",
+            "binding",
+            "repair"
+          ],
+          "max_tokens": 3000,
+          "revision": "",
+          "seed": 20260810,
+          "temperature": 0.0,
+          "url": "http://127.0.0.1:8080"
+        },
+        "plan": {
+          "binding_mode": "model",
+          "bloc_key_distinct": 0.99,
+          "chunk_size": 20,
+          "identifier_values_per_key": 2,
+          "kind_max_values": 12,
+          "kind_min_fill": 0.9,
+          "lexical_floor": 0.6,
+          "lexicon_path": null,
+          "nesting_floor": 0.9,
+          "refinement": "rules",
+          "sample_size": 5,
+          "shortlist_size": 24,
+          "stray_column_fill": 0.01,
+          "structure_mode": "model"
+        },
+        "run": {
+          "disclosure": "local-model-may-see-values",
+          "work_dir": "work"
+        },
+        "serve": {
+          "roots": []
+        },
+        "validate": {
+          "accept_thresholds": {
+            "address": 0.0,
+            "checksum": 0.8,
+            "country": 0.9,
+            "date": 0.9,
+            "email": 0.9,
+            "entity": 0.0,
+            "gender": 0.9,
+            "html": 0.0,
+            "identifier": 0.8,
+            "ip": 0.9,
+            "json": 0.0,
+            "language": 0.9,
+            "mimetype": 0.9,
+            "name": 0.0,
+            "number": 0.0,
+            "phone": 0.9,
+            "string": 0.0,
+            "text": 0.0,
+            "topic": 0.9,
+            "url": 0.9
+          },
+          "key_distinct_floor": 0.5,
+          "key_fill_floor": 0.9
+        }
+      },
+      "coverage": {
+        "c0": {
+          "declined": 0,
+          "offered": 2,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 2
+        },
+        "c1": {
+          "declined": 0,
+          "offered": 2,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 2
+        },
+        "c2": {
+          "declined": 0,
+          "offered": 2,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 2
+        }
+      },
+      "coverage_schema": 2,
+      "coverage_totals": {
+        "accounting_valid": true,
+        "claims": {
+          "claims": 3,
+          "emitted": 6,
+          "expected": 6,
+          "over_emission": 0,
+          "rejected": 0,
+          "shortfall": 0
+        },
+        "columns": 3,
+        "declined": 0,
+        "offered": 6,
+        "outside_selection": 0,
+        "rejected": 0,
+        "statuses": {
+          "bound": 3,
+          "dropped": 0,
+          "structural": 0,
+          "undecided": 0,
+          "unmapped": 0
+        },
+        "structural": 0,
+        "unaccounted": 0,
+        "values": 6
+      },
+      "declined": null,
+      "entities": {
+        "Debt": 2,
+        "Organization": 2,
+        "Person": 2
+      },
+      "furniture": {
+        "blank": 10
+      },
+      "mapping": "<out>/sources/156bba8c3903-fbd359c5/<gen>/mapping.yml",
+      "path": "<volatile>",
+      "properties": {
+        "birthPlace": 2,
+        "creditor": 2,
+        "debtor": 2,
+        "name": 2,
+        "namesMentioned": 2,
+        "position": 2
+      },
+      "rejects": {
+        "by_column": {},
+        "by_reason": {},
+        "by_stage": {},
+        "total": 0
+      },
+      "run_id": "<volatile>",
+      "safe_id": "156bba8c3903-fbd359c5",
+      "source": {
+        "filled_from_merges": 0,
+        "header_row": 0,
+        "hidden": false,
+        "id": "156bba8c3903/",
+        "label_row": null,
+        "records": 2,
+        "repairs": [],
+        "sha256": "156bba8c3903d1691458eea37227249892ed64f75ff9b19ef604f972cba029b2",
+        "sheet": ""
+      },
+      "stages": {
+        "emit": {
+          "duration_seconds": "<volatile>"
+        },
+        "profile": {
+          "duration_seconds": "<volatile>"
+        },
+        "propose": {
+          "duration_seconds": "<volatile>"
+        },
+        "validate": {
+          "duration_seconds": "<volatile>"
+        }
+      },
+      "statements": 12,
+      "structure": {
+        "attachments": [],
+        "bindings": {
+          "c0": [
+            {
+              "on": "e0",
+              "prop": "Person:position",
+              "type": "string"
+            }
+          ],
+          "c1": [
+            {
+              "on": "e1",
+              "prop": "Organization:name",
+              "type": "name"
+            }
+          ],
+          "c2": [
+            {
+              "on": "e0",
+              "prop": "Person:birthPlace",
+              "type": "string"
+            }
+          ]
+        },
+        "edges": [
+          {
+            "id": "g0",
+            "keys": [],
+            "schema": "Debt",
+            "source": "e0",
+            "target": "e1"
+          }
+        ],
+        "entities": [
+          {
+            "filter": null,
+            "id": "e0",
+            "instances": 2,
+            "keys": [
+              "c0"
+            ],
+            "schema": "Person"
+          },
+          {
+            "filter": null,
+            "id": "e1",
+            "instances": 2,
+            "keys": [
+              "c1",
+              "c2"
+            ],
+            "schema": "Organization"
+          }
+        ]
+      },
+      "subject": "Person",
+      "subject_declared": "Person",
+      "unfalsifiable": {
+        "bindings": 3,
+        "of_bindings": 3,
+        "of_statements": 8,
+        "statements": 8
+      }
+    },
+    "mode": "0o644"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/decisions.jsonl": {
+    "bytes": 15178,
+    "mode": "0o600",
+    "sha256": "2498e206e5743b51e838b27cde77409da8861252a3f869c3046a271ebb87d11c"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/entities.ftm.json": {
+    "bytes": 27786,
+    "entity_ids": [
+      [
+        "Address",
+        "ba23acd8badd5cca4c8aaa8aea6a04ebd240d014"
+      ],
+      [
+        "Person",
+        "0ff3d2c723f61cde86159c793b9474659f61cb95"
+      ],
+      [
+        "Person",
+        "1183f0821105c19937c35b45d1aa27866224c729"
+      ],
+      [
+        "Person",
+        "129f2131a415f05d1ee7d4ddfeff64e003db369e"
+      ],
+      [
+        "Person",
+        "19c7e078d74f4c0a31b344fe902ef9b82d5dfdf9"
+      ],
+      [
+        "Person",
+        "21a67da50edfadf18009e7b02b2b9ccade179cb9"
+      ],
+      [
+        "Person",
+        "4f80f3f3d8a0c8555db61fa6f4220806b443cfd3"
+      ],
+      [
+        "Person",
+        "50e326e4a49177f55ee1714b53296dd2b72b63ad"
+      ],
+      [
+        "Person",
+        "5241995bd511912e272988ae5babe6b528f80de2"
+      ],
+      [
+        "Person",
+        "56bd1dc526d1924f4dc9ad44477bbf4119d61aa9"
+      ],
+      [
+        "Person",
+        "5b71c0831b97ac319eb53ae57a6e0b9ac3a67192"
+      ],
+      [
+        "Person",
+        "5cdff6363a2d8afdf8ef9219a9383145571eae44"
+      ],
+      [
+        "Person",
+        "616b0d84b2f2f04ffd638cec4c8182c44c8e9a71"
+      ],
+      [
+        "Person",
+        "62c336ed81d678b7f34ba0672aabf329b5f02fc5"
+      ],
+      [
+        "Person",
+        "64f14700faab64c99ef96afc5cd83d77b8ac86fb"
+      ],
+      [
+        "Person",
+        "70f7a8628aa7ecb186a9810de3239b44ab1b535d"
+      ],
+      [
+        "Person",
+        "74268a36f85857402270a24c7cae68ef41183ce8"
+      ],
+      [
+        "Person",
+        "756307556d77e86b55aacc51deed882ca049f8c0"
+      ],
+      [
+        "Person",
+        "7ee8a2f16bd030eec6ffa4f3797b5878ed0843bc"
+      ],
+      [
+        "Person",
+        "92426eea88749c2667aad6af8f6540a0068163bc"
+      ],
+      [
+        "Person",
+        "9411b2bf67ce7db28b5e7a43dea947198eb03311"
+      ],
+      [
+        "Person",
+        "a9d5df99d3bdc117d98c5ff4f1f5f64e0f554612"
+      ],
+      [
+        "Person",
+        "abb662d7436ecae7b206fb357b953bdbafec9492"
+      ],
+      [
+        "Person",
+        "b280598b2f00214c89d55b45ce8fbb5ee4658517"
+      ],
+      [
+        "Person",
+        "b71d22e95ac8961dc7ef67c7aa9419c4e35bacbc"
+      ],
+      [
+        "Person",
+        "ba30e2ac69c3680d8eff0fbc5fa01cf310942d58"
+      ],
+      [
+        "Person",
+        "bf8e1c82210b29715856be1bc885f24c281c36af"
+      ],
+      [
+        "Person",
+        "ca9780c91780ea4a4a584b74ae044eb763d58765"
+      ],
+      [
+        "Person",
+        "cb4a4cf8ce1233d469a0fd4b8f2598168fc1ef8a"
+      ],
+      [
+        "Person",
+        "ce858359a81687cc328a65c7c61d91f45babebed"
+      ],
+      [
+        "Person",
+        "d32a83661689ce7ffe0d731b35633a72f8b60b64"
+      ],
+      [
+        "Person",
+        "d821711196b4ab960c3f7a6d51025fdc3b51ebe6"
+      ],
+      [
+        "Person",
+        "db564fc7ff49a5d1d1399d1314d188262d9ad540"
+      ],
+      [
+        "Person",
+        "db7aaeb38eadaea83cd5b56419cea505dddd927a"
+      ],
+      [
+        "Person",
+        "dbdcf18365a1eccc8de1fe8021adc8d815d9b496"
+      ],
+      [
+        "Person",
+        "df719fa3575c65a9a5e81047d75e3679cf1c366a"
+      ],
+      [
+        "Person",
+        "e24bb883854f1e77d9a49341d7e6aa06ff3be140"
+      ],
+      [
+        "Person",
+        "f8944a8fa48991e0e37f00d967aa08f1eb960165"
+      ],
+      [
+        "Person",
+        "fa30e231580e9ddd3bd928147a224501390819b2"
+      ],
+      [
+        "Person",
+        "fe8795f22ec6f59a262d8d0ad60cec8234eea4ef"
+      ]
+    ],
+    "mode": "0o600",
+    "sha256": "ce1ff61a76689ddee2156903b21dd5286fa428984117f7d860c9220110d91193"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/mapping.yml": {
+    "content": "31307b36b25e/:\n  queries:\n  - csv_url: file://<out>/sources/31307b36b25e-b207b067/<gen>/normalized.csv\n    entities:\n      address_block:\n        key_literal: \"address_block\\0\"\n        keys:\n        - __ck_address_block\n        properties:\n          city:\n            column: c26\n          country:\n            column: c22\n            split: ;\n          full:\n            column: c28\n            split: ;\n          postalCode:\n            column: c21\n          region:\n            column: c23\n          street:\n            column: c27\n          summary:\n            column: c30\n        schema: Address\n      c17:\n        key_literal: \"c17\\0\"\n        keys:\n        - c17__key\n        properties:\n          name:\n            column: c17\n            split: ;\n        schema: Person\n      person:\n        key_literal: \"person\\0\"\n        keys:\n        - c0__key\n        properties:\n          addressEntity:\n            entity: address_block\n          alias:\n            column: c3\n            split: ;\n          birthDate:\n            column: c6\n            split: ;\n          brightQueryId:\n            column: c0\n            split: ;\n          email:\n            column: c11\n            split: ;\n          gender:\n            column: c5\n          name:\n            columns:\n            - c2\n            - c4\n            split: ;\n          notes:\n            column: c8\n          phone:\n            column: c12\n            split: ;\n          political:\n            column: c16\n          publisher:\n            column: c19\n          vatCode:\n            column: c1\n            split: ;\n          website:\n            column: c7\n            split: ;\n        schema: Person\n",
+    "mode": "0o600"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/normalized.csv": {
+    "bytes": 38259,
+    "mode": "0o600",
+    "sha256": "4356e7bdb8fe8d0e840b1b5d08d3ecdca61e6a9fed2fc7cafc519c853715ad9f"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/plan.json": {
+    "bytes": 22508,
+    "mode": "0o600",
+    "sha256": "b5068c52e0fc7a484bc4d7a41352482c64c5091b110dcc83a2ddcbb628c053a3"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/plan.validated.json": {
+    "bytes": 22755,
+    "mode": "0o600",
+    "sha256": "9342087df13a80ec72feee897993293d7fa99f56a3f3bd8c43df127952c206d6"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/profile.json": {
+    "bytes": 26203,
+    "mode": "0o600",
+    "sha256": "e1ffcd1fad34b3b502b4076d5fc7d7da5f88e0963bc74d6246e68d569acbf9b2"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/rejects.jsonl": {
+    "bytes": 0,
+    "mode": "0o600",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/statements.csv": {
+    "bytes": 213454,
+    "mode": "0o600",
+    "sha256": "a3288d796c97126491eb3547192401ec9e75eba5685366410df4806e5971d4b1"
+  },
+  "sources/31307b36b25e-b207b067/<gen>/summary.json": {
+    "content": {
+      "claims": [
+        {
+          "canonical_type": "identifier",
+          "column": "c0",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:brightQueryId",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "identifier"
+        },
+        {
+          "canonical_type": "identifier",
+          "column": "c1",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:vatCode",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "identifier"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c2",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c3",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:alias",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c4",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "gender",
+          "column": "c5",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:gender",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "gender"
+        },
+        {
+          "canonical_type": "date",
+          "column": "c6",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:birthDate",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "date"
+        },
+        {
+          "canonical_type": "url",
+          "column": "c7",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:website",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "url"
+        },
+        {
+          "canonical_type": "text",
+          "column": "c8",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:notes",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "text"
+        },
+        {
+          "canonical_type": "email",
+          "column": "c11",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:email",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "email"
+        },
+        {
+          "canonical_type": "phone",
+          "column": "c12",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:phone",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "phone"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c16",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:political",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c17",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e2"
+          ],
+          "over_emission": 0,
+          "prop": "Person:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c19",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:publisher",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c21",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Address:postalCode",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "country",
+          "column": "c22",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Address:country",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "country"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c23",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Address:region",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c26",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Address:city",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c27",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Address:street",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "address",
+          "column": "c28",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Address:full",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "address"
+        },
+        {
+          "canonical_type": "text",
+          "column": "c30",
+          "emitted": 33,
+          "expected": 33,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Address:summary",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "text"
+        }
+      ],
+      "columns": {
+        "mapped": 21,
+        "total": 33,
+        "unmapped": 12,
+        "verdicts": {
+          "accepted": 41,
+          "rejected": 22,
+          "unmapped": 7
+        }
+      },
+      "config": {
+        "etalon": {
+          "instance_tolerance": 0.05
+        },
+        "layout": {
+          "drop_furniture": false,
+          "header_margin": 0.2,
+          "header_score_floor": 0.55
+        },
+        "limits": {
+          "compression_ratio": 200,
+          "delimited_bytes": 1073741824,
+          "member_bytes": 1073741824,
+          "members": 2000,
+          "merges_per_sheet": 100000,
+          "shared_strings_bytes": 536870912,
+          "uncompressed_bytes": 2147483648
+        },
+        "model": {
+          "enable_thinking": false,
+          "grammar": true,
+          "identity": "",
+          "live_stages": [
+            "structure",
+            "split",
+            "edge",
+            "binding",
+            "repair"
+          ],
+          "max_tokens": 3000,
+          "revision": "",
+          "seed": 20260810,
+          "temperature": 0.0,
+          "url": "http://127.0.0.1:8080"
+        },
+        "plan": {
+          "binding_mode": "model",
+          "bloc_key_distinct": 0.99,
+          "chunk_size": 20,
+          "identifier_values_per_key": 2,
+          "kind_max_values": 12,
+          "kind_min_fill": 0.9,
+          "lexical_floor": 0.6,
+          "lexicon_path": null,
+          "nesting_floor": 0.9,
+          "refinement": "rules",
+          "sample_size": 5,
+          "shortlist_size": 24,
+          "stray_column_fill": 0.01,
+          "structure_mode": "model"
+        },
+        "run": {
+          "disclosure": "local-model-may-see-values",
+          "work_dir": "work"
+        },
+        "serve": {
+          "roots": []
+        },
+        "validate": {
+          "accept_thresholds": {
+            "address": 0.0,
+            "checksum": 0.8,
+            "country": 0.9,
+            "date": 0.9,
+            "email": 0.9,
+            "entity": 0.0,
+            "gender": 0.9,
+            "html": 0.0,
+            "identifier": 0.8,
+            "ip": 0.9,
+            "json": 0.0,
+            "language": 0.9,
+            "mimetype": 0.9,
+            "name": 0.0,
+            "number": 0.0,
+            "phone": 0.9,
+            "string": 0.0,
+            "text": 0.0,
+            "topic": 0.9,
+            "url": 0.9
+          },
+          "key_distinct_floor": 0.5,
+          "key_fill_floor": 0.9
+        }
+      },
+      "coverage": {
+        "c0": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c1": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c10": {
+          "declined": 33,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c11": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c12": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c13": {
+          "declined": 33,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c14": {
+          "declined": 33,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c15": {
+          "declined": 0,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "dropped",
+          "structural": 0,
+          "unaccounted": 33,
+          "values": 33
+        },
+        "c16": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c17": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c18": {
+          "declined": 33,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c19": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c2": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c20": {
+          "declined": 33,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c21": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c22": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c23": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c24": {
+          "declined": 0,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "dropped",
+          "structural": 0,
+          "unaccounted": 33,
+          "values": 33
+        },
+        "c25": {
+          "declined": 0,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "dropped",
+          "structural": 0,
+          "unaccounted": 33,
+          "values": 33
+        },
+        "c26": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c27": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c28": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c29": {
+          "declined": 0,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "dropped",
+          "structural": 0,
+          "unaccounted": 33,
+          "values": 33
+        },
+        "c3": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c30": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c31": {
+          "declined": 33,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c32": {
+          "declined": 33,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c4": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c5": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c6": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c7": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c8": {
+          "declined": 0,
+          "offered": 33,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 33
+        },
+        "c9": {
+          "declined": 0,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "dropped",
+          "structural": 0,
+          "unaccounted": 33,
+          "values": 33
+        }
+      },
+      "coverage_schema": 2,
+      "coverage_totals": {
+        "accounting_valid": true,
+        "claims": {
+          "claims": 21,
+          "emitted": 693,
+          "expected": 693,
+          "over_emission": 0,
+          "rejected": 0,
+          "shortfall": 0
+        },
+        "columns": 33,
+        "declined": 231,
+        "offered": 693,
+        "outside_selection": 0,
+        "rejected": 0,
+        "statuses": {
+          "bound": 21,
+          "dropped": 5,
+          "structural": 0,
+          "undecided": 0,
+          "unmapped": 7
+        },
+        "structural": 0,
+        "unaccounted": 165,
+        "values": 1089
+      },
+      "declined": null,
+      "entities": {
+        "Address": 1,
+        "Person": 39
+      },
+      "furniture": {},
+      "mapping": "<out>/sources/31307b36b25e-b207b067/<gen>/mapping.yml",
+      "path": "<volatile>",
+      "properties": {
+        "addressEntity": 33,
+        "alias": 33,
+        "birthDate": 33,
+        "brightQueryId": 33,
+        "city": 33,
+        "country": 33,
+        "email": 33,
+        "full": 33,
+        "gender": 33,
+        "name": 99,
+        "notes": 33,
+        "phone": 33,
+        "political": 33,
+        "postalCode": 33,
+        "publisher": 33,
+        "region": 33,
+        "street": 33,
+        "summary": 33,
+        "vatCode": 33,
+        "website": 33
+      },
+      "rejects": {
+        "by_column": {},
+        "by_reason": {},
+        "by_stage": {},
+        "total": 0
+      },
+      "run_id": "<volatile>",
+      "safe_id": "31307b36b25e-b207b067",
+      "source": {
+        "filled_from_merges": 0,
+        "header_row": 0,
+        "hidden": false,
+        "id": "31307b36b25e/",
+        "label_row": null,
+        "records": 33,
+        "repairs": [],
+        "sha256": "31307b36b25e94e5c54af8d2a7adb619aa239c00e2c73ec53ba34b0453887efe",
+        "sheet": ""
+      },
+      "stages": {
+        "emit": {
+          "duration_seconds": "<volatile>"
+        },
+        "profile": {
+          "duration_seconds": "<volatile>"
+        },
+        "propose": {
+          "duration_seconds": "<volatile>"
+        },
+        "validate": {
+          "duration_seconds": "<volatile>"
+        }
+      },
+      "statements": 726,
+      "structure": {
+        "attachments": [
+          {
+            "on": "e0",
+            "prop": "Person:addressEntity",
+            "target": "e1"
+          }
+        ],
+        "bindings": {
+          "c0": [
+            {
+              "on": "e0",
+              "prop": "Person:brightQueryId",
+              "type": "identifier"
+            }
+          ],
+          "c1": [
+            {
+              "on": "e0",
+              "prop": "Person:vatCode",
+              "type": "identifier"
+            }
+          ],
+          "c11": [
+            {
+              "on": "e0",
+              "prop": "Person:email",
+              "type": "email"
+            }
+          ],
+          "c12": [
+            {
+              "on": "e0",
+              "prop": "Person:phone",
+              "type": "phone"
+            }
+          ],
+          "c16": [
+            {
+              "on": "e0",
+              "prop": "Person:political",
+              "type": "string"
+            }
+          ],
+          "c17": [
+            {
+              "on": "e2",
+              "prop": "Person:name",
+              "type": "name"
+            }
+          ],
+          "c19": [
+            {
+              "on": "e0",
+              "prop": "Person:publisher",
+              "type": "string"
+            }
+          ],
+          "c2": [
+            {
+              "on": "e0",
+              "prop": "Person:name",
+              "type": "name"
+            }
+          ],
+          "c21": [
+            {
+              "on": "e1",
+              "prop": "Address:postalCode",
+              "type": "string"
+            }
+          ],
+          "c22": [
+            {
+              "on": "e1",
+              "prop": "Address:country",
+              "type": "country"
+            }
+          ],
+          "c23": [
+            {
+              "on": "e1",
+              "prop": "Address:region",
+              "type": "string"
+            }
+          ],
+          "c26": [
+            {
+              "on": "e1",
+              "prop": "Address:city",
+              "type": "string"
+            }
+          ],
+          "c27": [
+            {
+              "on": "e1",
+              "prop": "Address:street",
+              "type": "string"
+            }
+          ],
+          "c28": [
+            {
+              "on": "e1",
+              "prop": "Address:full",
+              "type": "address"
+            }
+          ],
+          "c3": [
+            {
+              "on": "e0",
+              "prop": "Person:alias",
+              "type": "name"
+            }
+          ],
+          "c30": [
+            {
+              "on": "e1",
+              "prop": "Address:summary",
+              "type": "text"
+            }
+          ],
+          "c4": [
+            {
+              "on": "e0",
+              "prop": "Person:name",
+              "type": "name"
+            }
+          ],
+          "c5": [
+            {
+              "on": "e0",
+              "prop": "Person:gender",
+              "type": "gender"
+            }
+          ],
+          "c6": [
+            {
+              "on": "e0",
+              "prop": "Person:birthDate",
+              "type": "date"
+            }
+          ],
+          "c7": [
+            {
+              "on": "e0",
+              "prop": "Person:website",
+              "type": "url"
+            }
+          ],
+          "c8": [
+            {
+              "on": "e0",
+              "prop": "Person:notes",
+              "type": "text"
+            }
+          ]
+        },
+        "edges": [],
+        "entities": [
+          {
+            "filter": null,
+            "id": "e0",
+            "instances": 33,
+            "keys": [
+              "c0"
+            ],
+            "schema": "Person"
+          },
+          {
+            "filter": null,
+            "id": "e1",
+            "instances": 1,
+            "keys": [
+              "c27",
+              "c28"
+            ],
+            "schema": "Address"
+          },
+          {
+            "filter": null,
+            "id": "e2",
+            "instances": 6,
+            "keys": [
+              "c17"
+            ],
+            "schema": "Person"
+          }
+        ]
+      },
+      "subject": "Person",
+      "subject_declared": "Person",
+      "unfalsifiable": {
+        "bindings": 13,
+        "of_bindings": 21,
+        "of_statements": 693,
+        "statements": 429
+      }
+    },
+    "mode": "0o644"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/decisions.jsonl": {
+    "bytes": 12106,
+    "mode": "0o600",
+    "sha256": "89b4148159de743b9caf41eb0fc7c39c9385cb744a88c0c81f157469647f6f77"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/entities.ftm.json": {
+    "bytes": 91558,
+    "entity_ids": [
+      [
+        "Address",
+        "041626e49120261d7d967f9e7385506deb9b6f71"
+      ],
+      [
+        "Address",
+        "06c591dc142bdd61f224f3ec01b62ba35ea43829"
+      ],
+      [
+        "Address",
+        "0a28e609df23f982015c45d645c6724f86c5ee3d"
+      ],
+      [
+        "Address",
+        "0c53f4ced86a33648ab50d1ecc30f95eceb486fb"
+      ],
+      [
+        "Address",
+        "19b494f133e07478240e7196b751caf0975dce35"
+      ],
+      [
+        "Address",
+        "1bcc10e9f5977f6ee22bb737990e50e3e35e0395"
+      ],
+      [
+        "Address",
+        "1d8e64521d69f1cc5cb5c4597e234c9d037fd800"
+      ],
+      [
+        "Address",
+        "219a40eba720d41428d2b6fdb020464409d3eced"
+      ],
+      [
+        "Address",
+        "28fef2383a730043554ae3d5388c90e89691ca80"
+      ],
+      [
+        "Address",
+        "2d58b01442699b919644b4c71ee9dbe10d9cea9c"
+      ],
+      [
+        "Address",
+        "2e7f98a37f34a23a91ad75b3bf9a1bad48e75618"
+      ],
+      [
+        "Address",
+        "3417ad19ea029b50dea611f6a675f93fc4340e49"
+      ],
+      [
+        "Address",
+        "3b1a66bd19a6e6e03fc05f504087568066ca13b6"
+      ],
+      [
+        "Address",
+        "3ff906c140da52c5ddf383502b50ba3bd3ac37c4"
+      ],
+      [
+        "Address",
+        "437d0c593ce91abe3d21cd74eed4923de3a6b360"
+      ],
+      [
+        "Address",
+        "443c03f6c0002c5435332dfb3f80b57048370893"
+      ],
+      [
+        "Address",
+        "448ef21c5f216209b6724ddc01096aa710fe4f0c"
+      ],
+      [
+        "Address",
+        "44e09931e42eec2f5bf7a92c88d41af0dc99e869"
+      ],
+      [
+        "Address",
+        "56287ff25bb4b5d54fe58960d85c1a8c3162b6ef"
+      ],
+      [
+        "Address",
+        "5b3c1776616b0e9d7d1faba0af852a7d4689952f"
+      ],
+      [
+        "Address",
+        "5c54bfa136c3a7f81fb635b3ea88f0a9a7ee38fa"
+      ],
+      [
+        "Address",
+        "60a2391d680fcb8ad4e9798e7e6421c9dc339122"
+      ],
+      [
+        "Address",
+        "60c002ef4ed6173e6ff3432dd818a69c4a1527df"
+      ],
+      [
+        "Address",
+        "60c2825c4ac0bd8d4f139994d0f9ee7c771c8941"
+      ],
+      [
+        "Address",
+        "7a2199ec4b177d7040ddc99fc875c5a08276ffe0"
+      ],
+      [
+        "Address",
+        "89fa6c480b0c646370028de861a6e463e853d904"
+      ],
+      [
+        "Address",
+        "947f8ec930d6b531ab8010e3b99a64ad3411393a"
+      ],
+      [
+        "Address",
+        "9943712ba8fd2597c93706b146d68b670b073c8b"
+      ],
+      [
+        "Address",
+        "9e3add7e4e53826cd60823933e33e1aaa601976f"
+      ],
+      [
+        "Address",
+        "ab720f881a3ce40c32d505d4c69088482e4777bd"
+      ],
+      [
+        "Address",
+        "b160beb8eaeea38edecf353d3dd139d60a5cc5c0"
+      ],
+      [
+        "Address",
+        "b76de8d2187ad7dbd40bbdb5fc04ac6d520bce53"
+      ],
+      [
+        "Address",
+        "b8608c948b8b40c31c497c0ccde9a2da08d55120"
+      ],
+      [
+        "Address",
+        "b87a7f2c6cfd130d6660fb5b5902b418b20da178"
+      ],
+      [
+        "Address",
+        "b8bdc2a85c9428e7b7921605728fa0052b878d12"
+      ],
+      [
+        "Address",
+        "bb9583c2bd07069eb95a0ab23500a9c6dac3ff18"
+      ],
+      [
+        "Address",
+        "be48aa994c6bac5abd3b437a5d134ff35070a743"
+      ],
+      [
+        "Address",
+        "c05d4202f6c7365d13da3922d922af30da7d8022"
+      ],
+      [
+        "Address",
+        "c075883cf85f225f27737bc76ff0795d31e5da40"
+      ],
+      [
+        "Address",
+        "d01dc5b741e3bd187baa46ad591d45efff5509f7"
+      ],
+      [
+        "Address",
+        "dcf8b2784a0cf2eb3c337d2d5f5ba63b04ade895"
+      ],
+      [
+        "Address",
+        "e028bbcbd47a3d06f4de6671bb42b258721ffcc5"
+      ],
+      [
+        "Address",
+        "e217ce235e2ad2cd2b2773b7db8598b2e29ae84f"
+      ],
+      [
+        "Address",
+        "e459c1fbb29223fa6387780f10557d8425d58fd3"
+      ],
+      [
+        "Address",
+        "f1eb58229f711875c2fb7c841f4f8bbe7b80bb62"
+      ],
+      [
+        "Address",
+        "f72c725523ccd62130a65df06bb5fb7008883bda"
+      ],
+      [
+        "Address",
+        "fd4b2961e8055948f6d14a8f127550699b83810d"
+      ],
+      [
+        "Address",
+        "fdb09314c5c4cc2a2def02713bf86bed3cc75fd7"
+      ],
+      [
+        "Address",
+        "fdb83c6d62f0a024e25a22eb185e284c10d4bebd"
+      ],
+      [
+        "Organization",
+        "04baa38c728a5f69c89ab9efa1ac2166ded6c5b3"
+      ],
+      [
+        "Organization",
+        "08d74bc6afb37890b5dbf99861b6453415f614ea"
+      ],
+      [
+        "Organization",
+        "128e350cf2d17e32fad303768752c6b59e9265bc"
+      ],
+      [
+        "Organization",
+        "199530f60791be0f8bf80a5c57356c1efb6d57dc"
+      ],
+      [
+        "Organization",
+        "1e2d6e959e1e633cbad3c3e599df5319691db6d2"
+      ],
+      [
+        "Organization",
+        "232e3a78b1f6e53c6030081ede073d3e71a447f4"
+      ],
+      [
+        "Organization",
+        "236bbe06fb436d0e35301e56c53e68a9b71d17e3"
+      ],
+      [
+        "Organization",
+        "26ad1c152e071868785505386665a788e201ecfb"
+      ],
+      [
+        "Organization",
+        "26fbefa27d676952858106359201d1f5ddd77eca"
+      ],
+      [
+        "Organization",
+        "288e07d43d4596d3a211c4944e5ab10d948f65f6"
+      ],
+      [
+        "Organization",
+        "2c1814e5bb6fa600cfc366d91d9c595e716a1eb9"
+      ],
+      [
+        "Organization",
+        "3d6f169054e4740d47a4b00383f0b0e533ad4b9f"
+      ],
+      [
+        "Organization",
+        "4251d43760a086c064858f0144645d3412559eb8"
+      ],
+      [
+        "Organization",
+        "4cc144ea4f9c5bf02958ac6feb37cde529f6985d"
+      ],
+      [
+        "Organization",
+        "4e453ac15d43bdb950400814f222ca38a9131b2f"
+      ],
+      [
+        "Organization",
+        "6b1d1e7471dc764ca09846f1a6acf97dc239439a"
+      ],
+      [
+        "Organization",
+        "6b438ad26564d3cc73735d4ac68d7b61a5525229"
+      ],
+      [
+        "Organization",
+        "6dc07231fd7cdfbf0a903be3ab0d2e0ff98ead43"
+      ],
+      [
+        "Organization",
+        "6f502cb0db2c50c11d5fc8b14d8f5bb781dd8885"
+      ],
+      [
+        "Organization",
+        "7018885bf2493f3ffe78cbd78e6b9ccc58cb43fc"
+      ],
+      [
+        "Organization",
+        "76e79efbd9550ed9a6714a66d0d2ac25779f81bb"
+      ],
+      [
+        "Organization",
+        "7a7e732a3d18cbf4a5099cd63b62ff911744cf9f"
+      ],
+      [
+        "Organization",
+        "7a7eda7ff5fdf6a5561c052a143b10014f5c1f88"
+      ],
+      [
+        "Organization",
+        "7e5ba209e7c94f0e597b234e0909a52e16a86289"
+      ],
+      [
+        "Organization",
+        "8352b0b2ac8b5c128825a4507397773c28eb4dc7"
+      ],
+      [
+        "Organization",
+        "83fde504f5e8c8de3a034ff4410a9ef9bbabe1ee"
+      ],
+      [
+        "Organization",
+        "8843fb6de7c56681d7b65af9f43ad5f6a600da50"
+      ],
+      [
+        "Organization",
+        "90adf639d28606d5481ea20869bd8cbbbc8d6641"
+      ],
+      [
+        "Organization",
+        "9506d3d1f319b98741d5c05ac32102f7ef4c928d"
+      ],
+      [
+        "Organization",
+        "9523d279e7bc0e3e84ca6e949de2788dd270f1f5"
+      ],
+      [
+        "Organization",
+        "9893c6f1300e096354b8b3c220147da8d41f7cbb"
+      ],
+      [
+        "Organization",
+        "98da44df65715cfaf333d0d6dcb86c538b447fb0"
+      ],
+      [
+        "Organization",
+        "9cac1ff8eec03bd93907c6c6ae1e52b077a6a1c6"
+      ],
+      [
+        "Organization",
+        "9d25f5978cb8f681341367ee4008f8a4e9f55132"
+      ],
+      [
+        "Organization",
+        "9eb558a7542958ba5609b74be7cccfa7f52fc967"
+      ],
+      [
+        "Organization",
+        "a689ac4eb0e52373c3fbc8cddff66c3d96134a43"
+      ],
+      [
+        "Organization",
+        "a99e501f8ca35bfc991da85d4787731612a64536"
+      ],
+      [
+        "Organization",
+        "ab685e1c1d7666497597c8924eb278b015dc8ec2"
+      ],
+      [
+        "Organization",
+        "b91f2dbff56b5967cb9b83c59b70b0e52db78492"
+      ],
+      [
+        "Organization",
+        "bbb006e828e0e5b500890843ca12bb6f833a3654"
+      ],
+      [
+        "Organization",
+        "bd852d9732f4057e12d97398244baefa6e62cbcf"
+      ],
+      [
+        "Organization",
+        "be678f8103e4c4a6dda34458d2098e14de893fff"
+      ],
+      [
+        "Organization",
+        "c271868c451304d0fbf586fdd43aa835f162f22d"
+      ],
+      [
+        "Organization",
+        "c43756260be732bb7b337fcebacbe37fb46761c4"
+      ],
+      [
+        "Organization",
+        "ce9c8bbceb52df1759fd6ede04efac5c42928f8c"
+      ],
+      [
+        "Organization",
+        "d3b9c2ce68b5f51d436b7693c57b417fe4d54cc0"
+      ],
+      [
+        "Organization",
+        "d5495299e8c2db8aa168d52e42b3e2d56a816f71"
+      ],
+      [
+        "Organization",
+        "e38a7639ae415bd7a1e6358aeabc86d5f9b9ba00"
+      ],
+      [
+        "Organization",
+        "e5c526a974baa50d651b36b4905f686bf8081f0d"
+      ],
+      [
+        "Organization",
+        "ea81a928b58445ec1aeef14ee156debb8bac0294"
+      ],
+      [
+        "Organization",
+        "ecaf8901ea93eef104d9d0612f8ec6660de748cc"
+      ],
+      [
+        "Person",
+        "04cc39540b608b70d9242e6bf225645d521d72a5"
+      ],
+      [
+        "Person",
+        "09cd220da9e2c7937ab261bba848aba04e708979"
+      ],
+      [
+        "Person",
+        "11926a69b8185ac4b1109f402232ab3ec15b624b"
+      ],
+      [
+        "Person",
+        "1661b1be0537d8aea5cc9a9bca08526a22ceddeb"
+      ],
+      [
+        "Person",
+        "188d1993bb2cc3754880e9cda0856661d0064da7"
+      ],
+      [
+        "Person",
+        "2549083b2043c264154189c8fde666fde860c850"
+      ],
+      [
+        "Person",
+        "262093f02d3cbe4e19999fde2307f03855734a23"
+      ],
+      [
+        "Person",
+        "2ae0568c73c1d725da4d3b6117e2485d944d8019"
+      ],
+      [
+        "Person",
+        "345f37787e4bd42c2f717b621153a90cf70411e5"
+      ],
+      [
+        "Person",
+        "383af5c46f985c5fc00f9516f7b6a02a84ee9e2e"
+      ],
+      [
+        "Person",
+        "3ce18a969b4081d8ae5599723e5044b33897d03e"
+      ],
+      [
+        "Person",
+        "3e970a98f2ddaf3f820cc747a80e0f402e2f9661"
+      ],
+      [
+        "Person",
+        "50da83e22e33bac6be4aa17a23f257a4118c066a"
+      ],
+      [
+        "Person",
+        "5204e007a998244b79c769bda0825acaacc82bc0"
+      ],
+      [
+        "Person",
+        "525a974b57004076fa040bf8292746d04298eef6"
+      ],
+      [
+        "Person",
+        "6338058b1667abb2557e32aa08fb4268710df038"
+      ],
+      [
+        "Person",
+        "660cdb90fd894a5a6a3d5eba173834fdec04ad6d"
+      ],
+      [
+        "Person",
+        "668840577729914066c77b56ccb9829f2633552f"
+      ],
+      [
+        "Person",
+        "712de1e8d3805bf609bb2b8ba8bfcf381f9f0fd4"
+      ],
+      [
+        "Person",
+        "73e60ebf849a4f44d7357049e0c914dfffb4b781"
+      ],
+      [
+        "Person",
+        "7c76d9ec03ceb485fd9c5e531ff49f806b6651fc"
+      ],
+      [
+        "Person",
+        "7dc53469917d50dcc4fa14ae8825caad25f32954"
+      ],
+      [
+        "Person",
+        "7de4458295a5e776681c7778f908c63c623ede7a"
+      ],
+      [
+        "Person",
+        "809d0ef2b05a742dc208d33116cbdf93829b4e11"
+      ],
+      [
+        "Person",
+        "8bdf4f026ce082e7d112145cd4926eb0299a58ca"
+      ],
+      [
+        "Person",
+        "8c236b422fc7e0b07f99c04bd1242b431add554b"
+      ],
+      [
+        "Person",
+        "8e2f5007c087e8f5885e05bde3ea6de9acf27ef5"
+      ],
+      [
+        "Person",
+        "8e7769b4ac8b1d33ba4079da6b0ae18566cd22b0"
+      ],
+      [
+        "Person",
+        "9448a86361b390818ba1a9efa70e779083a58420"
+      ],
+      [
+        "Person",
+        "9532df53d7146e8d1ec2bbf65fee6b912d4b08eb"
+      ],
+      [
+        "Person",
+        "95d08ddf7bc54f1c0e1db64f53ba8d3c296794de"
+      ],
+      [
+        "Person",
+        "9cb7b04929a7661864511a7f0867bc345222f5ba"
+      ],
+      [
+        "Person",
+        "9f424f828c313dc38a6cec63d438e36343bcfbd7"
+      ],
+      [
+        "Person",
+        "ab67ca4781e87ac736491116d052724a05495aa6"
+      ],
+      [
+        "Person",
+        "afbf6c51035f05ce4c0197703177280696156351"
+      ],
+      [
+        "Person",
+        "b3affbcdec0d86ff02853d6f6567a6e31bab5b3f"
+      ],
+      [
+        "Person",
+        "b63d3d7ad69a325b9c04d46bfd49d8d8ece360a3"
+      ],
+      [
+        "Person",
+        "b66201cdb0936af5c66bd7105e850420633812c1"
+      ],
+      [
+        "Person",
+        "ba2877ce97a173b6df27ddca938ad4fe013d4d63"
+      ],
+      [
+        "Person",
+        "c3666342d6ef31c28fcbf94388fb8aabbff95f98"
+      ],
+      [
+        "Person",
+        "c84b872238505b886794e5c2d501c849644f9c9c"
+      ],
+      [
+        "Person",
+        "cf82baa00684c78665f82b8ed5ad80af7c82d1ca"
+      ],
+      [
+        "Person",
+        "d7d63cc573d2887343ca091e1f57af4ae8d74f2d"
+      ],
+      [
+        "Person",
+        "d95752100c6ceb87a62bd0abd989b3bdcb4749b7"
+      ],
+      [
+        "Person",
+        "d96fcccbd13aa4f210375306dddb748fd5a238cb"
+      ],
+      [
+        "Person",
+        "db4916c7544efeaba8ac5c643eaa0cde614d0291"
+      ],
+      [
+        "Person",
+        "dc6be4848007523f3b24181e7ac0fe9cf319337f"
+      ],
+      [
+        "Person",
+        "e1f4af1f6b1481a37dd5d8113b062fe8e3cfa275"
+      ],
+      [
+        "Person",
+        "e32d2dc28d39cca3b522e760a28953c3e3d4e214"
+      ],
+      [
+        "Person",
+        "f00569531d6bef8e988f64bb17c7b40f0b170b40"
+      ],
+      [
+        "Person",
+        "f877f75aa8469f757c8742d9691157ab17ad9226"
+      ]
+    ],
+    "mode": "0o600",
+    "sha256": "1800d4ad74419a5cc63a39b1e50213348f33b74bb7d6f16947974d54a8c218f9"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/mapping.yml": {
+    "content": "59150f8c32bb/Organizations:\n  queries:\n  - csv_url: file://<out>/sources/59150f8c32bb_Organizations-f801829d/<gen>/normalized.csv\n    entities:\n      address_block:\n        key_literal: \"address_block\\0\"\n        keys:\n        - __ck_address_block\n        properties:\n          city:\n            column: c15\n          country:\n            column: c12\n            split: ;\n          full:\n            column: c17\n            split: ;\n          postalCode:\n            column: c19\n          region:\n            column: c13\n          street:\n            column: c16\n          summary:\n            column: c18\n        schema: Address\n      org:\n        key_literal: \"org\\0\"\n        keys:\n        - __ck_org\n        properties:\n          phone:\n            column: c23\n            split: ;\n        schema: Organization\n      person:\n        key_literal: \"person\\0\"\n        keys:\n        - c0__key\n        properties:\n          abbreviation:\n            columns:\n            - c2\n            - c11\n            split: ;\n          address:\n            column: c20\n            split: ;\n          addressEntity:\n            entity: address_block\n          brightQueryId:\n            column: c10\n            split: ;\n          classification:\n            column: c7\n          description:\n            column: c3\n          email:\n            column: c22\n            split: ;\n          name:\n            columns:\n            - c1\n            - c4\n            - c8\n            - c21\n            split: ;\n          position:\n            column: c9\n          sourceUrl:\n            column: c6\n            split: ;\n          taxNumber:\n            column: c0\n            split: ;\n          website:\n            column: c5\n            split: ;\n        schema: Person\n",
+    "mode": "0o600"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/normalized.csv": {
+    "bytes": 87136,
+    "mode": "0o600",
+    "sha256": "279f00d576bfa46c455181f4831bf7eb295866e2c7f6f412b8354cdae9f461b0"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/plan.json": {
+    "bytes": 23362,
+    "mode": "0o600",
+    "sha256": "7c121147060c89cb5835ae12e956f1323adf803bca32de933145c70b93416486"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/plan.validated.json": {
+    "bytes": 19461,
+    "mode": "0o600",
+    "sha256": "7e990aeaa5466088a0167b84e9a0a755d4a7878465766d75fce0b2eb01c50aa6"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/profile.json": {
+    "bytes": 27876,
+    "mode": "0o600",
+    "sha256": "9bd49b869352e1414e5ea85dcfcece72d116405ec816faff0b483e9754d6bfd4"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/rejects.jsonl": {
+    "bytes": 6573,
+    "mode": "0o600",
+    "sha256": "549e931b2318b6ca533f7780e2230c6872a278da6d20e43635b86eebf1e8083f"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/statements.csv": {
+    "bytes": 418755,
+    "mode": "0o600",
+    "sha256": "7167405c7676454ad3f257fc089e4174e41b62ae950b6c503b2aaae582bad5c5"
+  },
+  "sources/59150f8c32bb_Organizations-f801829d/<gen>/summary.json": {
+    "content": {
+      "claims": [
+        {
+          "canonical_type": "identifier",
+          "column": "c0",
+          "emitted": 50,
+          "expected": 50,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:taxNumber",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "identifier"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c1",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c2",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:abbreviation",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "text",
+          "column": "c3",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:description",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "text"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c4",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "url",
+          "column": "c5",
+          "emitted": 40,
+          "expected": 40,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:website",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "url"
+        },
+        {
+          "canonical_type": "url",
+          "column": "c6",
+          "emitted": 30,
+          "expected": 30,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:sourceUrl",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "url"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c7",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:classification",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c8",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c9",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:position",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "identifier",
+          "column": "c10",
+          "emitted": 50,
+          "expected": 50,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:brightQueryId",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "identifier"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c11",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:abbreviation",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "country",
+          "column": "c12",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e2"
+          ],
+          "over_emission": 0,
+          "prop": "Address:country",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "country"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c13",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e2"
+          ],
+          "over_emission": 0,
+          "prop": "Address:region",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c15",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e2"
+          ],
+          "over_emission": 0,
+          "prop": "Address:city",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c16",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e2"
+          ],
+          "over_emission": 0,
+          "prop": "Address:street",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "address",
+          "column": "c17",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e2"
+          ],
+          "over_emission": 0,
+          "prop": "Address:full",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "address"
+        },
+        {
+          "canonical_type": "text",
+          "column": "c18",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e2"
+          ],
+          "over_emission": 0,
+          "prop": "Address:summary",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "text"
+        },
+        {
+          "canonical_type": "string",
+          "column": "c19",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e2"
+          ],
+          "over_emission": 0,
+          "prop": "Address:postalCode",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "string"
+        },
+        {
+          "canonical_type": "address",
+          "column": "c20",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:address",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "address"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c21",
+          "emitted": 51,
+          "expected": 51,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "email",
+          "column": "c22",
+          "emitted": 53,
+          "expected": 53,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:email",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "email"
+        },
+        {
+          "canonical_type": "phone",
+          "column": "c23",
+          "emitted": 55,
+          "expected": 55,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Organization:phone",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "phone"
+        }
+      ],
+      "columns": {
+        "mapped": 23,
+        "total": 27,
+        "unmapped": 4,
+        "verdicts": {
+          "accepted": 41,
+          "rejected": 13,
+          "unmapped": 3
+        }
+      },
+      "config": {
+        "etalon": {
+          "instance_tolerance": 0.05
+        },
+        "layout": {
+          "drop_furniture": false,
+          "header_margin": 0.2,
+          "header_score_floor": 0.55
+        },
+        "limits": {
+          "compression_ratio": 200,
+          "delimited_bytes": 1073741824,
+          "member_bytes": 1073741824,
+          "members": 2000,
+          "merges_per_sheet": 100000,
+          "shared_strings_bytes": 536870912,
+          "uncompressed_bytes": 2147483648
+        },
+        "model": {
+          "enable_thinking": false,
+          "grammar": true,
+          "identity": "",
+          "live_stages": [
+            "structure",
+            "split",
+            "edge",
+            "binding",
+            "repair"
+          ],
+          "max_tokens": 3000,
+          "revision": "",
+          "seed": 20260810,
+          "temperature": 0.0,
+          "url": "http://127.0.0.1:8080"
+        },
+        "plan": {
+          "binding_mode": "model",
+          "bloc_key_distinct": 0.99,
+          "chunk_size": 20,
+          "identifier_values_per_key": 2,
+          "kind_max_values": 12,
+          "kind_min_fill": 0.9,
+          "lexical_floor": 0.6,
+          "lexicon_path": null,
+          "nesting_floor": 0.9,
+          "refinement": "rules",
+          "sample_size": 5,
+          "shortlist_size": 24,
+          "stray_column_fill": 0.01,
+          "structure_mode": "model"
+        },
+        "run": {
+          "disclosure": "local-model-may-see-values",
+          "work_dir": "work"
+        },
+        "serve": {
+          "roots": []
+        },
+        "validate": {
+          "accept_thresholds": {
+            "address": 0.0,
+            "checksum": 0.8,
+            "country": 0.9,
+            "date": 0.9,
+            "email": 0.9,
+            "entity": 0.0,
+            "gender": 0.9,
+            "html": 0.0,
+            "identifier": 0.8,
+            "ip": 0.9,
+            "json": 0.0,
+            "language": 0.9,
+            "mimetype": 0.9,
+            "name": 0.0,
+            "number": 0.0,
+            "phone": 0.9,
+            "string": 0.0,
+            "text": 0.0,
+            "topic": 0.9,
+            "url": 0.9
+          },
+          "key_distinct_floor": 0.5,
+          "key_fill_floor": 0.9
+        }
+      },
+      "coverage": {
+        "c0": {
+          "declined": 0,
+          "offered": 50,
+          "outside_selection": 0,
+          "rejected": 1,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c1": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c10": {
+          "declined": 0,
+          "offered": 50,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 50
+        },
+        "c11": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c12": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c13": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c14": {
+          "declined": 0,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "dropped",
+          "structural": 0,
+          "unaccounted": 50,
+          "values": 50
+        },
+        "c15": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c16": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c17": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c18": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c19": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c2": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c20": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c21": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c22": {
+          "declined": 0,
+          "offered": 53,
+          "outside_selection": 0,
+          "rejected": 1,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 54
+        },
+        "c23": {
+          "declined": 0,
+          "offered": 55,
+          "outside_selection": 0,
+          "rejected": 2,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 57
+        },
+        "c24": {
+          "declined": 51,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c25": {
+          "declined": 51,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c26": {
+          "declined": 2,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 2
+        },
+        "c3": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c4": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c5": {
+          "declined": 0,
+          "offered": 40,
+          "outside_selection": 0,
+          "rejected": 12,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 52
+        },
+        "c6": {
+          "declined": 0,
+          "offered": 30,
+          "outside_selection": 0,
+          "rejected": 23,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 53
+        },
+        "c7": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c8": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        },
+        "c9": {
+          "declined": 0,
+          "offered": 51,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 51
+        }
+      },
+      "coverage_schema": 2,
+      "coverage_totals": {
+        "accounting_valid": true,
+        "claims": {
+          "claims": 23,
+          "emitted": 1145,
+          "expected": 1145,
+          "over_emission": 0,
+          "rejected": 0,
+          "shortfall": 0
+        },
+        "columns": 27,
+        "declined": 104,
+        "offered": 1145,
+        "outside_selection": 0,
+        "rejected": 39,
+        "statuses": {
+          "bound": 23,
+          "dropped": 1,
+          "structural": 0,
+          "undecided": 0,
+          "unmapped": 3
+        },
+        "structural": 0,
+        "unaccounted": 50,
+        "values": 1338
+      },
+      "declined": null,
+      "entities": {
+        "Address": 49,
+        "Organization": 51,
+        "Person": 51
+      },
+      "furniture": {
+        "blank": 880
+      },
+      "mapping": "<out>/sources/59150f8c32bb_Organizations-f801829d/<gen>/mapping.yml",
+      "path": "<volatile>",
+      "properties": {
+        "abbreviation": 102,
+        "address": 51,
+        "addressEntity": 51,
+        "brightQueryId": 50,
+        "city": 51,
+        "classification": 51,
+        "country": 51,
+        "description": 51,
+        "email": 53,
+        "full": 51,
+        "name": 204,
+        "phone": 55,
+        "position": 51,
+        "postalCode": 51,
+        "region": 51,
+        "sourceUrl": 30,
+        "street": 51,
+        "summary": 51,
+        "taxNumber": 50,
+        "website": 40
+      },
+      "rejects": {
+        "by_column": {
+          "c0": 1,
+          "c22": 1,
+          "c23": 2,
+          "c5": 12,
+          "c6": 23
+        },
+        "by_reason": {
+          "ftm email validator rejected it": 1,
+          "ftm url validator rejected it": 35,
+          "no digit anywhere; identifiers in this ontology carry one, and this is not a code either": 1,
+          "no rule in the active phone pack matches this number": 2
+        },
+        "by_stage": {
+          "normalize": 39
+        },
+        "total": 39
+      },
+      "run_id": "<volatile>",
+      "safe_id": "59150f8c32bb_Organizations-f801829d",
+      "source": {
+        "filled_from_merges": 0,
+        "header_row": 0,
+        "hidden": false,
+        "id": "59150f8c32bb/Organizations",
+        "label_row": 1,
+        "records": 51,
+        "repairs": [],
+        "sha256": "59150f8c32bb478fb663a9f6f433cdd7a63c5c1e5f89258620462cac5048d805",
+        "sheet": "Organizations"
+      },
+      "stages": {
+        "emit": {
+          "duration_seconds": "<volatile>"
+        },
+        "profile": {
+          "duration_seconds": "<volatile>"
+        },
+        "propose": {
+          "duration_seconds": "<volatile>"
+        },
+        "validate": {
+          "duration_seconds": "<volatile>"
+        }
+      },
+      "statements": 1196,
+      "structure": {
+        "attachments": [
+          {
+            "on": "e0",
+            "prop": "Person:addressEntity",
+            "target": "e2"
+          }
+        ],
+        "bindings": {
+          "c0": [
+            {
+              "on": "e0",
+              "prop": "Person:taxNumber",
+              "type": "identifier"
+            }
+          ],
+          "c1": [
+            {
+              "on": "e0",
+              "prop": "Person:name",
+              "type": "name"
+            }
+          ],
+          "c10": [
+            {
+              "on": "e0",
+              "prop": "Person:brightQueryId",
+              "type": "identifier"
+            }
+          ],
+          "c11": [
+            {
+              "on": "e0",
+              "prop": "Person:abbreviation",
+              "type": "name"
+            }
+          ],
+          "c12": [
+            {
+              "on": "e2",
+              "prop": "Address:country",
+              "type": "country"
+            }
+          ],
+          "c13": [
+            {
+              "on": "e2",
+              "prop": "Address:region",
+              "type": "string"
+            }
+          ],
+          "c15": [
+            {
+              "on": "e2",
+              "prop": "Address:city",
+              "type": "string"
+            }
+          ],
+          "c16": [
+            {
+              "on": "e2",
+              "prop": "Address:street",
+              "type": "string"
+            }
+          ],
+          "c17": [
+            {
+              "on": "e2",
+              "prop": "Address:full",
+              "type": "address"
+            }
+          ],
+          "c18": [
+            {
+              "on": "e2",
+              "prop": "Address:summary",
+              "type": "text"
+            }
+          ],
+          "c19": [
+            {
+              "on": "e2",
+              "prop": "Address:postalCode",
+              "type": "string"
+            }
+          ],
+          "c2": [
+            {
+              "on": "e0",
+              "prop": "Person:abbreviation",
+              "type": "name"
+            }
+          ],
+          "c20": [
+            {
+              "on": "e0",
+              "prop": "Person:address",
+              "type": "address"
+            }
+          ],
+          "c21": [
+            {
+              "on": "e0",
+              "prop": "Person:name",
+              "type": "name"
+            }
+          ],
+          "c22": [
+            {
+              "on": "e0",
+              "prop": "Person:email",
+              "type": "email"
+            }
+          ],
+          "c23": [
+            {
+              "on": "e1",
+              "prop": "Organization:phone",
+              "type": "phone"
+            }
+          ],
+          "c3": [
+            {
+              "on": "e0",
+              "prop": "Person:description",
+              "type": "text"
+            }
+          ],
+          "c4": [
+            {
+              "on": "e0",
+              "prop": "Person:name",
+              "type": "name"
+            }
+          ],
+          "c5": [
+            {
+              "on": "e0",
+              "prop": "Person:website",
+              "type": "url"
+            }
+          ],
+          "c6": [
+            {
+              "on": "e0",
+              "prop": "Person:sourceUrl",
+              "type": "url"
+            }
+          ],
+          "c7": [
+            {
+              "on": "e0",
+              "prop": "Person:classification",
+              "type": "string"
+            }
+          ],
+          "c8": [
+            {
+              "on": "e0",
+              "prop": "Person:name",
+              "type": "name"
+            }
+          ],
+          "c9": [
+            {
+              "on": "e0",
+              "prop": "Person:position",
+              "type": "string"
+            }
+          ]
+        },
+        "edges": [],
+        "entities": [
+          {
+            "filter": null,
+            "id": "e0",
+            "instances": 51,
+            "keys": [
+              "c0"
+            ],
+            "schema": "Person"
+          },
+          {
+            "filter": null,
+            "id": "e1",
+            "instances": 51,
+            "keys": [
+              "c1",
+              "c22"
+            ],
+            "schema": "Organization"
+          },
+          {
+            "filter": null,
+            "id": "e2",
+            "instances": 49,
+            "keys": [
+              "c16",
+              "c17"
+            ],
+            "schema": "Address"
+          }
+        ]
+      },
+      "subject": "Person",
+      "subject_declared": "Person",
+      "unfalsifiable": {
+        "bindings": 16,
+        "of_bindings": 23,
+        "of_statements": 1145,
+        "statements": 816
+      }
+    },
+    "mode": "0o644"
+  },
+  "sources/5edff882ea53_Аркуш1-1a2a612d/<gen>/decisions.jsonl": {
+    "bytes": 2405,
+    "mode": "0o600",
+    "sha256": "8abacce733ad5aa77f88b01e30102b6735dd4cdb7aa355a901651acf3fc615fa"
+  },
+  "sources/5edff882ea53_Аркуш1-1a2a612d/<gen>/entities.ftm.json": {
+    "bytes": 0,
+    "entity_ids": [],
+    "mode": "0o600",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sources/5edff882ea53_Аркуш1-1a2a612d/<gen>/normalized.csv": {
+    "bytes": 153,
+    "mode": "0o600",
+    "sha256": "28bb098b6455aad296cda60f62a05621e83313b4caa8aaba4750cdf920d5d310"
+  },
+  "sources/5edff882ea53_Аркуш1-1a2a612d/<gen>/plan.json": {
+    "bytes": 2329,
+    "mode": "0o600",
+    "sha256": "0002ce6e6b427a0d51693867214b3979a6e71cb54a8fa1c1dae71b2606266ef1"
+  },
+  "sources/5edff882ea53_Аркуш1-1a2a612d/<gen>/plan.validated.json": {
+    "bytes": 3040,
+    "mode": "0o600",
+    "sha256": "432a248f03f8dcc83750f042efd655fcb7551c7f5a22b0b9f0190f64ae569d9b"
+  },
+  "sources/5edff882ea53_Аркуш1-1a2a612d/<gen>/profile.json": {
+    "bytes": 2839,
+    "mode": "0o600",
+    "sha256": "ea82055e6c268866078bef259befd1e4130a6174b8d8f498bf4492c4e9188053"
+  },
+  "sources/5edff882ea53_Аркуш1-1a2a612d/<gen>/rejects.jsonl": {
+    "bytes": 0,
+    "mode": "0o600",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sources/5edff882ea53_Аркуш1-1a2a612d/<gen>/statements.csv": {
+    "bytes": 132,
+    "mode": "0o600",
+    "sha256": "27c498b8f7836919ab9f394266887aee4b8c228be9ba1450061de9113ac6bcfc"
+  },
+  "sources/5edff882ea53_Аркуш1-1a2a612d/<gen>/summary.json": {
+    "content": {
+      "claims": [],
+      "columns": {
+        "mapped": 0,
+        "total": 3,
+        "unmapped": 3,
+        "verdicts": {
+          "accepted": 3,
+          "declined": 1,
+          "rejected": 4,
+          "unmapped": 3
+        }
+      },
+      "config": {
+        "etalon": {
+          "instance_tolerance": 0.05
+        },
+        "layout": {
+          "drop_furniture": false,
+          "header_margin": 0.2,
+          "header_score_floor": 0.55
+        },
+        "limits": {
+          "compression_ratio": 200,
+          "delimited_bytes": 1073741824,
+          "member_bytes": 1073741824,
+          "members": 2000,
+          "merges_per_sheet": 100000,
+          "shared_strings_bytes": 536870912,
+          "uncompressed_bytes": 2147483648
+        },
+        "model": {
+          "enable_thinking": false,
+          "grammar": true,
+          "identity": "",
+          "live_stages": [
+            "structure",
+            "split",
+            "edge",
+            "binding",
+            "repair"
+          ],
+          "max_tokens": 3000,
+          "revision": "",
+          "seed": 20260810,
+          "temperature": 0.0,
+          "url": "http://127.0.0.1:8080"
+        },
+        "plan": {
+          "binding_mode": "model",
+          "bloc_key_distinct": 0.99,
+          "chunk_size": 20,
+          "identifier_values_per_key": 2,
+          "kind_max_values": 12,
+          "kind_min_fill": 0.9,
+          "lexical_floor": 0.6,
+          "lexicon_path": null,
+          "nesting_floor": 0.9,
+          "refinement": "rules",
+          "sample_size": 5,
+          "shortlist_size": 24,
+          "stray_column_fill": 0.01,
+          "structure_mode": "model"
+        },
+        "run": {
+          "disclosure": "local-model-may-see-values",
+          "work_dir": "work"
+        },
+        "serve": {
+          "roots": []
+        },
+        "validate": {
+          "accept_thresholds": {
+            "address": 0.0,
+            "checksum": 0.8,
+            "country": 0.9,
+            "date": 0.9,
+            "email": 0.9,
+            "entity": 0.0,
+            "gender": 0.9,
+            "html": 0.0,
+            "identifier": 0.8,
+            "ip": 0.9,
+            "json": 0.0,
+            "language": 0.9,
+            "mimetype": 0.9,
+            "name": 0.0,
+            "number": 0.0,
+            "phone": 0.9,
+            "string": 0.0,
+            "text": 0.0,
+            "topic": 0.9,
+            "url": 0.9
+          },
+          "key_distinct_floor": 0.5,
+          "key_fill_floor": 0.9
+        }
+      },
+      "coverage": {
+        "c0": {
+          "declined": 13,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 13
+        },
+        "c1": {
+          "declined": 39,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 39
+        },
+        "c2": {
+          "declined": 35,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": null,
+          "status": "unmapped",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 35
+        }
+      },
+      "coverage_schema": 2,
+      "coverage_totals": {
+        "accounting_valid": true,
+        "claims": {
+          "claims": 0,
+          "emitted": 0,
+          "expected": 0,
+          "over_emission": 0,
+          "rejected": 0,
+          "shortfall": 0
+        },
+        "columns": 3,
+        "declined": 87,
+        "offered": 0,
+        "outside_selection": 0,
+        "rejected": 0,
+        "statuses": {
+          "bound": 0,
+          "dropped": 0,
+          "structural": 0,
+          "undecided": 0,
+          "unmapped": 3
+        },
+        "structural": 0,
+        "unaccounted": 0,
+        "values": 87
+      },
+      "declined": "no declared entity survived validation, so the plan says nothing about this source; a mapping with no entity is one followthemoney refuses, and nothing is invented to stand in for the reading the evidence did not support",
+      "entities": {},
+      "furniture": {
+        "blank": 3
+      },
+      "mapping": null,
+      "path": "<volatile>",
+      "properties": {},
+      "rejects": {
+        "by_column": {},
+        "by_reason": {},
+        "by_stage": {},
+        "total": 0
+      },
+      "run_id": "<volatile>",
+      "safe_id": "5edff882ea53_Аркуш1-1a2a612d",
+      "source": {
+        "filled_from_merges": 8,
+        "header_row": 0,
+        "hidden": false,
+        "id": "5edff882ea53/Аркуш1",
+        "label_row": null,
+        "records": 39,
+        "repairs": [],
+        "sha256": "5edff882ea530afde03babc1e978ded6c74d7a54cf8c50f956dddba225f71612",
+        "sheet": "Аркуш1"
+      },
+      "stages": {
+        "emit": {
+          "duration_seconds": "<volatile>"
+        },
+        "profile": {
+          "duration_seconds": "<volatile>"
+        },
+        "propose": {
+          "duration_seconds": "<volatile>"
+        },
+        "validate": {
+          "duration_seconds": "<volatile>"
+        }
+      },
+      "statements": 0,
+      "structure": {
+        "attachments": [],
+        "bindings": {},
+        "edges": [],
+        "entities": []
+      },
+      "subject": null,
+      "subject_declared": "Person",
+      "unfalsifiable": {
+        "bindings": 0,
+        "of_bindings": 0,
+        "of_statements": 0,
+        "statements": 0
+      }
+    },
+    "mode": "0o644"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/decisions.jsonl": {
+    "bytes": 1725,
+    "mode": "0o600",
+    "sha256": "ae7dc21922fc7b9f355718a04f4b3d36b63c4e8dc200eb38bafad9c9583dc420"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/entities.ftm.json": {
+    "bytes": 30606,
+    "entity_ids": [
+      [
+        "Membership",
+        "0b35f4c9b714223491f21b10f49d51745e270c40"
+      ],
+      [
+        "Membership",
+        "0d7af5e072c0d103db229314c5103ca76a716222"
+      ],
+      [
+        "Membership",
+        "0f2c7d2fbd47309b006f98993ee6c1d9c470898e"
+      ],
+      [
+        "Membership",
+        "140b15e8fad85c25dd9c4622c07fba3d18f4ee94"
+      ],
+      [
+        "Membership",
+        "2d892350a922b82e16d56a4405ed80b74315058f"
+      ],
+      [
+        "Membership",
+        "3223a3d871e00d54826567b0204dfb892f2c7dc1"
+      ],
+      [
+        "Membership",
+        "413c8427eb98db8f285badadb5a5f893760f766b"
+      ],
+      [
+        "Membership",
+        "4d078c358029275b1d99cc8adeb0eaa4f09cf313"
+      ],
+      [
+        "Membership",
+        "4d495fcb751216289cbba1b90aa88d98554c6bea"
+      ],
+      [
+        "Membership",
+        "5bfe3147d720f8ac992121f3c32b2770f58ac328"
+      ],
+      [
+        "Membership",
+        "5c094abf5f74efa8096a68409545ea1ba434f760"
+      ],
+      [
+        "Membership",
+        "5d0c91c66bc835ea401f63ef8189bff757023f85"
+      ],
+      [
+        "Membership",
+        "5e34093e91cb8c458c00c706135109d7584abb93"
+      ],
+      [
+        "Membership",
+        "5e59321e26035722cc080f17629c9653e2ea07a2"
+      ],
+      [
+        "Membership",
+        "61baf3a64bb5f7a5e6efceb35235210e7b2d15f7"
+      ],
+      [
+        "Membership",
+        "6378c605fda48058471944eabc4fcc56c7ab657d"
+      ],
+      [
+        "Membership",
+        "6949506ae2bde9c81f23236517f7a21987cf9343"
+      ],
+      [
+        "Membership",
+        "6cb0a5e4ff3bb1833155509362d8935259c5194d"
+      ],
+      [
+        "Membership",
+        "82c8206af911971d2f8b46236512899b16797934"
+      ],
+      [
+        "Membership",
+        "8c8745ce6eead1fedc10848928b33f182fc8af27"
+      ],
+      [
+        "Membership",
+        "93ea025f5fbcf2c8925327adf516011003bc95bb"
+      ],
+      [
+        "Membership",
+        "95d54f0b184b7494106723842fb6d0928eb90e72"
+      ],
+      [
+        "Membership",
+        "9fb0be71da65d44385af665167edafba3b4cd2e4"
+      ],
+      [
+        "Membership",
+        "bae9cd1b348fe7bc1d21b8e7204c5317d7d1c1ca"
+      ],
+      [
+        "Membership",
+        "bf457b58a63333233b696fa1922effe48c8afef9"
+      ],
+      [
+        "Membership",
+        "c453aaa97a65ac778dda91e1fb318595a674aee9"
+      ],
+      [
+        "Membership",
+        "d4e90eea79f550426179c2d022c241a2cdb344ca"
+      ],
+      [
+        "Membership",
+        "df3cce071c25bdc1ef0b972193d4a2ea75e9cc69"
+      ],
+      [
+        "Membership",
+        "e032992695788dc4bff78f7a82fb3bb6c498f88b"
+      ],
+      [
+        "Membership",
+        "e4dc81166457bb0af7197e5f085d78bf6c9bb55f"
+      ],
+      [
+        "Membership",
+        "e9efc903209904bd58c4597e90333ed103585540"
+      ],
+      [
+        "Membership",
+        "f2b13036ca7a1d16f69db6672e26404ca3f2585d"
+      ],
+      [
+        "Membership",
+        "f57a3ad4e51801234c23582c7a40d5b5df0dc7a3"
+      ],
+      [
+        "Membership",
+        "facef6e94aef3fd432512d4cb13cf372f4240133"
+      ],
+      [
+        "Membership",
+        "fb4378d6bb870a5cf4e081a4f94d44e852f43d75"
+      ],
+      [
+        "Membership",
+        "ffee5261aa1b68509890820644bcc4c79a3ff711"
+      ],
+      [
+        "Organization",
+        "01ce230659fc614ce2f2795d2e7f84ecd535e482"
+      ],
+      [
+        "Organization",
+        "13dfcdab769db46cd278726d63aeaafe9006d9b4"
+      ],
+      [
+        "Organization",
+        "168b7d3d7a47acb7b4965f7635038d9c483bb202"
+      ],
+      [
+        "Organization",
+        "1ea7fe6bfb3dd8a4be6d4cbf39bcd96dbdd9e8fe"
+      ],
+      [
+        "Organization",
+        "33901dbc25ca9ed3e2df87afae18b02e8ef0ed8d"
+      ],
+      [
+        "Organization",
+        "35f076edf8c141bd6f4c93d856cfa26578e06481"
+      ],
+      [
+        "Organization",
+        "44a765c52a44ecc2ab538aed26356168b69d0571"
+      ],
+      [
+        "Organization",
+        "47c4fd5ca8928dcb10d9bd5f5860ac28916bea12"
+      ],
+      [
+        "Organization",
+        "564a65dbf62003d83eee24a22570731006eb294a"
+      ],
+      [
+        "Organization",
+        "5e63cb6f46879c4cea837188ef476d634a9f64ee"
+      ],
+      [
+        "Organization",
+        "655a3f0e9fe99503e2b4170afa5a652f94098371"
+      ],
+      [
+        "Organization",
+        "6f6f193da9e8b99418fee75ea14ca03dbd5ec77a"
+      ],
+      [
+        "Organization",
+        "70e72287db4249445db88d01bbec688ad6c57f64"
+      ],
+      [
+        "Organization",
+        "8527919e932bb44bd882f57751bca0c8556c0848"
+      ],
+      [
+        "Organization",
+        "8ad8d26ea8a8561b62ebb2b8292fc8e5d08edadc"
+      ],
+      [
+        "Organization",
+        "8d3825fbd74304115eb7c968a472a749a544bc5e"
+      ],
+      [
+        "Organization",
+        "8e50c96b75cfa3cace654f97729e1294547b4e0f"
+      ],
+      [
+        "Organization",
+        "8ffeae9e34d940fd7121ac1a22c92e27c618f963"
+      ],
+      [
+        "Organization",
+        "9889dc4253b8bde20d1dcf5768245e323541ce22"
+      ],
+      [
+        "Organization",
+        "9ed4f53689ce629d247eb3ff7f798f2ed89fff23"
+      ],
+      [
+        "Organization",
+        "ae5a628bbd287b54ed0df80e3d69f5d3ef541077"
+      ],
+      [
+        "Organization",
+        "b128135cdaa1b262c68182897385943974acca95"
+      ],
+      [
+        "Organization",
+        "b405325d9ea1120449d9c76f9fc0db5c99330ae8"
+      ],
+      [
+        "Organization",
+        "b9a0a35cbce51118c2c97c96e9b05e9874510d7d"
+      ],
+      [
+        "Organization",
+        "bc9dc2812bcf646627e053e9c429b0e3a284fcc4"
+      ],
+      [
+        "Organization",
+        "bff84c7b90510559c41e205a47d30f58096662b6"
+      ],
+      [
+        "Organization",
+        "c889a7a267c7c3a217e2f9d7610bb4ff011b4e06"
+      ],
+      [
+        "Organization",
+        "d215896562e5d8b3617ff7b306c4634215ded174"
+      ],
+      [
+        "Organization",
+        "dca3550e2d1ed84582a592d8fa27144930f0c397"
+      ],
+      [
+        "Organization",
+        "df10df56867aeb3c6d946ce5eb0630e8674b0728"
+      ],
+      [
+        "Organization",
+        "ee2bab83f0126b8fa7676945439f9c1daa5562a5"
+      ],
+      [
+        "Organization",
+        "f1cdc81e735ff1f84fa6bd3de12382e6b5dcf4da"
+      ],
+      [
+        "Organization",
+        "f389048f63be7e86558f27e71b68d2ff8d823e6f"
+      ],
+      [
+        "Organization",
+        "f4061fdd1693aa97e63fd9a0561189ecbca764cc"
+      ],
+      [
+        "Organization",
+        "f7e9f6f5853a575f84822548b607bf0cfac30216"
+      ],
+      [
+        "Organization",
+        "fd9db755760ca308908c6ab1aa9d46c6779dd461"
+      ],
+      [
+        "Person",
+        "00945df7d72e7b526e8dc72ebbd4c8d9af985536"
+      ],
+      [
+        "Person",
+        "0e3128b9da49f56ce9d3cbb898ab0a86c6300d05"
+      ],
+      [
+        "Person",
+        "1396a08de2c044f2a2abb1d707d1ba328a3c4ffa"
+      ],
+      [
+        "Person",
+        "1700ae1f7651ba14af9a8a13ab3dc1d8b108354c"
+      ],
+      [
+        "Person",
+        "22641ab3633d402e2bf9a020f99b0d4ebeb5d48d"
+      ],
+      [
+        "Person",
+        "37aa484f019d82c6dba100b0819c845bea8a01be"
+      ],
+      [
+        "Person",
+        "47b5406efa712c682539eaeb75534b1ed6b5a679"
+      ],
+      [
+        "Person",
+        "4b99b1f7df6305480ebd49adbbad4c5b00c32795"
+      ],
+      [
+        "Person",
+        "4e7e2f63a0a6acfb0db0e61f79236539575207d1"
+      ],
+      [
+        "Person",
+        "5dc6fb85bd73e5e55bea043f92483f154bf2c465"
+      ],
+      [
+        "Person",
+        "5fa675734576e1647240d5588f39653589dbe07d"
+      ],
+      [
+        "Person",
+        "65af1b7ef1cadb47881642e515119035384b2db3"
+      ],
+      [
+        "Person",
+        "65d6c04aecb0a4f5d7503cc4f7618cf24f895b11"
+      ],
+      [
+        "Person",
+        "81d64905329e3f34c63613be046bdf93c37dc82e"
+      ],
+      [
+        "Person",
+        "85c679a2f448284dde131bf7677ad308bbd4c209"
+      ],
+      [
+        "Person",
+        "87f687f7dd4e815bb6f6bb13938acbda805fddbf"
+      ],
+      [
+        "Person",
+        "8c5d3341e10f14a4bb65b1b8d4550eb0cdf5c80b"
+      ],
+      [
+        "Person",
+        "9546d091da0443f009ee483db1fc07f15492e2a5"
+      ],
+      [
+        "Person",
+        "a0123696738bf749a47e6d391fa1c7ce74ca9fc8"
+      ],
+      [
+        "Person",
+        "a0335966eaa0add6199728709c190a4214ef6547"
+      ],
+      [
+        "Person",
+        "aaf09f1c2ebe42a6b3e95b8bb6e2f1b6cdc14939"
+      ],
+      [
+        "Person",
+        "ad1051aa5a360d6abbd6fc60242812414b13acf5"
+      ],
+      [
+        "Person",
+        "ad8c3ce5390e5ac009afc4a78461b42148a19c25"
+      ],
+      [
+        "Person",
+        "b4663edfe142d2a1d86bb3ed63ca3f7e6e8c9b17"
+      ],
+      [
+        "Person",
+        "b72e88d29dd0175712cb1d66be46f853865d6318"
+      ],
+      [
+        "Person",
+        "c1512af526de5fc67d8a9137110ca89b5899bed4"
+      ],
+      [
+        "Person",
+        "c96fb5f36779c146c4e5b6818cad3f420ac9c860"
+      ],
+      [
+        "Person",
+        "ca9c9331b6f00876b3d77b518eb48ec1ce055019"
+      ],
+      [
+        "Person",
+        "d925fc34a9863d01cd61f8b803a00d306234d516"
+      ],
+      [
+        "Person",
+        "d92771fec80d42345de45c6314d4fba0c060e3d3"
+      ],
+      [
+        "Person",
+        "db0d0d1df79bbebc4eeee33148884247dcff85e5"
+      ],
+      [
+        "Person",
+        "ddc8a4f174cab5e26f4272f194a6d51d0936dff9"
+      ],
+      [
+        "Person",
+        "e0adefba711fe8664333907df54c87ba0707bd24"
+      ],
+      [
+        "Person",
+        "e311d028fead75b980fc3f0f4f901f20bd61bb66"
+      ],
+      [
+        "Person",
+        "f53fe06bd2d4c53af9bf6071363bbf92293af961"
+      ],
+      [
+        "Person",
+        "fa1d13912249337f992db520dc7d0152f107b2d7"
+      ]
+    ],
+    "mode": "0o600",
+    "sha256": "06cc9e8371cb692f43e75634994b0328d7dc79f9cfd9298b6cf289171a74389a"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/mapping.yml": {
+    "content": "be7cc1b8ae63/Лист1:\n  queries:\n  - csv_url: file://<out>/sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/normalized.csv\n    entities:\n      org:\n        key_literal: \"org\\0\"\n        keys:\n        - __ck_org\n        properties:\n          name:\n            column: c2\n            split: ;\n        schema: Organization\n      org_membership:\n        key_literal: \"org_membership\\0\"\n        keys:\n        - __ck_org_membership\n        properties:\n          member:\n            entity: person\n          organization:\n            entity: org\n        schema: Membership\n      person:\n        key_literal: \"person\\0\"\n        keys:\n        - c0__key\n        properties:\n          name:\n            column: c1\n            split: ;\n        schema: Person\n",
+    "mode": "0o600"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/normalized.csv": {
+    "bytes": 30436,
+    "mode": "0o600",
+    "sha256": "1716a3f1f8e145f59755a6d1749160c8be3952311258d0ebf8b6c350688d554d"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/plan.json": {
+    "bytes": 3375,
+    "mode": "0o600",
+    "sha256": "0a01fd8b76ea0afe444ba2b78ae7edfa016088c48544bafa21520aaacd40219d"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/plan.validated.json": {
+    "bytes": 2946,
+    "mode": "0o600",
+    "sha256": "7c8eb464470e9b2482818cdefeb040c96438a3858f7d457fb937b8a138290a79"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/profile.json": {
+    "bytes": 3530,
+    "mode": "0o600",
+    "sha256": "3ad6d31eebc227e354de1742ec8c2b9dccb523f78fb305d11c04389c8ab938b2"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/rejects.jsonl": {
+    "bytes": 0,
+    "mode": "0o600",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/statements.csv": {
+    "bytes": 75241,
+    "mode": "0o600",
+    "sha256": "787a3db8651961ec2932ac69cc6e0a89f0aa8ebd42e243d74c8769b74ca0ea65"
+  },
+  "sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/summary.json": {
+    "content": {
+      "claims": [
+        {
+          "canonical_type": "name",
+          "column": "c1",
+          "emitted": 36,
+          "expected": 36,
+          "filters": [],
+          "on": [
+            "e0"
+          ],
+          "over_emission": 0,
+          "prop": "Person:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        },
+        {
+          "canonical_type": "name",
+          "column": "c2",
+          "emitted": 36,
+          "expected": 36,
+          "filters": [],
+          "on": [
+            "e1"
+          ],
+          "over_emission": 0,
+          "prop": "Organization:name",
+          "rejected": 0,
+          "shortfall": 0,
+          "type": "name"
+        }
+      ],
+      "columns": {
+        "mapped": 2,
+        "total": 3,
+        "unmapped": 1,
+        "verdicts": {
+          "accepted": 6,
+          "rejected": 2,
+          "unmapped": 1
+        }
+      },
+      "config": {
+        "etalon": {
+          "instance_tolerance": 0.05
+        },
+        "layout": {
+          "drop_furniture": false,
+          "header_margin": 0.2,
+          "header_score_floor": 0.55
+        },
+        "limits": {
+          "compression_ratio": 200,
+          "delimited_bytes": 1073741824,
+          "member_bytes": 1073741824,
+          "members": 2000,
+          "merges_per_sheet": 100000,
+          "shared_strings_bytes": 536870912,
+          "uncompressed_bytes": 2147483648
+        },
+        "model": {
+          "enable_thinking": false,
+          "grammar": true,
+          "identity": "",
+          "live_stages": [
+            "structure",
+            "split",
+            "edge",
+            "binding",
+            "repair"
+          ],
+          "max_tokens": 3000,
+          "revision": "",
+          "seed": 20260810,
+          "temperature": 0.0,
+          "url": "http://127.0.0.1:8080"
+        },
+        "plan": {
+          "binding_mode": "model",
+          "bloc_key_distinct": 0.99,
+          "chunk_size": 20,
+          "identifier_values_per_key": 2,
+          "kind_max_values": 12,
+          "kind_min_fill": 0.9,
+          "lexical_floor": 0.6,
+          "lexicon_path": null,
+          "nesting_floor": 0.9,
+          "refinement": "rules",
+          "sample_size": 5,
+          "shortlist_size": 24,
+          "stray_column_fill": 0.01,
+          "structure_mode": "model"
+        },
+        "run": {
+          "disclosure": "local-model-may-see-values",
+          "work_dir": "work"
+        },
+        "serve": {
+          "roots": []
+        },
+        "validate": {
+          "accept_thresholds": {
+            "address": 0.0,
+            "checksum": 0.8,
+            "country": 0.9,
+            "date": 0.9,
+            "email": 0.9,
+            "entity": 0.0,
+            "gender": 0.9,
+            "html": 0.0,
+            "identifier": 0.8,
+            "ip": 0.9,
+            "json": 0.0,
+            "language": 0.9,
+            "mimetype": 0.9,
+            "name": 0.0,
+            "number": 0.0,
+            "phone": 0.9,
+            "string": 0.0,
+            "text": 0.0,
+            "topic": 0.9,
+            "url": 0.9
+          },
+          "key_distinct_floor": 0.5,
+          "key_fill_floor": 0.9
+        }
+      },
+      "coverage": {
+        "c0": {
+          "declined": 0,
+          "offered": 0,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "structural",
+          "structural": 36,
+          "unaccounted": 0,
+          "values": 36
+        },
+        "c1": {
+          "declined": 0,
+          "offered": 36,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 36
+        },
+        "c2": {
+          "declined": 0,
+          "offered": 36,
+          "outside_selection": 0,
+          "rejected": 0,
+          "role": "key",
+          "status": "bound",
+          "structural": 0,
+          "unaccounted": 0,
+          "values": 36
+        }
+      },
+      "coverage_schema": 2,
+      "coverage_totals": {
+        "accounting_valid": true,
+        "claims": {
+          "claims": 2,
+          "emitted": 72,
+          "expected": 72,
+          "over_emission": 0,
+          "rejected": 0,
+          "shortfall": 0
+        },
+        "columns": 3,
+        "declined": 0,
+        "offered": 72,
+        "outside_selection": 0,
+        "rejected": 0,
+        "statuses": {
+          "bound": 2,
+          "dropped": 0,
+          "structural": 1,
+          "undecided": 0,
+          "unmapped": 0
+        },
+        "structural": 36,
+        "unaccounted": 0,
+        "values": 108
+      },
+      "declined": null,
+      "entities": {
+        "Membership": 36,
+        "Organization": 36,
+        "Person": 36
+      },
+      "furniture": {
+        "blank": 1,
+        "title": 1
+      },
+      "mapping": "<out>/sources/be7cc1b8ae63_Лист1-fc5c89b3/<gen>/mapping.yml",
+      "path": "<volatile>",
+      "properties": {
+        "member": 36,
+        "name": 72,
+        "namesMentioned": 72,
+        "organization": 36
+      },
+      "rejects": {
+        "by_column": {},
+        "by_reason": {},
+        "by_stage": {},
+        "total": 0
+      },
+      "run_id": "<volatile>",
+      "safe_id": "be7cc1b8ae63_Лист1-fc5c89b3",
+      "source": {
+        "filled_from_merges": 0,
+        "header_row": 2,
+        "hidden": false,
+        "id": "be7cc1b8ae63/Лист1",
+        "label_row": null,
+        "records": 36,
+        "repairs": [],
+        "sha256": "be7cc1b8ae63a2820a41f51a63e64a1d1bcd114d7fa3d088efd382cec2e21082",
+        "sheet": "Лист1"
+      },
+      "stages": {
+        "emit": {
+          "duration_seconds": "<volatile>"
+        },
+        "profile": {
+          "duration_seconds": "<volatile>"
+        },
+        "propose": {
+          "duration_seconds": "<volatile>"
+        },
+        "validate": {
+          "duration_seconds": "<volatile>"
+        }
+      },
+      "statements": 216,
+      "structure": {
+        "attachments": [],
+        "bindings": {
+          "c1": [
+            {
+              "on": "e0",
+              "prop": "Person:name",
+              "type": "name"
+            }
+          ],
+          "c2": [
+            {
+              "on": "e1",
+              "prop": "Organization:name",
+              "type": "name"
+            }
+          ]
+        },
+        "edges": [
+          {
+            "id": "g0",
+            "keys": [],
+            "schema": "Membership",
+            "source": "e0",
+            "target": "e1"
+          }
+        ],
+        "entities": [
+          {
+            "filter": null,
+            "id": "e0",
+            "instances": 36,
+            "keys": [
+              "c0"
+            ],
+            "schema": "Person"
+          },
+          {
+            "filter": null,
+            "id": "e1",
+            "instances": 36,
+            "keys": [
+              "c1",
+              "c2"
+            ],
+            "schema": "Organization"
+          }
+        ]
+      },
+      "subject": "Person",
+      "subject_declared": "Person",
+      "unfalsifiable": {
+        "bindings": 2,
+        "of_bindings": 2,
+        "of_statements": 144,
+        "statements": 144
+      }
+    },
+    "mode": "0o644"
+  },
+  "workspace.json": {
+    "content": {
+      "aggregate": {
+        "committed_at": "<volatile>",
+        "failures": [],
+        "generation": "<gen>",
+        "incomplete": false,
+        "path": "<volatile>",
+        "sources": {
+          "156bba8c3903-fbd359c5": "<gen>",
+          "31307b36b25e-b207b067": "<gen>",
+          "59150f8c32bb_Organizations-f801829d": "<gen>",
+          "5edff882ea53_Аркуш1-1a2a612d": "<gen>",
+          "be7cc1b8ae63_Лист1-fc5c89b3": "<gen>"
+        }
+      },
+      "created_at": "<volatile>",
+      "decisions": {},
+      "format": 2,
+      "sources": {
+        "156bba8c3903-fbd359c5": {
+          "artifacts": {
+            "decisions.jsonl": "<sha256>",
+            "entities.ftm.json": "<sha256>",
+            "mapping.yml": "<sha256>",
+            "normalized.csv": "<sha256>",
+            "plan.json": "<sha256>",
+            "plan.validated.json": "<sha256>",
+            "profile.json": "<sha256>",
+            "rejects.jsonl": "<sha256>",
+            "statements.csv": "<sha256>",
+            "summary.json": "<sha256>"
+          },
+          "committed_at": "<volatile>",
+          "generation": "<gen>",
+          "origin": "<repo>/tests/fixtures/reception_semicolon.csv",
+          "override_revision": 0,
+          "path": "<volatile>",
+          "run_id": "<volatile>",
+          "sha256": "156bba8c3903d1691458eea37227249892ed64f75ff9b19ef604f972cba029b2",
+          "sheet": "",
+          "source_id": "156bba8c3903/"
+        },
+        "31307b36b25e-b207b067": {
+          "artifacts": {
+            "decisions.jsonl": "<sha256>",
+            "entities.ftm.json": "<sha256>",
+            "mapping.yml": "<sha256>",
+            "normalized.csv": "<sha256>",
+            "plan.json": "<sha256>",
+            "plan.validated.json": "<sha256>",
+            "profile.json": "<sha256>",
+            "rejects.jsonl": "<sha256>",
+            "statements.csv": "<sha256>",
+            "summary.json": "<sha256>"
+          },
+          "committed_at": "<volatile>",
+          "generation": "<gen>",
+          "origin": "<repo>/tests/fixtures/deputies_popolo.csv",
+          "override_revision": 0,
+          "path": "<volatile>",
+          "run_id": "<volatile>",
+          "sha256": "31307b36b25e94e5c54af8d2a7adb619aa239c00e2c73ec53ba34b0453887efe",
+          "sheet": "",
+          "source_id": "31307b36b25e/"
+        },
+        "59150f8c32bb_Organizations-f801829d": {
+          "artifacts": {
+            "decisions.jsonl": "<sha256>",
+            "entities.ftm.json": "<sha256>",
+            "mapping.yml": "<sha256>",
+            "normalized.csv": "<sha256>",
+            "plan.json": "<sha256>",
+            "plan.validated.json": "<sha256>",
+            "profile.json": "<sha256>",
+            "rejects.jsonl": "<sha256>",
+            "statements.csv": "<sha256>",
+            "summary.json": "<sha256>"
+          },
+          "committed_at": "<volatile>",
+          "generation": "<gen>",
+          "origin": "<repo>/tests/fixtures/orgbook_two_header_rows.xlsx",
+          "override_revision": 0,
+          "path": "<volatile>",
+          "run_id": "<volatile>",
+          "sha256": "59150f8c32bb478fb663a9f6f433cdd7a63c5c1e5f89258620462cac5048d805",
+          "sheet": "Organizations",
+          "source_id": "59150f8c32bb/Organizations"
+        },
+        "5edff882ea53_Аркуш1-1a2a612d": {
+          "artifacts": {
+            "decisions.jsonl": "<sha256>",
+            "entities.ftm.json": "<sha256>",
+            "normalized.csv": "<sha256>",
+            "plan.json": "<sha256>",
+            "plan.validated.json": "<sha256>",
+            "profile.json": "<sha256>",
+            "rejects.jsonl": "<sha256>",
+            "statements.csv": "<sha256>",
+            "summary.json": "<sha256>"
+          },
+          "committed_at": "<volatile>",
+          "generation": "<gen>",
+          "origin": "<repo>/tests/fixtures/structure_merged.xlsx",
+          "override_revision": 0,
+          "path": "<volatile>",
+          "run_id": "<volatile>",
+          "sha256": "5edff882ea530afde03babc1e978ded6c74d7a54cf8c50f956dddba225f71612",
+          "sheet": "Аркуш1",
+          "source_id": "5edff882ea53/Аркуш1"
+        },
+        "be7cc1b8ae63_Лист1-fc5c89b3": {
+          "artifacts": {
+            "decisions.jsonl": "<sha256>",
+            "entities.ftm.json": "<sha256>",
+            "mapping.yml": "<sha256>",
+            "normalized.csv": "<sha256>",
+            "plan.json": "<sha256>",
+            "plan.validated.json": "<sha256>",
+            "profile.json": "<sha256>",
+            "rejects.jsonl": "<sha256>",
+            "statements.csv": "<sha256>",
+            "summary.json": "<sha256>"
+          },
+          "committed_at": "<volatile>",
+          "generation": "<gen>",
+          "origin": "<repo>/tests/fixtures/reception_title_rows.xlsx",
+          "override_revision": 0,
+          "path": "<volatile>",
+          "run_id": "<volatile>",
+          "sha256": "be7cc1b8ae63a2820a41f51a63e64a1d1bcd114d7fa3d088efd382cec2e21082",
+          "sheet": "Лист1",
+          "source_id": "be7cc1b8ae63/Лист1"
+        }
+      },
+      "updated_at": "<volatile>"
+    },
+    "mode": "0o644"
+  }
+}

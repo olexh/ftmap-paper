@@ -1,0 +1,1534 @@
+{
+  "_vendored_from": "coltype/reference/ftm_labels_uk.json, copied 2026-08-19. That copy is the original and the one to edit; this one is a vendored copy so an installed ftmap outside this checkout keeps its Ukrainian labels. Keys beginning with an underscore are metadata, not properties.",
+  "_about": "Ukrainian labels and header spellings for FollowTheMoney properties. FtM 4.10.1 ships ar/bs/de/es/fr/nb/nl/pt_BR/ru/tr and no uk; this catalogue is the missing locale, kept in a shape that can be contributed upstream as translations/uk/LC_MESSAGES/followthemoney.po. It is the ONLY hand-maintained artefact in the vocabulary: codes, categories, near-groups and matchability are all generated from the ontology by coltype.schema.ftm.",
+  "_spellings_policy": "Spellings are header forms observed in the two corpora or their obvious abbreviations. They are NOT synonyms invented to help the matcher score better; a spelling that no header uses is a tuned baseline wearing a control's clothes.",
+  "Thing:name": {
+    "label": "повне ім'я або назва",
+    "hint": "ПІБ однією коміркою, або повна назва організації",
+    "spellings": [
+      "ПІБ",
+      "П.І.Б.",
+      "прізвище ім'я по батькові",
+      "прізвище, ім'я, по батькові",
+      "ПІБ повністю",
+      "ФИО",
+      "назва",
+      "найменування",
+      "повна назва",
+      "повне найменування",
+      "назва організації",
+      "найменування закладу",
+      "підрозділ",
+      "назва підрозділу",
+      "військова частина",
+      "в/ч",
+      "власники",
+      "judge",
+      "chief_name",
+      "sti_name",
+      "sub_name"
+    ]
+  },
+  "Thing:alias": {
+    "label": "інша назва або псевдонім",
+    "hint": "скорочена чи попередня форма того самого імені",
+    "spellings": [
+      "псевдонім",
+      "інша назва",
+      "original_name"
+    ]
+  },
+  "Thing:previousName": {
+    "label": "попередня назва",
+    "hint": "назва до перейменування",
+    "spellings": [
+      "попередня назва",
+      "стара назва",
+      "колишня назва",
+      "former_name"
+    ]
+  },
+  "Thing:weakAlias": {
+    "label": "позивний або нік",
+    "hint": "позивний, прізвисько, нікнейм — ідентифікує слабко, збігу самого по собі замало",
+    "spellings": [
+      "позивний",
+      "позивний знак",
+      "нік",
+      "нікнейм",
+      "прізвисько",
+      "кличка",
+      "псевдо"
+    ]
+  },
+  "Thing:country": {
+    "label": "країна",
+    "hint": "держава",
+    "spellings": [
+      "країна",
+      "держава",
+      "громадянство країни"
+    ]
+  },
+  "Thing:address": {
+    "label": "адреса",
+    "hint": "адреса рядком",
+    "spellings": [
+      "адреса",
+      "повна адреса",
+      "місце проживання",
+      "місце реєстрації",
+      "адреса проживання",
+      "прописка",
+      "фактична адреса",
+      "юридична адреса",
+      "адрес",
+      "місцезнаходження"
+    ]
+  },
+  "Thing:notes": {
+    "label": "примітки",
+    "hint": "вільний коментар аналітика або джерела",
+    "spellings": [
+      "примітка",
+      "примітки",
+      "коментар",
+      "коментарі",
+      "нотатки",
+      "зауваження"
+    ]
+  },
+  "Thing:description": {
+    "label": "опис",
+    "hint": "текстовий опис змісту запису",
+    "spellings": [
+      "опис",
+      "характеристика",
+      "детальний опис"
+    ]
+  },
+  "Thing:summary": {
+    "label": "стислий опис",
+    "hint": "короткий виклад",
+    "spellings": [
+      "стислий опис",
+      "короткий опис",
+      "анотація"
+    ]
+  },
+  "Thing:keywords": {
+    "label": "теги або ключові слова",
+    "hint": "мітки, за якими запис класифіковано",
+    "spellings": [
+      "теги",
+      "тег",
+      "мітки",
+      "мітка",
+      "ключові слова",
+      "категорії"
+    ]
+  },
+  "Thing:publisher": {
+    "label": "джерело даних",
+    "hint": "звідки запис узято — назва джерела, файлу, вивантаження",
+    "spellings": [
+      "джерело",
+      "джерело даних",
+      "звідки",
+      "походження",
+      "джерело інформації",
+      "sourceID",
+      "source_id",
+      "dataset"
+    ]
+  },
+  "Thing:sourceUrl": {
+    "label": "посилання на джерело",
+    "hint": "URL первинного джерела",
+    "spellings": [
+      "посилання на джерело",
+      "url джерела",
+      "лінк на джерело"
+    ]
+  },
+  "Thing:retrievedAt": {
+    "label": "дата отримання",
+    "hint": "коли запис було зібрано або завантажено",
+    "spellings": [
+      "дата отримання",
+      "дата завантаження",
+      "дата вивантаження",
+      "станом на",
+      "last_seen"
+    ]
+  },
+  "Thing:modifiedAt": {
+    "label": "дата зміни",
+    "hint": "коли запис востаннє змінено",
+    "spellings": [
+      "дата зміни",
+      "дата оновлення",
+      "оновлено",
+      "last_change"
+    ]
+  },
+  "Thing:createdAt": {
+    "label": "дата створення",
+    "hint": "коли запис створено",
+    "spellings": [
+      "дата створення",
+      "створено",
+      "first_seen"
+    ]
+  },
+  "Person:firstName": {
+    "label": "ім'я",
+    "hint": "лише ім'я, окремою коміркою",
+    "spellings": [
+      "ім'я",
+      "имʼя",
+      "имя",
+      "ім`я",
+      "имья"
+    ]
+  },
+  "Person:lastName": {
+    "label": "прізвище",
+    "hint": "лише прізвище, окремою коміркою",
+    "spellings": [
+      "прізвище",
+      "фамилия",
+      "прізв."
+    ]
+  },
+  "Person:fatherName": {
+    "label": "по батькові",
+    "hint": "лише по батькові, окремою коміркою",
+    "spellings": [
+      "по батькові",
+      "побатькові",
+      "по-батькові",
+      "отчество",
+      "по батьковi"
+    ]
+  },
+  "Person:motherName": {
+    "label": "по матері",
+    "hint": "матронім",
+    "spellings": [
+      "по матері"
+    ]
+  },
+  "Person:birthDate": {
+    "label": "дата народження",
+    "hint": "дата або рік народження людини",
+    "spellings": [
+      "дата народження",
+      "д.н.",
+      "дн",
+      "рік народження",
+      "р.н.",
+      "дата нар",
+      "дата рождения",
+      "народився",
+      "народилася"
+    ]
+  },
+  "Person:deathDate": {
+    "label": "дата смерті",
+    "hint": "дата смерті або загибелі",
+    "spellings": [
+      "дата смерті",
+      "дата загибелі",
+      "загинув",
+      "помер"
+    ]
+  },
+  "Person:gender": {
+    "label": "стать",
+    "hint": "чоловіча / жіноча, ч/ж, m/f",
+    "spellings": [
+      "стать",
+      "пол"
+    ]
+  },
+  "Person:birthPlace": {
+    "label": "місце народження",
+    "hint": "населений пункт або область народження",
+    "spellings": [
+      "місце народження",
+      "м.н.",
+      "місце нар",
+      "место рождения"
+    ]
+  },
+  "Person:birthCountry": {
+    "label": "країна народження",
+    "hint": "",
+    "spellings": [
+      "країна народження"
+    ]
+  },
+  "Person:citizenship": {
+    "label": "громадянство",
+    "hint": "",
+    "spellings": [
+      "громадянство",
+      "гражданство"
+    ]
+  },
+  "Person:position": {
+    "label": "посада",
+    "hint": "посада особи, як записано в джерелі",
+    "spellings": [
+      "посада",
+      "посада особи",
+      "должность",
+      "обіймана посада"
+    ]
+  },
+  "Person:title": {
+    "label": "звання або титул",
+    "hint": "військове чи спеціальне звання, науковий ступінь, титул",
+    "spellings": [
+      "звання",
+      "військове звання",
+      "в/звання",
+      "спеціальне звання",
+      "воинское звание",
+      "ранг",
+      "чин",
+      "титул"
+    ]
+  },
+  "Person:profession": {
+    "label": "професія або фах",
+    "hint": "",
+    "spellings": [
+      "професія",
+      "фах",
+      "спеціальність",
+      "вид діяльності"
+    ]
+  },
+  "Person:education": {
+    "label": "освіта",
+    "hint": "",
+    "spellings": [
+      "освіта",
+      "рівень освіти",
+      "навчальний заклад"
+    ]
+  },
+  "Person:biography": {
+    "label": "біографія або досьє",
+    "hint": "зв'язний текст про особу — довідка, характеристика, досьє",
+    "spellings": [
+      "біографія",
+      "довідка",
+      "характеристика",
+      "досьє",
+      "біографічна довідка",
+      "життєпис"
+    ]
+  },
+  "Person:appearance": {
+    "label": "зовнішність",
+    "hint": "прикмети, опис зовнішності",
+    "spellings": [
+      "зовнішність",
+      "прикмети",
+      "особливі прикмети",
+      "опис зовнішності"
+    ]
+  },
+  "Person:passportNumber": {
+    "label": "номер паспорта",
+    "hint": "серія і номер паспорта",
+    "spellings": [
+      "паспорт",
+      "номер паспорта",
+      "серія паспорта",
+      "серія та номер паспорта",
+      "паспортні дані"
+    ]
+  },
+  "Person:political": {
+    "label": "політична приналежність",
+    "hint": "партія або політична сила особи",
+    "spellings": [
+      "партія",
+      "партійність",
+      "політична сила",
+      "суб'єкт висування",
+      "політична партія"
+    ]
+  },
+  "Person:height": {
+    "label": "зріст",
+    "hint": "",
+    "spellings": [
+      "зріст",
+      "рост"
+    ]
+  },
+  "Person:weight": {
+    "label": "вага",
+    "hint": "",
+    "spellings": [
+      "вага"
+    ]
+  },
+  "Person:eyeColor": {
+    "label": "колір очей",
+    "hint": "",
+    "spellings": [
+      "колір очей"
+    ]
+  },
+  "Person:hairColor": {
+    "label": "колір волосся",
+    "hint": "",
+    "spellings": [
+      "колір волосся"
+    ]
+  },
+  "LegalEntity:idNumber": {
+    "label": "ідентифікаційний номер",
+    "hint": "службовий чи персональний номер особи або організації — не податковий і не реєстраційний",
+    "spellings": [
+      "ідентифікаційний номер",
+      "особистий номер",
+      "персональний номер",
+      "службовий номер",
+      "особовий номер",
+      "жетон",
+      "номер жетона",
+      "табельний номер"
+    ]
+  },
+  "LegalEntity:taxNumber": {
+    "label": "податковий номер",
+    "hint": "РНОКПП (ІПН) фізичної особи або податковий номер організації",
+    "spellings": [
+      "РНОКПП",
+      "ІПН",
+      "податковий номер",
+      "ідентифікаційний код",
+      "ідентифікаційний номер платника",
+      "інн",
+      "код платника податків"
+    ]
+  },
+  "LegalEntity:registrationNumber": {
+    "label": "реєстраційний номер",
+    "hint": "ЄДРПОУ або інший код у реєстрі юридичних осіб",
+    "spellings": [
+      "ЄДРПОУ",
+      "код ЄДРПОУ",
+      "реєстраційний номер",
+      "рег. номер",
+      "код за ЄДРПОУ",
+      "номер у реєстрі",
+      "court_code",
+      "код суб'єкта управління",
+      "ibcRUC",
+      "c_sti",
+      "tin_s",
+      "sub_tin_s"
+    ]
+  },
+  "LegalEntity:phone": {
+    "label": "телефон",
+    "hint": "номер телефону в будь-якому форматі",
+    "spellings": [
+      "телефон",
+      "тел",
+      "тел.",
+      "номер телефону",
+      "мобільний",
+      "моб",
+      "контактний телефон"
+    ]
+  },
+  "LegalEntity:email": {
+    "label": "електронна пошта",
+    "hint": "адреса e-mail",
+    "spellings": [
+      "електронна пошта",
+      "ел. пошта",
+      "ел пошта",
+      "пошта",
+      "емейл",
+      "електронна адреса"
+    ]
+  },
+  "LegalEntity:website": {
+    "label": "вебсайт",
+    "hint": "посилання на сайт або сторінку",
+    "spellings": [
+      "сайт",
+      "вебсайт",
+      "веб-сайт",
+      "посилання",
+      "лінк",
+      "адреса сайту"
+    ]
+  },
+  "LegalEntity:legalForm": {
+    "label": "організаційно-правова форма",
+    "hint": "ТОВ, ФОП, КП, форма власності",
+    "spellings": [
+      "організаційно-правова форма",
+      "опф",
+      "форма власності",
+      "правова форма",
+      "тип власності",
+      "company_type",
+      "організаційна форма"
+    ]
+  },
+  "LegalEntity:classification": {
+    "label": "класифікація або тип",
+    "hint": "тип закладу, тип органу, категорія організації",
+    "spellings": [
+      "тип",
+      "тип закладу",
+      "тип організації",
+      "тип органу",
+      "категорія закладу",
+      "вид"
+    ]
+  },
+  "LegalEntity:status": {
+    "label": "статус",
+    "hint": "діє, ліквідовано, зареєстровано, завершено",
+    "spellings": [
+      "статус",
+      "стан",
+      "поточний стан"
+    ]
+  },
+  "LegalEntity:sector": {
+    "label": "галузь або сфера",
+    "hint": "",
+    "spellings": [
+      "галузь",
+      "сфера",
+      "сфера діяльності",
+      "напрям"
+    ]
+  },
+  "LegalEntity:innCode": {
+    "label": "ІПН РФ (ИНН)",
+    "hint": "російський податковий номер — трапляється в даних противника",
+    "spellings": [
+      "ИНН",
+      "инн"
+    ]
+  },
+  "LegalEntity:ogrnCode": {
+    "label": "ОДРН РФ (ОГРН)",
+    "hint": "російський реєстраційний номер — трапляється в даних противника",
+    "spellings": [
+      "ОГРН",
+      "огрн"
+    ]
+  },
+  "LegalEntity:licenseNumber": {
+    "label": "номер ліцензії",
+    "hint": "",
+    "spellings": [
+      "номер ліцензії",
+      "ліцензія"
+    ]
+  },
+  "Address:full": {
+    "label": "повна адреса",
+    "hint": "адреса як єдиний рядок",
+    "spellings": [
+      "повна адреса",
+      "адреса повністю",
+      "адреса одним рядком"
+    ]
+  },
+  "Address:city": {
+    "label": "населений пункт",
+    "hint": "місто, село, селище",
+    "spellings": [
+      "населений пункт",
+      "нас. пункт",
+      "місто",
+      "село",
+      "селище",
+      "н.п.",
+      "город",
+      "місто (село)"
+    ]
+  },
+  "Address:region": {
+    "label": "область або регіон",
+    "hint": "область, АР Крим, регіон верхнього рівня",
+    "spellings": [
+      "область",
+      "обл",
+      "обл.",
+      "регіон",
+      "область (регіон)",
+      "ар крим"
+    ]
+  },
+  "Address:street": {
+    "label": "вулиця",
+    "hint": "назва вулиці, з типом або без",
+    "spellings": [
+      "вулиця",
+      "вул",
+      "вул.",
+      "назва вулиці",
+      "адреса вулиці"
+    ]
+  },
+  "Address:postalCode": {
+    "label": "поштовий індекс",
+    "hint": "",
+    "spellings": [
+      "поштовий індекс",
+      "індекс",
+      "поштовий код"
+    ]
+  },
+  "Address:latitude": {
+    "label": "широта",
+    "hint": "географічна широта",
+    "spellings": [
+      "широта"
+    ]
+  },
+  "Address:longitude": {
+    "label": "довгота",
+    "hint": "географічна довгота",
+    "spellings": [
+      "довгота"
+    ]
+  },
+  "Address:remarks": {
+    "label": "уточнення адреси",
+    "hint": "корпус, під'їзд, орієнтир",
+    "spellings": [
+      "уточнення адреси",
+      "орієнтир"
+    ]
+  },
+  "Identification:number": {
+    "label": "номер документа",
+    "hint": "номер посвідчення, свідоцтва, довідки, наказу, справи",
+    "spellings": [
+      "номер документа",
+      "№ документа",
+      "серія та номер",
+      "номер посвідчення",
+      "номер свідоцтва",
+      "номер довідки",
+      "номер наказу",
+      "номер справи",
+      "номер акта",
+      "номер договору",
+      "номер протоколу"
+    ]
+  },
+  "Identification:type": {
+    "label": "тип документа",
+    "hint": "паспорт, посвідчення, військовий квиток",
+    "spellings": [
+      "тип документа",
+      "вид документа"
+    ]
+  },
+  "Identification:authority": {
+    "label": "орган видачі",
+    "hint": "хто видав документ",
+    "spellings": [
+      "орган видачі",
+      "ким виданий",
+      "ким видано",
+      "виданий",
+      "видавник"
+    ]
+  },
+  "Passport:personalNumber": {
+    "label": "особовий номер у документі",
+    "hint": "унікальний номер запису в паспорті або посвідченні",
+    "spellings": [
+      "особовий номер",
+      "унікальний номер запису",
+      "УНЗР"
+    ]
+  },
+  "Interest:role": {
+    "label": "роль у складі організації",
+    "hint": "посада або роль особи саме в цьому підрозділі чи органі",
+    "spellings": [
+      "роль"
+    ]
+  },
+  "Occupancy:periodStart": {
+    "label": "початок каденції",
+    "hint": "",
+    "spellings": [
+      "початок каденції",
+      "початок повноважень"
+    ]
+  },
+  "Occupancy:periodEnd": {
+    "label": "кінець каденції",
+    "hint": "",
+    "spellings": [
+      "кінець каденції",
+      "закінчення повноважень"
+    ]
+  },
+  "Occupancy:electionDate": {
+    "label": "дата обрання",
+    "hint": "",
+    "spellings": [
+      "дата обрання",
+      "обраний"
+    ]
+  },
+  "Occupancy:constituency": {
+    "label": "виборчий округ",
+    "hint": "",
+    "spellings": [
+      "виборчий округ",
+      "округ",
+      "номер округу"
+    ]
+  },
+  "Occupancy:politicalGroup": {
+    "label": "фракція або депутатська група",
+    "hint": "",
+    "spellings": [
+      "фракція",
+      "депутатська група",
+      "політична група",
+      "назва фракції"
+    ]
+  },
+  "Occupancy:status": {
+    "label": "статус повноважень",
+    "hint": "",
+    "spellings": [
+      "статус повноважень",
+      "статус депутата"
+    ]
+  },
+  "Interval:recordId": {
+    "label": "ідентифікатор запису",
+    "hint": "власний ідентифікатор запису в джерелі — GUID, UUID, первинний ключ. НЕ порядковий номер рядка",
+    "spellings": [
+      "ідентифікатор",
+      "ідентифікатор запису",
+      "record id",
+      "guid",
+      "uuid",
+      "унікальний ідентифікатор"
+    ]
+  },
+  "Interval:startDate": {
+    "label": "дата початку",
+    "hint": "",
+    "spellings": [
+      "дата початку",
+      "початок",
+      "діє з",
+      "дата призначення",
+      "дата вступу",
+      "з якого часу",
+      "прийнято"
+    ]
+  },
+  "Interval:endDate": {
+    "label": "дата завершення",
+    "hint": "",
+    "spellings": [
+      "дата завершення",
+      "закінчення",
+      "діє до",
+      "дата вибуття",
+      "дата звільнення",
+      "по який час",
+      "звільнено"
+    ]
+  },
+  "Interval:date": {
+    "label": "дата",
+    "hint": "дата події, крім дати народження",
+    "spellings": [
+      "дата",
+      "дата події",
+      "дата запису"
+    ]
+  },
+  "Call:callerNumber": {
+    "label": "номер, з якого дзвонили",
+    "hint": "",
+    "spellings": [
+      "номер абонента а",
+      "хто дзвонив",
+      "вихідний номер",
+      "абонент а"
+    ]
+  },
+  "Call:receiverNumber": {
+    "label": "номер, на який дзвонили",
+    "hint": "",
+    "spellings": [
+      "номер абонента б",
+      "кому дзвонили",
+      "вхідний номер",
+      "абонент б"
+    ]
+  },
+  "Call:duration": {
+    "label": "тривалість дзвінка",
+    "hint": "",
+    "spellings": [
+      "тривалість",
+      "тривалість дзвінка",
+      "секунд"
+    ]
+  },
+  "UserAccount:username": {
+    "label": "обліковий запис",
+    "hint": "логін, username, ID акаунта в месенджері чи соцмережі",
+    "spellings": [
+      "обліковий запис",
+      "акаунт",
+      "логін",
+      "username",
+      "id акаунта",
+      "telegram",
+      "телеграм",
+      "юзернейм"
+    ]
+  },
+  "UserAccount:service": {
+    "label": "сервіс або месенджер",
+    "hint": "",
+    "spellings": [
+      "сервіс",
+      "месенджер",
+      "платформа",
+      "соцмережа"
+    ]
+  },
+  "Vehicle:registrationNumber": {
+    "label": "державний номер транспортного засобу",
+    "hint": "",
+    "spellings": [
+      "держномер",
+      "державний номер",
+      "номер авто",
+      "ДНЗ",
+      "номерний знак",
+      "реєстраційний №"
+    ]
+  },
+  "Vehicle:model": {
+    "label": "модель транспортного засобу",
+    "hint": "",
+    "spellings": [
+      "модель",
+      "марка",
+      "марка авто"
+    ]
+  },
+  "Vehicle:type": {
+    "label": "тип транспортного засобу",
+    "hint": "",
+    "spellings": [
+      "тип тз",
+      "тип транспортного засобу"
+    ]
+  },
+  "Document:fileName": {
+    "label": "ім'я файлу",
+    "hint": "",
+    "spellings": [
+      "ім'я файлу",
+      "назва файлу",
+      "файл"
+    ]
+  },
+  "Document:title": {
+    "label": "назва документа",
+    "hint": "",
+    "spellings": [
+      "назва документа",
+      "заголовок"
+    ]
+  },
+  "Value:amount": {
+    "label": "грошова сума",
+    "hint": "гривні, видатки, оклад, вартість",
+    "spellings": [
+      "сума",
+      "вартість",
+      "оклад",
+      "видатки",
+      "грошова сума",
+      "обсяг фінансування",
+      "грн"
+    ]
+  },
+  "Value:currency": {
+    "label": "валюта",
+    "hint": "",
+    "spellings": [
+      "валюта"
+    ]
+  },
+  "Interest:status": {
+    "label": "статус членства",
+    "hint": "чинне, призупинене або завершене членство",
+    "spellings": [
+      "статус членства"
+    ]
+  },
+  "LegalEntity:dissolutionDate": {
+    "label": "дата припинення",
+    "hint": "ліквідація або припинення юридичної особи",
+    "spellings": [
+      "дата ліквідації",
+      "дата припинення"
+    ]
+  },
+  "LegalEntity:abbreviation": {
+    "label": "скорочена назва",
+    "hint": "абревіатура або коротка форма назви організації",
+    "spellings": [
+      "скорочена назва",
+      "коротка назва",
+      "скорочене найменування",
+      "абревіатура"
+    ]
+  },
+  "LegalEntity:incorporationDate": {
+    "label": "дата реєстрації",
+    "hint": "дата державної реєстрації юридичної особи",
+    "spellings": [
+      "дата реєстрації",
+      "дата державної реєстрації"
+    ]
+  },
+  "Person:ethnicity": {
+    "label": "національність",
+    "hint": "етнічна належність; НЕ громадянство",
+    "spellings": [
+      "національність"
+    ]
+  },
+  "Address:street2": {
+    "label": "номер будинку",
+    "hint": "друга частина адреси: будинок, корпус",
+    "spellings": [
+      "номер будинку",
+      "номер будівлі",
+      "будинок",
+      "буд."
+    ]
+  },
+  "Family:relationship": {
+    "label": "ступінь споріднення",
+    "hint": "ким доводиться особі",
+    "spellings": [
+      "ступінь споріднення",
+      "родинний зв'язок"
+    ]
+  },
+  "_not_translated": {
+    "LegalEntity:leiCode": "LEI is written as LEI in Ukrainian filings too",
+    "LegalEntity:dunsCode": "US/global trade identifier; absent from UA sources",
+    "LegalEntity:bvdId": "commercial database key",
+    "LegalEntity:npiCode": "US healthcare provider identifier",
+    "LegalEntity:uniqueEntityId": "US federal award identifier",
+    "LegalEntity:icijId": "ICIJ internal key",
+    "LegalEntity:swiftBic": "written as SWIFT/BIC in Ukrainian banking too",
+    "LegalEntity:opencorporatesUrl": "a URL, matched as one",
+    "Company:cikCode": "US SEC identifier",
+    "Company:irsCode": "US tax identifier",
+    "Company:ricCode": "Reuters instrument code",
+    "Company:ticker": "written in Latin",
+    "Company:bikCode": "RU/BY bank code; reachable through the ru catalogue",
+    "Company:jibCode": "ex-Yugoslav identifier",
+    "Company:mbsCode": "ex-Yugoslav identifier",
+    "Company:voenCode": "Azerbaijani tax identifier",
+    "Company:pfrNumber": "RU pension fund; its English label already over-matches",
+    "Company:caemCode": "Romanian activity classifier",
+    "Company:okopfCode": "RU legal-form classifier; ru catalogue covers it",
+    "Company:oksmCode": "RU country classifier; ru catalogue covers it",
+    "Company:fssCode": "RU social insurance",
+    "Company:ipoCode": "RU classifier",
+    "Organization:cageCode": "NATO/US supplier code",
+    "Organization:giiNumber": "US FATCA identifier",
+    "Organization:imoNumber": "maritime identifier",
+    "Organization:permId": "Refinitiv key",
+    "Address:googlePlaceId": "machine key, never a Ukrainian header",
+    "Address:osmId": "machine key, never a Ukrainian header",
+    "Address:state": "Ukraine has no federal tier; would compete with region/district",
+    "Person:nationality": "FtM `nationality` is a COUNTRY; Ukrainian «національність» is ethnicity and is on Person:ethnicity. Labelling this would tie with Person:citizenship and make both abstain",
+    "Document:crawler": "processing metadata, not a source header",
+    "Document:generator": "processing metadata",
+    "Document:processingAgent": "processing metadata",
+    "Document:messageId": "machine key",
+    "Event:important": "no Ukrainian header form observed"
+  },
+  "Person:middleName": {
+    "label": "друге ім'я",
+    "hint": "",
+    "spellings": []
+  },
+  "Person:nameSuffix": {
+    "label": "суфікс імені",
+    "hint": "",
+    "spellings": []
+  },
+  "Person:religion": {
+    "label": "віросповідання",
+    "hint": "",
+    "spellings": []
+  },
+  "Person:spokenLanguage": {
+    "label": "мови, якими володіє",
+    "hint": "",
+    "spellings": []
+  },
+  "Person:socialSecurityNumber": {
+    "label": "номер соціального страхування",
+    "hint": "",
+    "spellings": []
+  },
+  "Event:location": {
+    "label": "місце події",
+    "hint": "",
+    "spellings": []
+  },
+  "Address:postOfficeBox": {
+    "label": "абонентська скринька",
+    "hint": "",
+    "spellings": []
+  },
+  "LegalEntity:okpoCode": {
+    "label": "ЄДРПОУ (ОКПО)",
+    "hint": "",
+    "spellings": []
+  },
+  "LegalEntity:vatCode": {
+    "label": "номер платника ПДВ",
+    "hint": "",
+    "spellings": []
+  },
+  "LegalEntity:jurisdiction": {
+    "label": "юрисдикція",
+    "hint": "",
+    "spellings": []
+  },
+  "LegalEntity:mainCountry": {
+    "label": "країна походження",
+    "hint": "",
+    "spellings": []
+  },
+  "LegalEntity:taxStatus": {
+    "label": "податковий статус",
+    "hint": "",
+    "spellings": []
+  },
+  "Company:capital": {
+    "label": "статутний капітал",
+    "hint": "",
+    "spellings": []
+  },
+  "Company:coatoCode": {
+    "label": "КОАТУУ (КОАТО)",
+    "hint": "",
+    "spellings": []
+  },
+  "Company:kppCode": {
+    "label": "КПП",
+    "hint": "",
+    "spellings": []
+  },
+  "Company:fnsCode": {
+    "label": "код податкової служби",
+    "hint": "",
+    "spellings": []
+  },
+  "Directorship:secretary": {
+    "label": "секретар",
+    "hint": "",
+    "spellings": []
+  },
+  "Position:numberOfSeats": {
+    "label": "кількість штатних одиниць",
+    "hint": "",
+    "spellings": []
+  },
+  "Position:inceptionDate": {
+    "label": "дата утворення посади",
+    "hint": "",
+    "spellings": []
+  },
+  "Position:subnationalArea": {
+    "label": "територія посади",
+    "hint": "",
+    "spellings": []
+  },
+  "Occupancy:declarationDate": {
+    "label": "дата декларації",
+    "hint": "",
+    "spellings": []
+  },
+  "Vehicle:registrationDate": {
+    "label": "дата реєстрації транспортного засобу",
+    "hint": "",
+    "spellings": [
+      "дата реєстрації"
+    ]
+  },
+  "Vehicle:deregistrationDate": {
+    "label": "дата зняття з обліку",
+    "hint": "",
+    "spellings": []
+  },
+  "Vehicle:buildDate": {
+    "label": "рік випуску",
+    "hint": "",
+    "spellings": []
+  },
+  "Email:from": {
+    "label": "від кого",
+    "hint": "",
+    "spellings": []
+  },
+  "Email:to": {
+    "label": "кому",
+    "hint": "",
+    "spellings": []
+  },
+  "Email:cc": {
+    "label": "копія",
+    "hint": "",
+    "spellings": []
+  },
+  "Email:bcc": {
+    "label": "прихована копія",
+    "hint": "",
+    "spellings": []
+  },
+  "Email:sender": {
+    "label": "відправник",
+    "hint": "",
+    "spellings": []
+  },
+  "Email:subject": {
+    "label": "тема листа",
+    "hint": "",
+    "spellings": []
+  },
+  "Email:threadTopic": {
+    "label": "тема листування",
+    "hint": "",
+    "spellings": []
+  },
+  "Message:subject": {
+    "label": "тема повідомлення",
+    "hint": "",
+    "spellings": []
+  },
+  "Message:threadTopic": {
+    "label": "тема листування",
+    "hint": "",
+    "spellings": []
+  },
+  "UserAccount:password": {
+    "label": "пароль",
+    "hint": "",
+    "spellings": []
+  },
+  "UserAccount:ipAddress": {
+    "label": "IP-адреса",
+    "hint": "",
+    "spellings": []
+  },
+  "Document:author": {
+    "label": "автор документа",
+    "hint": "",
+    "spellings": []
+  },
+  "Document:authoredAt": {
+    "label": "дата створення документа",
+    "hint": "",
+    "spellings": []
+  },
+  "Document:publishedAt": {
+    "label": "дата оприлюднення",
+    "hint": "",
+    "spellings": [
+      "date_publ",
+      "дата оприлюднення",
+      "дата публікації",
+      "опубліковано"
+    ]
+  },
+  "Document:language": {
+    "label": "мова документа",
+    "hint": "",
+    "spellings": []
+  },
+  "Document:extension": {
+    "label": "розширення файлу",
+    "hint": "",
+    "spellings": []
+  },
+  "Document:fileSize": {
+    "label": "розмір файлу",
+    "hint": "",
+    "spellings": []
+  },
+  "Document:mimeType": {
+    "label": "тип вмісту",
+    "hint": "",
+    "spellings": []
+  },
+  "Document:encoding": {
+    "label": "кодування файлу",
+    "hint": "",
+    "spellings": []
+  },
+  "Document:contentHash": {
+    "label": "контрольна сума",
+    "hint": "",
+    "spellings": []
+  },
+  "Value:amountEur": {
+    "label": "сума в євро",
+    "hint": "",
+    "spellings": []
+  },
+  "Value:amountUsd": {
+    "label": "сума в доларах",
+    "hint": "",
+    "spellings": []
+  },
+  "Thing:topics": {
+    "label": "тематичні мітки",
+    "hint": "",
+    "spellings": []
+  },
+  "Thing:wikipediaUrl": {
+    "label": "стаття у Вікіпедії",
+    "hint": "",
+    "spellings": []
+  },
+  "Thing:wikidataId": {
+    "label": "ідентифікатор Wikidata",
+    "hint": "",
+    "spellings": []
+  },
+  "Thing:publisherUrl": {
+    "label": "посилання на видавця",
+    "hint": "",
+    "spellings": []
+  },
+  "Interval:publisherUrl": {
+    "label": "посилання на видавця",
+    "hint": "",
+    "spellings": []
+  },
+  "Thing:program": {
+    "label": "програма",
+    "hint": "",
+    "spellings": []
+  },
+  "LegalEntity:icijId": {
+    "label": "ідентифікатор ICIJ",
+    "hint": "вузловий id (node_id) у витоках ICIJ Offshore Leaks",
+    "spellings": [
+      "node_id",
+      "node_id_start",
+      "node_id_end"
+    ]
+  },
+  "Vessel:registrationPort": {
+    "label": "порт припису",
+    "hint": "порт реєстрації судна",
+    "spellings": [
+      "порт припису"
+    ]
+  },
+  "Vessel:type": {
+    "label": "тип судна",
+    "hint": "тип або призначення судна",
+    "spellings": [
+      "тип судна",
+      "призначення"
+    ]
+  },
+  "Vessel:deregistrationDate": {
+    "label": "дата виключення з реєстру суден",
+    "hint": "відмітка про виключення судна з Державного реєстру",
+    "spellings": [
+      "відмітка про виключення судна з Державного реєстру"
+    ]
+  },
+  "Contract:procedure": {
+    "label": "процедура закупівлі",
+    "hint": "вид процедури, за якою укладено договір",
+    "spellings": [
+      "процедура"
+    ]
+  },
+  "Vessel:buildDate": {
+    "label": "рік побудови",
+    "hint": "рік або дата побудови судна",
+    "spellings": [
+      "рік побудови"
+    ]
+  },
+  "Sanction:program": {
+    "label": "санкційна програма",
+    "hint": "програма або перелік, за яким накладено санкції",
+    "spellings": [
+      "sanctions"
+    ]
+  },
+  "Sanction:reason": {
+    "label": "підстава санкцій",
+    "hint": "підстава або опис санкційного рішення",
+    "spellings": [
+      "sanctions"
+    ]
+  },
+  "Interval:publisher": {
+    "label": "джерело даних",
+    "hint": "звідки запис узято — назва джерела, файлу, вивантаження (FollowTheMoney оголошує цю властивість окремо на Interval; той самий зміст, що й у Thing)",
+    "spellings": [
+      "джерело",
+      "джерело даних",
+      "звідки",
+      "походження",
+      "джерело інформації",
+      "sourceID",
+      "source_id",
+      "dataset"
+    ]
+  },
+  "Interval:retrievedAt": {
+    "label": "дата отримання",
+    "hint": "коли запис було зібрано або завантажено (FollowTheMoney оголошує цю властивість окремо на Interval; той самий зміст, що й у Thing)",
+    "spellings": [
+      "дата отримання",
+      "дата завантаження",
+      "дата вивантаження",
+      "станом на",
+      "last_seen"
+    ]
+  },
+  "Interval:modifiedAt": {
+    "label": "дата зміни",
+    "hint": "коли запис востаннє змінено (FollowTheMoney оголошує цю властивість окремо на Interval; той самий зміст, що й у Thing)",
+    "spellings": [
+      "дата зміни",
+      "дата оновлення",
+      "оновлено",
+      "last_change"
+    ]
+  },
+  "Interval:sourceUrl": {
+    "label": "посилання на джерело",
+    "hint": "URL первинного джерела (FollowTheMoney оголошує цю властивість окремо на Interval; той самий зміст, що й у Thing)",
+    "spellings": [
+      "посилання на джерело",
+      "url джерела",
+      "лінк на джерело"
+    ]
+  },
+  "Vessel:grossRegisteredTonnage": {
+    "label": "валова місткість",
+    "hint": "валова реєстрова місткість судна (GT/GRT), в одиницях",
+    "spellings": [
+      "валова місткість"
+    ]
+  },
+  "Vessel:tonnage": {
+    "label": "чиста місткість",
+    "hint": "чиста реєстрова місткість судна (NT/NRT), в одиницях",
+    "spellings": [
+      "чиста місткість"
+    ]
+  },
+  "ContractAward:cpvCode": {
+    "label": "код CPV (ДК 021:2015)",
+    "hint": "код предмета закупівлі за ДК 021:2015 (український CPV)",
+    "spellings": [
+      "код по ДК 021:2015",
+      "ДК 021:2015",
+      "код ДК 021:2015",
+      "cpv",
+      "код CPV"
+    ]
+  },
+  "Contract:type": {
+    "label": "вид предмета закупівлі",
+    "hint": "товари, роботи чи послуги",
+    "spellings": [
+      "вид предмета закупівлі",
+      "вид предмету закупівлі"
+    ]
+  },
+  "Contract:description": {
+    "label": "опис предмета закупівлі",
+    "hint": "опис окремої частини або частин предмета закупівлі",
+    "spellings": [
+      "опис предмета закупівлі",
+      "опис окремої частини або частин предмета закупівлі"
+    ]
+  },
+  "Membership:role": {
+    "label": "роль у членстві",
+    "hint": "посада у фракції, комісії, партії",
+    "spellings": [
+      "post",
+      "pos",
+      "посада",
+      "роль",
+      "role"
+    ]
+  },
+  "Employment:role": {
+    "label": "посада",
+    "hint": "посада за місцем роботи",
+    "spellings": [
+      "post",
+      "pos",
+      "посада",
+      "роль",
+      "role",
+      "position"
+    ]
+  },
+  "Employment:date": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "decree date",
+      "дата наказу"
+    ]
+  },
+  "Employment:recordId": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "decree num",
+      "номер наказу",
+      "№ наказу"
+    ]
+  },
+  "Employment:description": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "offense",
+      "порушення",
+      "суть порушення"
+    ]
+  },
+  "Employment:status": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "punishment",
+      "стягнення",
+      "вид стягнення"
+    ]
+  },
+  "Debt:description": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "vd cat",
+      "категорія",
+      "категорія стягнення"
+    ]
+  },
+  "Occupancy:startDate": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "date begin"
+    ]
+  },
+  "Occupancy:endDate": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "date end"
+    ]
+  },
+  "Contract:name": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "назва закупівлі",
+      "предмет закупівлі",
+      "найменування предмета закупівлі"
+    ]
+  },
+  "Contract:sourceUrl": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "посилання",
+      "посилання на закупівлю",
+      "link"
+    ]
+  },
+  "Contract:amount": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "сума, грн.",
+      "сума, грн",
+      "очікувана вартість",
+      "вартість"
+    ]
+  },
+  "ContractAward:status": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "рішення",
+      "статус",
+      "decision"
+    ]
+  },
+  "ContractAward:amount": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "пропозиція",
+      "ціна пропозиції",
+      "сума договору"
+    ]
+  },
+  "ContractAward:date": {
+    "label": "",
+    "hint": "",
+    "spellings": [
+      "опубліковано",
+      "дата публікації",
+      "дата укладення"
+    ]
+  }
+}

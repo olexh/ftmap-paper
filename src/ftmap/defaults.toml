@@ -1,0 +1,76 @@
+[model]
+url = "http://127.0.0.1:8080"
+seed = 20260810
+temperature = 0.0
+enable_thinking = false
+max_tokens = 3000
+revision = ""
+identity = ""
+live_stages = ["structure", "split", "edge", "binding", "repair"]
+grammar = true
+
+[plan]
+shortlist_size = 24
+chunk_size = 20
+sample_size = 5
+kind_max_values = 12
+kind_min_fill = 0.9
+bloc_key_distinct = 0.99
+lexicon_path = ""
+lexical_floor = 0.6
+identifier_values_per_key = 2
+nesting_floor = 0.9
+stray_column_fill = 0.01
+binding_mode = "model"
+structure_mode = "model"
+refinement = "rules"
+
+[layout]
+header_score_floor = 0.55
+header_margin = 0.20
+drop_furniture = false
+
+[validate]
+key_fill_floor = 0.9
+key_distinct_floor = 0.5
+
+[validate.accept_thresholds]
+date = 0.90
+phone = 0.90
+email = 0.90
+url = 0.90
+country = 0.90
+gender = 0.90
+identifier = 0.80
+checksum = 0.80
+name = 0.0
+string = 0.0
+text = 0.0
+address = 0.0
+number = 0.0
+entity = 0.0
+topic = 0.90
+language = 0.90
+ip = 0.90
+mimetype = 0.90
+html = 0.0
+json = 0.0
+
+[etalon]
+instance_tolerance = 0.05
+
+[run]
+work_dir = "work"
+disclosure = "local-model-may-see-values"
+
+[serve]
+roots = []
+
+[limits]
+members = 2000
+uncompressed_bytes = 2147483648
+compression_ratio = 200
+member_bytes = 1073741824
+shared_strings_bytes = 536870912
+merges_per_sheet = 100000
+delimited_bytes = 1073741824

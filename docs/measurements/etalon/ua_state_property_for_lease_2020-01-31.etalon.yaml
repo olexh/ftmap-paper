@@ -1,0 +1,218 @@
+etalon: 2
+
+source:
+  path: corpus-external/shape-stress/ua_state_property_for_lease_2020-01-31.csv
+  sha256: 93cd1c4f376ee9b791c32c9fd3cb3d04ed48c1ca2ed2182236082abd6a85bb81
+  sheet: ""
+
+subject:
+  answer: RealEstate
+  accept: [Asset]
+  why: >-
+    One row is one immovable object offered for lease (a building, part of a
+    building, a garage, a pond) with its name, location, area and condition.
+    Asset is the same reading one level up; the balance holder and managing
+    body are context, not the subject.
+
+entities:
+  - key: object
+    schema: RealEstate
+    accept: [Asset]
+    keys: []
+    why: >-
+      No identity column: `№ з/п` is a row ordinal and c14 fills 81 of 5 993
+      rows. 254 rows are byte-identical to another once the ordinal is dropped
+      (21 distinct ponds of ДП "Укрриба" share name, place and area), so a
+      content key would merge real objects.
+
+  - key: holder
+    schema: Organization
+    accept: [Company, LegalEntity]
+    keys: [c3]
+    instances: 853
+    why: >-
+      The балансоутримувач carrying the object on its balance sheet: ~3 500
+      rows are state enterprises, ~1 260 village councils, schools and
+      hospitals, so Organization covers both and Company is the plurality
+      reading. Keyed on ЄДРПОУ, 853 codes over 863 spellings.
+
+  - key: manager
+    schema: PublicBody
+    accept: [Organization, LegalEntity]
+    keys: [c2]
+    why: >-
+      The орган управління: 57 names, all ministries, state agencies, oblast
+      administrations or ФДМУ regional offices. Keyed on the name because the
+      code is no identifier here: 28784 covers eight ФДМУ offices, 27 rows
+      have no code and three hold a floor area.
+
+edges:
+  - key: balance
+    kind: link
+    schema: Ownership
+    source: holder
+    target: object
+    why: >-
+      The one relation the file asserts about the object: this organisation
+      holds it. Ownership is FtM's only LegalEntity to Asset link, and its
+      ownershipType and role can record that the holding is балансоутримувач
+      rather than title, which the state keeps.
+
+columns:
+  - id: c0
+    header: "№ з/п"
+    role: not-data
+    why: >-
+      A row ordinal, 1…5993, consecutive with no gaps, 5 993 distinct,
+      labelled only in the first header line. It states no fact and would not
+      survive a re-sort.
+  - id: c1
+    header: "Код"
+    role: property
+    answer: PublicBody:registrationNumber
+    accept_decline: true
+    why: >-
+      The managing body's code in the state classifier of governing bodies: 5
+      832 of 5 993 are 5-digit, 111 six-digit, 20 an ЄДРПОУ, 27 empty, three a
+      floor area. A state code fits registrationNumber; declining is fine, as
+      151 rows coded 28784 name the Fund itself.
+  - id: c2
+    header: "Назва"
+    role: key+property
+    answer: PublicBody:name
+    why: >-
+      The managing body's own name, 100 % filled, 57 distinct, nothing else
+      packed in. It is the only usable identity for that body, so it is both
+      the key and a fact about it.
+  - id: c3
+    header: "Код за ЄДРПОУ"
+    role: key+property
+    answer: Organization:registrationNumber
+    why: >-
+      The balance holder's ЄДРПОУ, the state register code of a legal person:
+      5 937 of 5 993 values are numeric, 5 133 the canonical eight digits. It
+      is the holder's join key and an external identifier. 56 rows hold
+      `відсутній`, `-` or a floor area and merge badly.
+  - id: c4
+    header: "Назва"
+    role: property
+    answer: Organization:name
+    why: >-
+      The balance holder's name, 100 % filled, 863 distinct spellings over 853
+      codes. Workshop suffixes (`ДП "ВО ПМЗ ім.О.М.Макарова", ВК ДТЗ №5`) are
+      sub-units of one legal person, but they are still what the source calls
+      the holder.
+  - id: c5
+    header: "Юридична адреса"
+    role: property
+    answer: Organization:address
+    why: >-
+      The holder's registered address, 100 % filled, 3 686 rows opening with a
+      postcode. It is the holder's, not the object's: ДП "Укрриба" shows one
+      address on all 1 603 of its rows while its objects sit in 19 regions.
+      `address` takes the string as it is.
+  - id: c6
+    header: "Контактний телефон"
+    role: property
+    answer: Organization:phone
+    why: >-
+      The holder's contact numbers; 1 971 of 5 993 cells pack two or more,
+      split by comma, semicolon or newline (`486-07-91, 486-99-40`). `phone`
+      is multi-valued, so splitting is right. Formatting is chaotic (`(066
+      3807950`) but every cell holds only phone digits.
+  - id: c7
+    header: "Регіон"
+    role: unmappable
+    why: >-
+      A two-digit region code, 25 distinct, zero-padded. It describes the
+      object: it matches the oblast prefix of the object's КОАТУУ on every
+      row, while ДП "Укрриба" carries 19 values from one address. FtM has no
+      sub-national region slot; country slots reject `12`.
+  - id: c8
+    header: "Назва"
+    role: property
+    answer: RealEstate:name
+    why: >-
+      What the object is called in the offer, 100 % filled, 4 264 distinct
+      (`Гараж` ×102). Mostly a descriptive label (837 values start
+      lower-case), but that is the name a piece of real estate has. 325 cells
+      also pack an inventory number, 339 a `літ.` letter.
+  - id: c9
+    header: "Місцезнаходження"
+    role: property
+    answer: RealEstate:address
+    why: >-
+      Where the object is, as one free-text line, 100 % filled, 2 242
+      distinct: oblast, district, settlement, street, number. It is the
+      object's address, not the holder's, and `address` is the address-typed
+      string slot.
+  - id: c10
+    header: "Код класифікатора об\"єкта адміністративно-територіального устрою України"
+    role: unmappable
+    why: >-
+      The КОАТУУ code of the territory the object sits in: 649 distinct,
+      always ten digits, 1 979 of 5 993 oblast-level (`0500000000`). It
+      classifies the territory, not the object, so `cadastralCode` (the
+      parcel's own number) would be false; FtM has no such slot.
+  - id: c11
+    header: "Пропозиції щодо використання"
+    role: property
+    answer: RealEstate:notes
+    accept: [RealEstate:description]
+    accept_decline: true
+    why: >-
+      What the Fund proposes the object be used for, 5 971/5 993 filled, 1 313
+      distinct, from `офіс` or `для риборозведення` ×1 606 to a 438-character
+      paragraph. It concerns a future lease, not the building, so `notes`
+      holds it; `propertyType` would say what it is.
+  - id: c12
+    header: "Характеристика"
+    role: property
+    answer: RealEstate:description
+    accept: [RealEstate:notes, RealEstate:summary]
+    why: >-
+      The physical description and condition of the object, 5 957/5 993
+      filled, 2 450 distinct, up to 1 289 characters (`одноповерхове
+      приміщення, опалення відсутнє … потребує капітального ремонту`). A
+      description in the plain sense, which `description` holds.
+  - id: c13
+    header: "Площа, кв.м"
+    role: property
+    answer: RealEstate:area
+    why: >-
+      Floor or water area in square metres, filled on 4 276 of 5 993 rows, 67
+      as the sentinel `-`, leaving 4 209 numbers; 3 473 use a decimal comma
+      and 115 a non-breaking space for thousands (`1 296,00`). `area` is a
+      bare number; the unit lives only in the header.
+  - id: c14
+    header: null
+    role: property
+    answer: RealEstate:registrationNumber
+    accept_decline: true
+    why: >-
+      An undeclared 15th column, named in neither header row, holding the
+      object's state property register number on 81 of 5 993 rows
+      (`414316.22.ААБАЕЛ041`). Content with an exact home, so it is answered;
+      declining a headerless column filled on 1.4 % of rows is ok.
+  - id: c15
+    header: null
+    role: not-data
+    why: >-
+      Declared by every row and empty in all 5 993 of them: spreadsheet
+      overhang from the merged group header above, not a field.
+  - id: c16
+    header: null
+    role: not-data
+    why: >-
+      One value in 5 993 rows, `101002003` on row 648, an internal number that
+      escaped its cell. An export artefact, not a field.
+  - id: c17
+    header: null
+    role: not-data
+    why: Declared by every row and empty in all 5 993 of them, like c15.
+  - id: c18
+    header: null
+    role: not-data
+    why: >-
+      Two values in 5 993 rows, both `18` on rows 1702–1703, duplicating those
+      rows' Регіон code. A stray copy left by the export, not a field.

@@ -1,0 +1,267 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_local_deputies_ivano-frankivsk.csv
+  sha256: 4c1068dd186593efd906b94aa8594d67af85957df40a18a0848c5f60f7245642
+  sheet: ""
+
+subject:
+  answer: Person
+  accept: []
+  why: >-
+    One row is one deputy of the Івано-Франківськ city council: name, gender,
+    birth date, party, faction, commission, contacts, and where and when they
+    receive constituents.
+
+entities:
+  - key: deputy
+    schema: Person
+    accept: []
+    keys: [c2, c3, c4]
+    instances: 42
+    why: >-
+      `id` is the literal `null` on every row and `votingIdentifier` is empty,
+      so the three name parts are the only key: 42 distinct over 42 rows.
+  - key: party
+    schema: Organization
+    accept: [LegalEntity]
+    keys: [c10]
+    instances: 3
+    why: Three parties, named in full («Політична партія ВО «Свобода»»).
+  - key: faction
+    schema: Organization
+    accept: [LegalEntity]
+    keys: [c16]
+    instances: 3
+    why: >-
+      The council faction of each party, a body of the council distinct from
+      the party (a deputy is a member of both). Three, one per party.
+  - key: commission
+    schema: Organization
+    accept: [LegalEntity, PublicBody]
+    keys: [c18]
+    why: >-
+      The standing commission, but the publisher packs the post into the same
+      cell («…, член комісії», «…, заступник голови»), so 32 distinct strings
+      name far fewer than 32 commissions. Keyed on the cell because nothing
+      better exists; the count is inflated.
+  - key: council
+    schema: PublicBody
+    accept: [Organization, LegalEntity]
+    keys: []
+    scope: table
+    producible: false
+    why: >-
+      Івано-Франківська міська рада, the body every row is a deputy of. No
+      column names it; the CATUTTC code and the city name only imply it, so it
+      cannot be produced from a column.
+  - key: reception
+    schema: Address
+    accept: []
+    keys: [c28, c29]
+    instances: 33
+    why: >-
+      Where the deputy receives constituents: a street and building number in
+      Івано-Франківськ, 27 distinct pairs over 41 located rows. A place, not
+      the deputy's home. The 33 instances count only keys with both parts
+      filled; a partial key builds no entity.
+
+edges:
+  - key: party_member
+    kind: link
+    schema: Membership
+    source: deputy
+    target: party
+    why: Party membership, 42 of 42 rows.
+  - key: faction_member
+    kind: link
+    schema: Membership
+    source: deputy
+    target: faction
+    why: Faction membership, with the post in c17 as its role.
+  - key: commission_member
+    kind: link
+    schema: Membership
+    source: deputy
+    target: commission
+    why: Commission membership; the post is inside c18's text.
+  - key: seat
+    kind: link
+    schema: Membership
+    source: deputy
+    target: council
+    why: >-
+      The deputy's seat in the council. Its target cannot be produced from a
+      column, so neither can this edge.
+  - key: receives_at
+    kind: property
+    prop: Person:addressEntity
+    source: deputy
+    target: reception
+    why: The reception address, attached to the person.
+
+columns:
+  - id: c0
+    header: id
+    role: not-data
+    why: The literal `null` on every row.
+  - id: c1
+    header: votingIdentifier
+    role: not-data
+    why: Empty.
+  - id: c2
+    header: familyName
+    role: key+property
+    answer: Person:lastName
+    why: Surname.
+  - id: c3
+    header: name
+    role: key+property
+    answer: Person:firstName
+    why: Given name.
+  - id: c4
+    header: additionalName
+    role: key+property
+    answer: Person:fatherName
+    why: Patronymic.
+  - id: c5
+    header: Column6
+    role: not-data
+    why: An unnamed empty column the export added.
+  - id: c6
+    header: gender
+    role: property
+    answer: Person:gender
+    why: 1 and 2, coded.
+  - id: c7
+    header: birthDate
+    role: property
+    answer: Person:birthDate
+    why: ISO dates, 100 % filled.
+  - id: c8
+    header: image
+    role: unmappable
+    why: A photo URL; no image property on Person.
+  - id: c9
+    header: biography
+    role: property
+    answer: Person:summary
+    accept: [Person:description, Person:biography]
+    why: A line of prose about education and commission.
+  - id: c10
+    header: partyName
+    role: key+property
+    answer: Organization:name
+    why: The party.
+  - id: c11
+    header: partyId
+    role: not-data
+    why: Empty.
+  - id: c12
+    header: email
+    role: property
+    answer: Person:email
+    why: 41 of 42 rows.
+  - id: c13
+    header: telephone
+    role: property
+    answer: Person:phone
+    why: Ukrainian mobile numbers.
+  - id: c14
+    header: homepage
+    role: property
+    answer: Person:sourceUrl
+    accept: [Person:website]
+    why: The deputy's page on the council site.
+  - id: c15
+    header: account
+    role: property
+    answer: Person:website
+    accept_decline: true
+    why: A Facebook URL on 40 rows; a social account, which FtM has no property for beyond website.
+  - id: c16
+    header: factionName
+    role: key+property
+    answer: Organization:name
+    why: The faction.
+  - id: c17
+    header: factionPost
+    role: property
+    answer: Membership:role
+    why: «Член фракції», «Голова фракції» on 30 rows, the role in the faction.
+  - id: c18
+    header: commissionName
+    role: key+property
+    answer: Organization:name
+    why: The commission, with the post packed in after the comma.
+  - id: c19
+    header: commissionPost
+    role: not-data
+    why: Empty; the post is inside c18.
+  - id: c20
+    header: areaId
+    role: not-data
+    why: A district number within the city, 1–5.
+  - id: c21
+    header: CATUTTC
+    role: unmappable
+    why: The КАТОТТГ code of the city, constant; no FtM home on Person.
+  - id: c22
+    header: addressPostCode
+    role: not-data
+    why: Empty.
+  - id: c23
+    header: addressAdminUnitL1
+    role: property
+    answer: Address:country
+    accept_decline: true
+    why: «Україна», constant.
+  - id: c24
+    header: addressAdminUnitL2
+    role: property
+    answer: Address:region
+    why: «Івано-Франківська область», constant.
+  - id: c25
+    header: addressAdminUnitL3
+    role: unmappable
+    why: The raion; FtM's Address has region and city, no district level.
+  - id: c26
+    header: addressAdminUnitL4
+    role: unmappable
+    why: The hromada; same.
+  - id: c27
+    header: addressPostName
+    role: property
+    answer: Address:city
+    why: «Івано-Франківськ», constant.
+  - id: c28
+    header: addressThoroughfare
+    role: key+property
+    answer: Address:street
+    why: The street of the reception address, 26 distinct.
+  - id: c29
+    header: addressLocatorDesignator
+    role: key+property
+    answer: Address:full
+    accept: [Address:street, Address:summary]
+    why: >-
+      The building number («12А»); FtM's Address has no house-number property,
+      so it goes into the full address or with the street.
+  - id: c30
+    header: addressLocatorBuilding
+    role: not-data
+    why: Constant.
+  - id: c31
+    header: addressLocatorName
+    role: property
+    answer: Address:summary
+    accept_decline: true
+    why: The venue («ЗШ №9», a school or a party office); a note on the address.
+  - id: c32
+    header: openingHours
+    role: unmappable
+    why: Reception hours; no FtM home.
+  - id: c33
+    header: availabilityRestriction
+    role: unmappable
+    why: «перший четвер місяця»; same.

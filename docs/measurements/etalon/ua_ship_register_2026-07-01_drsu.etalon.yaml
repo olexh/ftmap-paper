@@ -1,0 +1,470 @@
+etalon: 2
+
+source:
+  path: corpus-external/shape-stress/ua_ship_register_2026-07-01.xlsx
+  sha256: c483638b1db336ad5e85569972079f618adea9ca44b333b6cb2e356d509ea9ed
+  sheet: ДРСУ
+
+subject:
+  answer: Vessel
+  accept: []
+  why: >-
+    One row is one registration episode of one ship in the Державний судновий
+    реєстр; everything but the registration dates describes the ship. Vehicle
+    is not accepted: imoNumber, the tonnages, flag and registrationPort exist
+    only on Vessel and would be lost.
+
+entities:
+  - key: vessel
+    schema: Vessel
+    accept: []
+    keys: []
+    why: >-
+      No column individuates a hull: Реєстраційний № repeats because each port
+      numbers its own boats (44 rows are "1"), and IMO is filled on only 1 310
+      rows. The row ordinal is the only identity left and is known wrong: IMO
+      8872631 occupies 8 rows, one per episode.
+  - key: owner_person
+    schema: Person
+    accept: []
+    keys: [c14]
+    instances: 10026
+    why: >-
+      12 748 rows carry a natural-person owner in ПІБ, 12 418 in the
+      three-token form. 10 026 distinct names over 12 691 real values, so the
+      name also deduplicates: the same owner holds several boats. 57 cells
+      hold the sentinel "0" and must not become a person.
+  - key: owner_legal
+    schema: Company
+    accept: [Organization, LegalEntity]
+    keys: [c15]
+    instances: 6516
+    why: >-
+      Meant for the legal-person owner (6 516 distinct, 4 888 with
+      ТОВ/ДП/ВАТ/ПрАТ/АСК markers, plus foreign owners). Not type-clean: of 4
+      078 rows where both owner columns are real, 3 934 hold the same natural
+      person in both, which is why LegalEntity is also right.
+  - key: charterer_legal
+    schema: Company
+    accept: [Organization, LegalEntity]
+    keys: [c16]
+    instances: 251
+    why: >-
+      647 rows name a chartering company (251 distinct), overwhelmingly
+      shipping lines such as Українське Дунайське Пароплавство and АСК
+      Укррічфлот. A distinct party from the owner, so a distinct entity; 67
+      cells hold "0".
+  - key: charterer_person
+    schema: Person
+    accept: []
+    keys: [c17]
+    instances: 25
+    why: >-
+      The rarest real column in the sheet: 93 filled cells, 68 of them "0" and
+      2 dashes, leaving 23 natural-person charterers, 25 distinct. Few but
+      real people, and folding them into the owner entity would assert an
+      ownership the register does not record.
+
+edges:
+  - key: ownership_person
+    kind: link
+    schema: Ownership
+    source: owner_person
+    target: vessel
+    why: >-
+      The register's core relation: 12 691 rows state that a named natural
+      person owns this hull. Ownership runs LegalEntity to Asset, Person is a
+      LegalEntity and Vessel an Asset, so this is the relation FtM declares
+      for it.
+  - key: ownership_legal
+    kind: link
+    schema: Ownership
+    source: owner_legal
+    target: vessel
+    why: >-
+      The same relation for the 11 627 rows with a legal-person owner. Two
+      edges because the two columns key two different entities; 4 078 rows
+      produce both, and on 3 934 of those the second edge duplicates the first
+      under a different schema.
+  - key: chartered_by
+    kind: property
+    prop: Vessel:operator
+    source: vessel
+    target: charterer_legal
+    why: >-
+      A фрахтувальник in a ship register is the bareboat charterer, exactly
+      what Vessel:operator names: the party running the ship without owning
+      it. It is an entity-typed property, so a mapping cannot emit it; an
+      Ownership edge would be a false claim of title.
+  - key: chartered_by_person
+    kind: property
+    prop: Vessel:operator
+    source: vessel
+    target: charterer_person
+    why: >-
+      The same relation for the 23 rows whose charterer is a natural person.
+      Same property, different endpoint, because a Person and a Company are
+      different entities even when they play one role.
+
+columns:
+  - id: c0
+    header: Реєстраційний №
+    role: property
+    answer: Vessel:registrationNumber
+    accept: []
+    why: >-
+      The register's own number for this entry: 8 300 bare integers and 11 150
+      values with letters (Іпс-0129, С-137, УПС-1644). A real state-issued
+      identifier, so it emits, but it does not identify the row, hence
+      property rather than key.
+  - id: c1
+    header: Дата реєстрації
+    role: property
+    answer: Vessel:registrationDate
+    accept: []
+    why: >-
+      The date this entry was made in the register, 99.4 % filled. 20 045
+      cells are real datetimes, 89 are the text form "07.07.2016" and one is a
+      time of day; the property is a date and takes all three once coerced.
+  - id: c2
+    header: Характер реєстрації
+    role: unmappable
+    why: >-
+      Six values over 20 248 rows: Постійний 18 403, Не вказано 1 194,
+      Тимчасовий 587, ПАРАЛЕЛЬНА 51 and two case variants. It is the standing
+      of the registration, not a fact about the ship, and Vessel has no status
+      slot; type would put "Постійний" among ship types.
+  - id: c3
+    header: Сучасна назва судна
+    role: property
+    answer: Vessel:name
+    accept: []
+    why: >-
+      The ship's current name, 18 026 distinct over 20 245 rows and the
+      register's own primary label. 10 442 values are hull plates ("Ua 0089
+      Sv") issued to pleasure craft, but that is still what the register calls
+      the vessel. 95 cells pack two forms with "/".
+  - id: c4
+    header: Колишня назва судна
+    role: property
+    answer: Vessel:previousName
+    accept: []
+    why: >-
+      The exact home: FtM declares previousName on Thing and Vessel adds
+      nameChangeDate beside it. 4 341 filled, of which 117 are sentinels ("0"
+      82, "-" 19, "не має" 16).
+  - id: c5
+    header: Модель судна
+    role: property
+    answer: Vessel:model
+    accept: []
+    why: >-
+      The builder's model designation (Bombardier RXP, Finval 505, Bayliner),
+      the exact property. But 16 391 of 20 244 filled cells are sentinels such
+      as "Не вказано", "0" and "н/в", leaving real content on roughly 3 800
+      rows.
+  - id: c6
+    header: Ідентифікаційний № корпусу
+    role: unmappable
+    why: >-
+      The hull identification number, the manufacturer's serial for the hull.
+      Airplane declares serialNumber but Vessel does not, and neither
+      crsNumber, callSign nor mmsi is this; registrationNumber is already c0.
+      42 % of the filled cells are sentinels.
+  - id: c7
+    header: Тип судна
+    role: property
+    answer: Vessel:type
+    accept: []
+    why: >-
+      538 distinct values mixing propulsion class with hull class ("самохідне
+      моторне" 3 346, "несамохідне" 1 162, "Катер"). Vessel:type is a free
+      string and this is the type as the source states it; 2 612 cells carry a
+      comma and are effectively multi-valued.
+  - id: c8
+    header: Призначення
+    role: property
+    answer: Vessel:type
+    accept: []
+    why: >-
+      The purpose the ship is registered for: прогулянкове 9 429 across case
+      variants, водяний мотоцикл 771, Суднова Баржа 693, Буксир 297. It
+      answers the same question as c7 and type is multi-valued, so both
+      columns feed it rather than one going to description.
+  - id: c9
+    header: ' '
+    role: property
+    answer: Vessel:registrationPort
+    accept: []
+    why: >-
+      The header is a single space, but the column is the port of registry: 39
+      distinct values, all ports or inland registration offices (Київ 9 918,
+      Ізмаїльський МТП 1 420); the sibling sheet calls it "Порт припису".
+      registrationPort is a string, so no address.
+  - id: c10
+    header: Країна
+    role: property
+    answer: Vessel:country
+    accept: []
+    accept_decline: true
+    why: >-
+      Country of build, not flag: it sits between port and year built, its top
+      values are shipbuilding countries (Україна 4 727, США 4 079, Канада 2
+      386), and every hull flies the Ukrainian flag. country is the only home
+      left but is not stated, so declining is fine.
+  - id: c11
+    header: Рік побудови
+    role: property
+    answer: Vessel:buildDate
+    accept: []
+    why: >-
+      The year built, 20 248 filled, 20 247 as integers. FtM dates accept a
+      bare year once "2008" is a string rather than 2008.0. 451 values are not
+      a usable year: "0" 296, "999" 117, and freaks like "19787" and "-1971".
+  - id: c12
+    header: Термін дії фрахт. Договору
+    role: unmappable
+    why: >-
+      The expiry of the charter contract, 599 rows, 589 real dates. It is a
+      fact about the charter, which is modelled as Vessel:operator, an
+      entity-typed property with nowhere to hang a date; no Vessel date fits,
+      and Ownership:endDate would date no real ownership.
+  - id: c13
+    header: IMO
+    role: property
+    answer: Vessel:imoNumber
+    accept: []
+    why: >-
+      The IMO number, the exact property and the only globally stable ship
+      identifier in the sheet. Filled on 1 310 rows (6.5 %), sea-going ships
+      only, of which 67 are sentinels ("0" 36, "-" 13, "Не вказано" 8),
+      leaving 1 253 real values over 816 distinct numbers.
+  - id: c14
+    header: ПІБ
+    role: key+property
+    answer: Person:name
+    accept: [LegalEntity:name]
+    why: >-
+      The natural-person owner's full name and the owner entity's identity;
+      the register carries no ІПН or passport number, so the name is the only
+      key. 12 418 of 12 748 cells are the three-token ПІБ form; 23 pack an
+      ownership change after "/".
+  - id: c15
+    header: Назва (юр)
+    role: key+property
+    answer: Company:name
+    accept: [Organization:name, LegalEntity:name, Person:name]
+    why: >-
+      The legal-person owner's name and that entity's only identity. The
+      column is contaminated: 3 934 rows repeat the natural person from c14
+      verbatim, 88 cells append a postal address, 21 pack a change of owner
+      after "/". Person:name fits a third of the rows.
+  - id: c16
+    header: Назва юр. (фрахтувальник)
+    role: key+property
+    answer: Company:name
+    accept: [Organization:name, LegalEntity:name]
+    why: >-
+      The chartering company's name and that entity's key. 715 filled, 67 of
+      them "0"; one cell holds a postal address instead of a name and one
+      appends the termination of the bareboat contract.
+  - id: c17
+    header: Прізвище Ім′я По-батькові (фрахтувальник)
+    role: key+property
+    answer: Person:name
+    accept: [LegalEntity:name]
+    why: >-
+      The natural-person charterer's name and that entity's key. 93 filled of
+      which 70 are sentinels ("0" 68, "-", "---"), leaving 23 real names. A
+      column that is 75 % sentinel still carries real people on the rest.
+  - id: c18
+    header: Довжина, м
+    role: unmappable
+    why: >-
+      Length overall in metres, 20 251 filled, the best-populated
+      characteristic in the sheet and one FtM cannot hold: Vessel declares the
+      tonnages and no linear dimension. Vessel:amount is a monetary field, and
+      taking it for a length would be a category error.
+  - id: c19
+    header: Ширина, м
+    role: unmappable
+    why: >-
+      Beam in metres, 20 251 filled, 412 of them "0.00". Same absence as c18;
+      29 cells use a comma decimal separator.
+  - id: c20
+    header: Висота, м
+    role: unmappable
+    why: >-
+      Depth/height in metres, 20 237 filled of which 2 528 are "0.00". No FtM
+      home.
+  - id: c21
+    header: Валова місткість, од
+    role: property
+    answer: Vessel:grossRegisteredTonnage
+    accept: []
+    why: >-
+      Gross tonnage, and grossRegisteredTonnage is its exact property. 20 229
+      filled but 12 159 (60 %) are "0.00" because pleasure craft are not
+      measured, leaving about 8 000 real figures.
+  - id: c22
+    header: Осадка, м
+    role: unmappable
+    why: >-
+      Draught in metres, which FtM has no property for, and a quarter of the
+      column is not a draught at all: 5 284 of 20 234 filled cells are Excel
+      date serials, because a draught typed as "3.34" was auto-converted into
+      March 1934. The cell as published is a date.
+  - id: c23
+    header: Матеріал корпусу
+    role: unmappable
+    why: >-
+      Hull material: Склопластик 9 743 across case variants, Сталь 6 988,
+      Сплав АМг 1 567, Залізобетон 151. Real, 98.6 % filled, with no FtM
+      property; Vessel has model and type, and material is neither, so binding
+      it to type would corrupt that vocabulary.
+  - id: c24
+    header: Тип головних механізмів
+    role: unmappable
+    why: >-
+      Main engine type (Rotax, Mercruiser, Yamaha, "Дизель 6нвд 26а-3"), often
+      with the engine's serial appended. 8 306 distinct over 19 861 filled
+      cells, 2 149 of them sentinels. Vessel:model is the ship's model, not
+      the engine's; nothing else fits.
+  - id: c25
+    header: Потужність головних механізмів
+    role: unmappable
+    why: >-
+      Engine power, and a trap: Vessel:amount is a number and would accept
+      every value, but it is a monetary amount, and the column is not even in
+      one unit (3 351 cells say "к.с.", 3 050 say "кВт"). A power figure has
+      no home in FtM, so declining is correct.
+  - id: c26
+    header: Кількість головних механізмів, од
+    role: unmappable
+    why: >-
+      Number of main engines: 1 on 13 884 rows, 2 on 3 387, 0 on 2 844. A
+      count with no FtM property; amount would take it and mean money.
+  - id: c27
+    header: Екіпаж, ос
+    role: unmappable
+    why: >-
+      Crew capacity, 64 % of it the sentinel 0 because pleasure craft carry no
+      crew. A headcount, and FtM has no such property on Vessel.
+  - id: c28
+    header: Пасажири, ос
+    role: unmappable
+    why: Passenger capacity, 63 % zero. Same absence as c27.
+  - id: c29
+    header: Дедвейт, т
+    role: property
+    answer: Vessel:deadweightTonnage
+    accept: []
+    why: >-
+      Deadweight in tonnes, and deadweightTonnage is its exact property. 20
+      225 filled of which 17 187 (85 %) are "0.00", so about 3 000 rows carry
+      a real figure.
+  - id: c30
+    header: Чиста місткість, од
+    role: property
+    answer: Vessel:tonnage
+    accept: []
+    why: >-
+      Net register tonnage. FtM declares grossRegisteredTonnage,
+      deadweightTonnage and a bare tonnage; the first two are taken by c21 and
+      c29, and net tonnage is a tonnage, so the generic slot is a
+      generalisation, not a category error. 86.6 % of the column is 0.00.
+  - id: c31
+    header: Кількість рефрижираторних трюмів, од
+    role: unmappable
+    why: >-
+      Number of refrigerated holds. 19 955 of 20 225 filled cells are 0; 270
+      rows carry a real count. A count of compartments, with no FtM property.
+  - id: c32
+    header: Ємність, рефрижираторних трюмів, т.куб.м
+    role: unmappable
+    why: >-
+      Capacity of the refrigerated holds in thousand cubic metres, 98.7 %
+      "0.00". A volume; FtM has no volume property on Vessel and amount is
+      money.
+  - id: c33
+    header: Тип вантажних трюмів
+    role: unmappable
+    why: >-
+      Cargo hold type ("Вантажні Трюми" 473, "Вантажний Танк" 53) on 778 rows,
+      109 of them sentinels. A fact about the ship's fittings, not its type,
+      and Vessel has no property for it.
+  - id: c34
+    header: Тимчасова відмітка про виключення судна з Державного реєстру
+    role: property
+    answer: Vessel:deregistrationDate
+    accept: []
+    accept_decline: true
+    why: >-
+      The date of a temporary removal from the register, 88 rows, 86 of them
+      real dates. deregistrationDate is the only date property that fits, but
+      a suspension expected to be reversed is not a de-registration, which is
+      why c35 is separate; declining is also fine.
+  - id: c35
+    header: Постійна відмітка про виключення судна з Державного реєстру
+    role: property
+    answer: Vessel:deregistrationDate
+    accept: []
+    why: >-
+      The date of permanent removal from the register, and the exact property.
+      7 685 rows (37.9 %) carry one, over a third of the register being
+      historical; 7 104 are real dates and 580 are the text form "18.04.2024".
+  - id: c36
+    header: Документ - підстава для виключення судна з Державного реєстру
+    role: property
+    answer: Vessel:notes
+    accept: [Vessel:description]
+    accept_decline: true
+    why: >-
+      The grounds for removal, in prose ("заява судновласника у зв'язку з
+      продажею" 188, "наказ № 121"), 4 507 rows, 3 747 distinct. notes is the
+      slot for a registrar's remark; declining is also fine because the
+      sentence documents the removal act, not the ship.
+  - id: c37
+    header: 'НОМЕР ЕNI  та ким присвоєний'
+    role: unmappable
+    why: >-
+      The European Number of Identification and who assigned it, packed into
+      one string on 55 rows: "ENI 42000260, присвоєно РСУ, свідоцтво від
+      04.10.2022 № 106-04532-22". FtM has imoNumber, mmsi, callSign and
+      crsNumber but no ENI, and the cell is not bare.
+  - id: c38
+    header: Відмітка про присвоєні номери ЕNІ судна (видача, заміна свідоцтв)
+    role: property
+    answer: Vessel:notes
+    accept: [Vessel:description]
+    accept_decline: true
+    why: >-
+      41 rows of registrar's prose about the issue and replacement of flag
+      certificates and ENI numbers ("С-во (прапор) від 13.04.2023 № 000153").
+      Same treatment as c36 for the same reason, and declining is equally
+      fine.
+  - id: c39
+    header: Примітка
+    role: property
+    answer: Vessel:notes
+    accept: [Vessel:description]
+    why: >-
+      A note, and the one free-text column that is unambiguously a remark
+      about this register entry: 102 rows recording renamings, changes of
+      shipowner and, on two rows, an arrest imposed by an investigating judge.
+      notes fits, and there is no case for declining.
+  - id: c40
+    header: null
+    role: not-data
+    why: Excel padding. No header and not one cell in 20 270 rows.
+  - id: c41
+    header: null
+    role: not-data
+    why: Excel padding, as c40.
+  - id: c42
+    header: null
+    role: not-data
+    why: >-
+      Padding with one stray character: the letter "A" in row 16 150 and
+      nothing else. It is what makes this the last column a trimmer can reach,
+      not content.

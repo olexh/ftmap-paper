@@ -1,0 +1,178 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_court_procurement_2020-12.csv
+  sha256: 2b910bae50307f15b1c593aad71a74223d74de2e4622afba8e74cc68b8fbf581
+  sheet: ""
+
+subject:
+  answer: Contract
+  accept: [ContractAward]
+  why: >-
+    One row is one concluded (or, twice, cancelled) procurement; 28 of 30 name
+    a winner, a price and a decision. Either half of the contract/award pair
+    is a defensible primary; a reporting Event is not, since Event carries no
+    amount, currency, cpvCode or supplier.
+
+entities:
+  - key: authority
+    schema: PublicBody
+    accept: [Organization, LegalEntity]
+    keys: [c1]
+    scope: table
+    why: >-
+      One entity for the whole file, not one per row: every row is the same
+      court, identified by ЄДРПОУ 42257456. Keying on nothing would emit
+      thirty copies of it.
+  - key: contract
+    schema: Contract
+    keys: [c19]
+    why: The Prozorro tender URL is the only per-row identity the file carries.
+  - key: supplier
+    schema: Company
+    accept: [Organization, LegalEntity, Person]
+    keys: [c15]
+    instances: 20
+    why: >-
+      20 rows carry an 8-digit ЄДРПОУ (a company), 6 a 10-digit РНОКПП (a ФОП,
+      so a person). Company with Person accepted; the code packed into the
+      cell after the hash sign is the key.
+
+edges:
+  - key: award
+    kind: link
+    schema: ContractAward
+    source: contract
+    target: supplier
+    why: >-
+      The award is the link entity itself, carrying cpvCode, amount, status
+      and date. On the 2 cancelled rows the supplier end is empty, so the
+      award records only that the procedure failed.
+  - key: authority_of
+    kind: property
+    prop: Contract:authority
+    source: contract
+    target: authority
+    why: >-
+      The court as contracting authority. FtM models this as an entity-typed
+      property, not a link entity, so no cell can produce it; without it the
+      buyer is connected to nothing.
+
+columns:
+  - id: c0
+    header: Найменування
+    role: property
+    answer: PublicBody:name
+    accept: [Organization:name, LegalEntity:name]
+  - id: c1
+    header: КодЄДРПОУ
+    role: key+property
+    answer: PublicBody:registrationNumber
+    accept: [LegalEntity:taxNumber, Organization:registrationNumber]
+    why: >-
+      ЄДРПОУ is both the registration code and the legal entity's tax id.
+      taxNumber is true but would collide with the ФОП РНОКПП in c15;
+      registrationNumber keeps the two separable.
+  - id: c2
+    header: Вебсайт
+    role: property
+    answer: PublicBody:website
+    accept: [Organization:website, LegalEntity:website]
+  - id: c3
+    header: Місцезнаходження
+    role: property
+    answer: PublicBody:address
+    accept: [LegalEntity:address, Organization:address]
+  - id: c4
+    header: Контактнаособа
+    role: unmappable
+    why: >-
+      A named contact with a phone and an email packed together. FtM has no
+      property linking a contact person to an organisation without asserting
+      directorship or membership, so the Person it would make is unattachable.
+  - id: c5
+    header: Категорія
+    role: property
+    answer: PublicBody:classification
+    accept: [Organization:classification]
+    why: >-
+      A procurement-law buyer category, source-provided and multi-valued:
+      ЄДРПОУ 42257456 carries two different values across the 30 rows, which
+      an entity cannot do with legalForm.
+  - id: c6
+    header: Видпредметузакупівлі
+    role: property
+    answer: Contract:type
+    why: Товари / Послуги, the procurement subject kind; two values over 30 rows.
+  - id: c7
+    header: Класифікатортайоговідповіднийкод
+    role: property
+    answer: ContractAward:cpvCode
+    why: >-
+      ДК 021:2015 is the CPV and 14820000-5 is a literal CPV code, which must
+      be extracted from the packed string.
+  - id: c8
+    header: Описокремоїчастиниабочастинпредметазакупівлі
+    role: property
+    answer: Contract:description
+    why: >-
+      The cell packs five facts. description is the lossy but honest option;
+      nothing else in FtM holds them separately.
+  - id: c9
+    header: Подія
+    role: unmappable
+    why: >-
+      Names what happened to occasion the report. FtM's procurement schemata
+      model the contract, the call and the award, not a reporting event.
+  - id: c10
+    header: Опис
+    role: unmappable
+  - id: c11
+    header: Типоплати
+    role: unmappable
+  - id: c12
+    header: Період(днів)
+    role: unmappable
+  - id: c13
+    header: Типднів
+    role: unmappable
+  - id: c14
+    header: Розміроплати(%)
+    role: unmappable
+    why: >-
+      A payment share, not an ownership share; Ownership:percentage would be
+      the wrong home.
+  - id: c15
+    header: Учасник
+    role: key+property
+    answer: Company:name
+    accept: [Organization:name, LegalEntity:name, Person:name]
+    why: >-
+      The winner's name with an ЄДРПОУ or РНОКПП packed in after a hash sign.
+      The name is the payload; the relation to the purchase is the award edge,
+      not this column.
+  - id: c16
+    header: Рішення
+    role: property
+    answer: ContractAward:status
+    why: >-
+      Переможець is an outcome token, not narrative, so status fits; a notes
+      binding would merely tolerate the value.
+  - id: c17
+    header: Пропозиція
+    role: property
+    answer: ContractAward:amount
+    accept: [ContractAward:currency]
+    why: >-
+      12 980,00 UAH, a monetary amount with two exact homes: amount after
+      de-formatting, and currency. Present on 28 of 30 rows.
+  - id: c18
+    header: Опубліковано
+    role: property
+    answer: ContractAward:date
+    accept: [Contract:contractDate]
+  - id: c19
+    header: Посилання
+    role: key+property
+    answer: Contract:sourceUrl
+    accept: [ContractAward:sourceUrl]

@@ -1,0 +1,243 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_tax_debtors_2022-02-23_every40th.csv
+  sha256: 62b1cbc901d19b7dc2dfb1244e085e2c0ab6a0bf15a93c2e6192a7d822a1617b
+  sheet: ""
+
+subject:
+  answer: Debt
+  accept: [LegalEntity]
+  why: >-
+    One row is one arrears balance: one taxpayer owes one named tax one amount
+    as of one date; sampled taxpayers occupy 2 to 8 rows each. LegalEntity is
+    also fine: the title invites reading a row as a debtor, and only it covers
+    76 % persons and 24 % companies.
+
+entities:
+  - key: debtor_org
+    schema: Company
+    accept: [Organization, LegalEntity]
+    keys: [c1, c2]
+    why: >-
+      The 5 105 rows whose tin_s is a real 8-digit ЄДРПОУ. Each code maps to
+      exactly one name, and chief_name is filled on 5 104 of these rows and on
+      none of the others, so the file itself splits its debtors here.
+  - key: debtor_person
+    schema: Person
+    accept: [LegalEntity]
+    keys: [c2]
+    why: >-
+      Natural persons: the 16 424 rows whose tin_s is the redaction constant
+      `**********`; 16 238 names are a bare ПІБ. Only 37.7 % owe the ФОП tax,
+      so they are not all ФОП. With the code gone the name is the whole
+      identity, 16 424 distinct in this slice.
+  - key: subunit
+    schema: Company
+    accept: [Organization, LegalEntity]
+    keys: [c3, c4]
+    instances: 66
+    why: >-
+      66 rows name a відокремлений підрозділ with its own registration code,
+      never equal to the parent's, so a separately registered organisation, 65
+      distinct. Two 9-digit values register agreements (ДОГОВІР ПРО СПІЛЬНУ
+      ДІЯЛЬНІСТЬ №4024), which do not fit.
+  - key: chief
+    schema: Person
+    keys: [c5]
+    why: >-
+      4 791 distinct директори over the 5 104 rows with chief_name; the name
+      is the only handle. One liquidator heads 14 rows across 9 failed banks,
+      so repeats are real. Name collisions are a known risk: 182 names head
+      more than one ЄДРПОУ.
+  - key: tax_office
+    schema: PublicBody
+    accept: [Organization, LegalEntity]
+    keys: [c6]
+    instances: 749
+    why: >-
+      749 distinct c_sti codes, each mapping to one sti_name: the ДПІ or ГУ
+      ДПС office that administers the debt, plus two interregional
+      large-taxpayer directorates. A state fiscal body, so PublicBody;
+      Organization is only less specific.
+  - key: office_chief
+    schema: Person
+    keys: [c8]
+    instances: 27
+    why: >-
+      Only 27 distinct names across 742 offices, and 24 resolve to a single
+      oblast once spelling variants of the ГУ prefix are folded; two head the
+      interregional ВПП directorates. One person per regional directorate,
+      keyed on the name, which is all there is.
+
+edges:
+  - key: debt_org
+    kind: link
+    schema: Debt
+    source: debtor_org
+    target: tax_office
+    why: >-
+      The relation the table exists to publish. Debt is FollowTheMoney's own
+      edge for it, debtor to creditor with amount, currency, date and
+      description, so the money in this file is mappable.
+  - key: debt_person
+    kind: link
+    schema: Debt
+    source: debtor_person
+    target: tax_office
+    why: >-
+      The same relation over the natural-person population. Declared
+      separately because the debtor is a different schema, not because the
+      file asserts a different kind of obligation.
+  - key: directorship
+    kind: link
+    schema: Directorship
+    source: chief
+    target: debtor_org
+    why: >-
+      chief_name is the named head of the debtor organisation and is filled
+      exactly on the rows where the debtor is one. Directorship's organization
+      property ranges on Organization, which is why the debtor was split
+      rather than blurred into one LegalEntity.
+  - key: office_directorship
+    kind: link
+    schema: Directorship
+    source: office_chief
+    target: tax_office
+    why: >-
+      The row places sti_chief_name beside sti_name and asserts the relation.
+      It holds for the legal entity (the oblast ГУ ДПС) and is loose for the
+      string, since a district ДПІ has been a structural unit without a head
+      of its own since 2020.
+  - key: subunit_parent
+    kind: property
+    prop: Company:parent
+    source: subunit
+    target: debtor_org
+    why: >-
+      The 66 sub-unit rows say exactly that this organisation belongs to that
+      one. FollowTheMoney models it as an entity-typed property rather than a
+      link entity, so no cell can carry it and a mapping cannot produce it; a
+      ceiling, not a miss.
+
+columns:
+  - id: c0
+    header: ondate
+    role: property
+    answer: Debt:date
+    accept_decline: true
+    why: >-
+      The as-of date of the arrears balance, `2022-02-22` on all 21 529 rows.
+      A real fact about every debt, but a single-valued column also reads as a
+      file-level export stamp, so declining it is equally right.
+  - id: c1
+    header: tin_s
+    role: key+property
+    answer: LegalEntity:registrationNumber
+    accept: [LegalEntity:taxNumber]
+    why: >-
+      An 8-digit ЄДРПОУ on 5 105 rows and the literal `**********` on the
+      other 16 424. The code is the state registration code, which the tax
+      service also uses as the taxpayer number, hence taxNumber. The asterisks
+      are not an identifier and must not be keyed on.
+  - id: c2
+    header: name
+    role: key+property
+    answer: LegalEntity:name
+    why: >-
+      The debtor's own name: a company name with its legal form packed in
+      (`ТОВ` ×3 116, `ПП` ×360, `ДП` ×172) on the code rows, a bare ПІБ on the
+      redacted ones. 21 478 distinct over 21 529 rows, and the only identity
+      the person rows have.
+  - id: c3
+    header: sub_tin_s
+    role: key+property
+    answer: Organization:registrationNumber
+    accept: [Organization:taxNumber]
+    why: >-
+      The sub-unit's own registration code on 66 rows and `NULL` on 21 463.
+      Never equal to the parent's code, so it identifies a second
+      organisation; 64 are 8 digits and 2 are 9, which is not a valid ЄДРПОУ.
+  - id: c4
+    header: sub_name
+    role: key+property
+    answer: Organization:name
+    why: >-
+      The self-identifying name of the відокремлений підрозділ, up to 197
+      characters and usually restating the parent's full name inside it. A
+      name of a different body, not a description of the parent.
+  - id: c5
+    header: chief_name
+    role: key+property
+    answer: Person:name
+    why: >-
+      A ПІБ, the head of the debtor organisation, on 5 104 rows; `NULL` on 16
+      425, every masked row and one code row besides. A personal name with
+      nothing packed into it, and the key of the chief entity.
+  - id: c6
+    header: c_sti
+    role: key+property
+    answer: PublicBody:registrationNumber
+    accept_decline: true
+    why: >-
+      The tax service's 3- or 4-digit office code, 749 distinct, the only
+      clean key for the office. A district ДПІ has not been a legal entity
+      since 2020 and has no registration number of its own, so using it as a
+      bare key and emitting nothing is equally right.
+  - id: c7
+    header: sti_name
+    role: property
+    answer: PublicBody:name
+    why: >-
+      The office's official name, `ГУ ДПС У <oblast> (<district> ДПІ)`. 742
+      distinct against 749 codes because seven offices were renumbered under
+      an unchanged name, which is why the name is not the key.
+  - id: c8
+    header: sti_chief_name
+    role: key+property
+    answer: Person:name
+    why: >-
+      A ПІБ, 27 distinct values, the head of the regional directorate that
+      owns the office named in c7. A personal name; which body it heads is an
+      edge question, not a column one.
+  - id: c9
+    header: shot
+    role: unmappable
+    why: >-
+      The 8-digit budget revenue classification code (ККД), 86 distinct,
+      many-to-one onto the labels in c10 (five labels carry two codes each).
+      Debt declares no classification or category property, and recordId means
+      the source record's own id, so this has no home.
+  - id: c10
+    header: shot_name
+    role: property
+    answer: Debt:description
+    accept_decline: true
+    why: >-
+      The name of the tax owed (`Єдиний податок з фiзичних осiб` ×6 190), i.e.
+      what the debt is for, which is what Debt:description holds. It is a
+      code-table label rather than prose, so leaving it unmappable alongside
+      c9 is equally right.
+  - id: c11
+    header: zn_all
+    role: property
+    answer: Debt:amount
+    why: >-
+      The amount owed, comma-decimal, 0,01 to 668 821 917,58, never negative
+      or zero. The only one of the three money columns that carries the debt
+      on every row. Currency is UAH from knowing the file, not from a column.
+  - id: c12
+    header: zn_state
+    role: unmappable
+    why: >-
+      zn_state and zn_local are never both non-zero, so it is not half of a
+      split. It repeats zn_all on the 3 218 state-budget rows and is `0,00` on
+      the other 18 311: the destination budget, which Debt cannot hold. As an
+      amount it is a false 0,00 on 85 % of rows.
+  - id: c13
+    header: zn_local
+    role: unmappable
+    why: >-
+      The mirror of c12: zn_all on the 18 311 local-budget rows, `0,00` on the
+      3 218 others. 15 416 distinct values make it look like the richest money
+      column, and it is still redundant.

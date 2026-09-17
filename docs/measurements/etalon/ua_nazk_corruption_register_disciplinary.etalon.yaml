@@ -1,0 +1,106 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_nazk_corruption_register_2026-09-04.xlsx
+  sha256: 2000a6d46c86f0445397c2a301e63580c37900468139e18148653e6f997588d5
+  sheet: DISCIPLINARY_P
+
+subject:
+  answer: Person
+  accept: []
+  why: >-
+    One row is one disciplinary penalty imposed by an employer on one named
+    person for a corruption-related breach. There is no court and no case; the
+    person and their employment are the whole graph.
+
+entities:
+  - key: person
+    schema: Person
+    accept: []
+    keys: [c0, c1, c2]
+    instances: 1443
+    why: >-
+      The name in three columns is the only identifier, 1 444 distinct names
+      over 1 470 rows. Instances count only keys with every part filled, since
+      no entity is built from a partial key, which gives 1443.
+  - key: employer
+    schema: Organization
+    accept: [LegalEntity, Company, PublicBody]
+    keys: [c3]
+    instances: 772
+    why: >-
+      The employer that imposed the penalty, 772 distinct over 1 470 rows and
+      100 % filled: police directorates, border guard units, forestry
+      enterprises, councils. Organization fits, and any LegalEntity reading is
+      also fine.
+
+edges:
+  - key: employment
+    kind: link
+    schema: Employment
+    source: person
+    target: employer
+    why: >-
+      The person was employed by the organisation in the position named, and
+      the penalty is an event of that employment.
+
+columns:
+  - id: c0
+    header: CORRUPTIONER_LAST_NAME
+    role: key+property
+    answer: Person:lastName
+    why: Surname, 1 304 distinct.
+  - id: c1
+    header: CORRUPTIONER_FIRST_NAME
+    role: key+property
+    answer: Person:firstName
+    why: Given name.
+  - id: c2
+    header: CORRUPTIONER_SURNAME
+    role: key+property
+    answer: Person:fatherName
+    why: Mislabelled by the publisher; the column holds the patronymic.
+  - id: c3
+    header: CORR_WORK_PLACE
+    role: key+property
+    answer: Organization:name
+    why: The employer's name.
+  - id: c4
+    header: CORR_WORK_POS
+    role: property
+    answer: Employment:role
+    accept: [Person:position]
+    why: The position, 1 106 distinct («майстер лісу», «Директор»).
+  - id: c5
+    header: ACTIVITY_SPH_NAME
+    role: unmappable
+    why: The offender's legal category under the law; no FtM slot on Person.
+  - id: c6
+    header: OFFENSE
+    role: property
+    answer: Employment:description
+    accept: [Employment:summary]
+    why: The breach as prose, 861 distinct; what the penalty was for.
+  - id: c7
+    header: PUNISHMENT
+    role: property
+    answer: Employment:status
+    accept: [Employment:summary]
+    why: >-
+      The penalty, 31 values («Догана» 794, «Інше стягнення» 275, «Зауваження»
+      119): a status of the employment relation as of the decree, and
+      prose-shaped enough that summary is also right.
+  - id: c8
+    header: DECREE_DATE
+    role: property
+    answer: Employment:date
+    why: The date of the penalty order, dd.mm.yy, 100 % filled.
+  - id: c9
+    header: DECREE_NUM
+    role: property
+    answer: Employment:recordId
+    accept_decline: true
+    why: >-
+      The order's number («69», «143-рк»), 764 distinct, a record id of the
+      penalty. It identifies nothing the graph keeps, so declining is also
+      right.

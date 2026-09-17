@@ -1,0 +1,174 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_aircraft_register_2026-08-20.xls
+  sha256: c0f1ec7236e158715750dd34eaf4e024cbcd90ea663b7eedaa34b4ff0507678c
+  sheet: Sheet1
+
+subject:
+  answer: Vehicle
+  accept: [Airplane]
+  why: >-
+    One row is one airframe on the state register, and 318 of the 872 are not
+    airplanes: 169 helicopters, 93 gliders, 26 trikes, 24 balloons, 6
+    gyroplanes. Vehicle is true of every row; Airplane is false on 36.5 % but
+    is the only schema with serialNumber.
+
+entities:
+  - key: airplane
+    schema: Vehicle
+    accept: [Airplane]
+    keys: [c2]
+    instances: 872
+    why: >-
+      The UR- tail mark is unique across all 872 rows and is the aircraft's
+      identity. The certificate number is the document's identity, not the
+      airframe's.
+  - key: certificate
+    schema: Identification
+    accept: [License]
+    keys: [c6]
+    instances: 872
+    why: >-
+      The registration certificate is a document, not an airframe, so it is a
+      separate entity. 491 numbers carry a /N suffix, but all 872 base numbers
+      are distinct, so no reissue pair is visible; c2 and c6 are each unique,
+      so the split gains no deduplication here.
+  - key: owner
+    schema: LegalEntity
+    accept: [Company, Organization, Person]
+    keys: [c11]
+    why: >-
+      LegalEntity is the range of Ownership:owner and Identification:holder
+      and fits every row: 302 of 872 cells carry a ЄДРПОУ, at least 336 are
+      personal names. 22 cells hold several owners in a Ukrainian and an
+      English block; split on ";" or 9 co-owners merge.
+  - key: operator
+    schema: Company
+    accept: [Organization, LegalEntity, Person]
+    keys: [c10]
+    why: >-
+      588 of 872 rows hold the sentinel "Не відноситься / Not applicable".
+      That is an absence, not an operator; emitting it as a name manufactures
+      some 588 organisations called "Not applicable" that would resolve
+      against each other.
+
+edges:
+  - key: ownership
+    kind: link
+    schema: Ownership
+    source: owner
+    target: airplane
+    why: >-
+      The one true link entity the row produces. A multi-owner cell yields
+      several Ownership edges, not one.
+  - key: operated_by
+    kind: property
+    prop: Vehicle:operator
+    source: airplane
+    target: operator
+    why: >-
+      A property edge on 284 real rows, not a link entity. FtM models the
+      operator as an entity-typed property, so a mapping cannot emit it.
+  - key: held_by
+    kind: property
+    prop: Identification:holder
+    source: certificate
+    target: owner
+    why: >-
+      Identification:holder ranges on LegalEntity, so the certificate cannot
+      point at the aircraft it identifies; the only available attachment is
+      the owner, which is a different fact. A holder set to the aircraft id
+      would be an invalid entity.
+
+columns:
+  - id: c0
+    header: n/n
+    role: not-data
+    why: A row ordinal. Real information, but an export artefact rather than content.
+  - id: c1
+    header: Тип/модель
+    role: property
+    answer: Airplane:model
+    accept: [Vehicle:model, Vehicle:type]
+    why: >-
+      The header names both type and model, and the values are designations
+      rather than categories, so model fits better; type is a reasonable
+      alternative reading.
+  - id: c2
+    header: Державний і реєстраційний знак
+    role: key+property
+    answer: Airplane:registrationNumber
+    accept: [Vehicle:registrationNumber]
+    why: >-
+      The tail number is both the row's identity and its registration number.
+      Consuming it only as a key would lose 872 registration numbers; the
+      inversion to watch for is the certificate number taking
+      registrationNumber and the mark being left with nothing.
+  - id: c3
+    header: Заводський (серійний) номер
+    role: property
+    answer: Airplane:serialNumber
+    why: >-
+      The manufacturer's serial. serialNumber is declared on Airplane and not
+      inherited by Vehicle, so a run that agrees the subject is Vehicle has
+      nowhere to put this column, while a run reading Airplane binds it. No
+      schema fits every row and holds a serial.
+  - id: c4
+    header: Рік виготовлення
+    role: property
+    answer: Airplane:buildDate
+    accept: [Vehicle:buildDate]
+    why: FtM dates accept a bare year; 2006.0 must be coerced to "2006" first.
+  - id: c5
+    header: Максимальна злітна маса, кг
+    role: unmappable
+    why: >-
+      A mass in kilograms. Asset:amount is monetary, so it does not fit; this
+      column exists to name that trap.
+  - id: c6
+    header: № реєстраційного посвідчення
+    role: key+property
+    answer: Identification:number
+    accept: [Vehicle:registrationNumber]
+    why: >-
+      The English header reads "Certificate of aircraft registration", so
+      Vehicle:registrationNumber is coherent. It is worse because it makes the
+      document's number an attribute of the airframe, and the "/3" reissue
+      suffix then joins the aircraft's identity.
+  - id: c7
+    header: Дата видачі… / термін дії
+    role: property
+    answer: Identification:startDate
+    accept: [Vehicle:registrationDate, Identification:endDate]
+    why: >-
+      The cell packs an issue date and, on 229 rows, an expiry, separated by
+      "/". Vehicle:registrationDate is an equally defensible primary for the
+      head date. Nothing binds until the cell is split.
+  - id: c8
+    header: Підписант Ім'я ПРИЗВІЩЕ
+    role: unmappable
+    why: >-
+      A signatory. FtM has no edge to hang a named official on without
+      asserting a role the file does not state.
+  - id: c9
+    header: Статус сертифікату
+    role: unmappable
+    why: Identification has no status property.
+  - id: c10
+    header: Експлуатант/ Орендар
+    role: key+property
+    answer: Company:name
+    accept: [Organization:name, LegalEntity:name]
+    why: >-
+      The operator's name is the payload; the relation to the aircraft is
+      Vehicle:operator, a property edge. The sentinel on 588 rows must not
+      become a name.
+  - id: c11
+    header: Власники
+    role: key+property
+    answer: Company:name
+    accept: [Organization:name, LegalEntity:name, Person:name]
+    why: >-
+      The owner's name, one per ";"-separated segment. The ownership relation
+      is the Ownership edge, not this column.

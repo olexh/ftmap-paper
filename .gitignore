@@ -1,0 +1,38 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+build/
+dist/
+*.egg-info/
+.DS_Store
+
+# Run outputs. Excluded by directory glob, not by name, because a run directory
+# may carry cell values.
+work*/
+ftmap.toml
+
+# Input snapshots and the private machinery of a workspace, by name as well,
+# because `--out` takes any path.
+.snapshots/
+.staging/
+.derived/
+.locks/
+decisions/
+mapping.yml
+
+# Value-bearing artefacts, by name.
+*.ftm.json
+statements.csv
+normalized.csv
+profile.json
+plan.json
+plan.validated.json
+decisions.jsonl
+rejects.jsonl
+overrides.jsonl
+prompts.jsonl
+failures.jsonl

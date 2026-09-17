@@ -1,0 +1,42 @@
+etalon: 2
+
+source:
+  path: corpus-external/shape-stress/ua_ship_register_2026-07-01.xlsx
+  sha256: c483638b1db336ad5e85569972079f618adea9ca44b333b6cb2e356d509ea9ed
+  sheet: "Значення"
+
+subject:
+  answer: Table
+  accept: [Document, Workbook]
+  why: >-
+    One row is a code/label pair in a data dictionary, which no FtM schema
+    describes. The only nameable object is the sheet itself, a hidden
+    two-column table documenting other sheets, so Table is least wrong;
+    Document and Workbook are the same reading, coarser.
+
+produces_nothing: >-
+  A hidden legend — one row per permitted value of coded fields in the ДРСУ
+  sheets, of different kinds from block to block. No FollowTheMoney schema is
+  a term in a controlled vocabulary, so no row is an entity, and a pipeline
+  that emits anything from this sheet has manufactured it.
+entities: []
+
+edges: []
+
+columns:
+  - id: c0
+    header: "Символ"
+    role: unmappable
+    why: >-
+      197 distinct over 198 filled rows, mixing 56 mnemonic codes
+      (`обл1`–`обл27`, `орг1`–`орг12`) with 139 integers that look like
+      surrogate ids. It is a lookup's join key naming only a legend row, so an
+      identifier property would claim `обл17` names something real.
+  - id: c1
+    header: "Значення"
+    role: unmappable
+    why: >-
+      204 filled, 138 distinct, and not one kind of thing: consecutive rows
+      hold a boolean (`Ні`), an oblast (`Одеська`), a classification society
+      (`Бюро Верітас`) and a status (`Відстій`); 8 rows are bold headings.
+      Organization:name would make `Ремонт` a company.

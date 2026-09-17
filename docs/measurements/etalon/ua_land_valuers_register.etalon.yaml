@@ -1,0 +1,165 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_land_valuers_register.csv
+  sha256: feeed95804b5cbc5691f703b957a9e86b8ff379b7d332126de6d8157356dc891
+  sheet: ""
+
+subject:
+  answer: Person
+  accept: [LegalEntity]
+  why: >-
+    One row is one certified land valuer. Six rows are tombstones reading
+    "Виключено в зв'язку з дублюванням №156 реєстру", withdrawn because the
+    same person was listed twice, which only makes sense if the row is the
+    person. LegalEntity only loses specificity.
+
+entities:
+  - key: valuer
+    schema: Person
+    accept: [LegalEntity]
+    keys: [c1]
+    instances: 2890
+    why: >-
+      2 892 rows, 2 890 distinct full names. The name is the only handle the
+      file carries: no tax number, no birth date, no ЄДРПОУ. Keying on it
+      merges two homonym pairs; keying on the row ordinal or certificate
+      number gives a register that cannot be deduplicated.
+  - key: certificate
+    schema: Identification
+    accept: [License]
+    keys: [c3]
+    instances: 2881
+    why: >-
+      The qualification certificate is a document with a number, issuer, issue
+      date and end date, and Identification carries all four plus a holder. 2
+      881 distinct numbers over 2 892 rows: five are reused by two people and
+      one placeholder covers the six tombstones.
+  - key: workplace
+    schema: Address
+    keys: [c8, c9]
+    why: >-
+      The file gives a locality and an oblast and nothing else, exactly what
+      Address:city and Address:region hold. 419 distinct (city, region) pairs
+      over 2 811 located rows; keying on the pair makes it a place, not 2 892
+      copies. 81 unlocated rows mint no Address.
+
+edges:
+  - key: held_by
+    kind: property
+    prop: Identification:holder
+    source: certificate
+    target: valuer
+    why: >-
+      The only relation the file states: this certificate belongs to this
+      person. FtM models it as an entity-typed property on Identification
+      rather than a link entity, so a mapping cannot emit it; a ceiling of the
+      architecture, stated so it stays visible.
+  - key: works_at
+    kind: property
+    prop: Person:addressEntity
+    source: valuer
+    target: workplace
+    why: >-
+      employmentCity and employmentRegion attach a place to the valuer.
+      addressEntity is FtM's reference from a person to a structured Address;
+      like the holder link it is entity-typed and therefore cannot be
+      produced.
+
+columns:
+  - id: c0
+    header: rowNumber
+    role: not-data
+    why: >-
+      1 to 2 892, contiguous, in file order. The tombstone rows cite it ("№156
+      реєстру"), so the register uses it as its entry number, but it is
+      indistinguishable from the row ordinal and carries no fact about the
+      valuer; keying on it would defeat deduplication.
+  - id: c1
+    header: fullName
+    role: key+property
+    answer: Person:name
+    why: >-
+      Прізвище Ім'я По батькові in full, 100 % filled, 2 890 distinct: the
+      person's primary name and the entity's only identity. 101 rows pack a
+      former surname in brackets (Коваленко (Фурса) Марина Іванівна) and six
+      hold a withdrawal notice instead.
+  - id: c2
+    header: qualCertIssueDate
+    role: property
+    answer: Identification:startDate
+    why: >-
+      ISO yyyy-mm-dd, 100 % filled, 183 distinct dates clustered on the days
+      the examination boards sat (81 rows on 2006-03-11). startDate is
+      documented as the date of issue of a document, which is exactly this.
+      Six rows carry the sentinel 1900-01-00, not a date.
+  - id: c3
+    header: qualCertNumber
+    role: key+property
+    answer: Identification:number
+    accept: [Person:licenseNumber]
+    why: >-
+      A Cyrillic two-letter series plus a zero-padded ordinal (АК 00075, МК
+      00670, ЦХ 00915); the series encodes the issuing institution. It is the
+      certificate's identifier. Person:licenseNumber is the alternative for an
+      annotator who mints no document entity.
+  - id: c4
+    header: qualCertIssuingInstitution
+    role: property
+    answer: Identification:authority
+    why: >-
+      The body that issued the certificate, seven distinct strings over 2 886
+      rows, six rows "null". Identification:authority is FtM's string slot for
+      the issuer, so the value has an exact home. One issuer is a joint-stock
+      company, which loosens the label only.
+  - id: c5
+    header: extractionDate
+    role: property
+    answer: Person:retrievedAt
+    accept: [Identification:retrievedAt, Address:retrievedAt]
+    accept_decline: true
+    why: >-
+      One value for the whole file, 2026-08-17, the day the page was scraped.
+      retrievedAt is documented as the retrieval date of a data gathering
+      system, so it fits exactly, but it is a fact about the export, not any
+      person, so declining is equally right.
+  - id: c6
+    header: sourceUrl
+    role: property
+    answer: Person:sourceUrl
+    accept: [Identification:sourceUrl, Person:publisherUrl]
+    accept_decline: true
+    why: >-
+      The same landing page on 2 891 of 2 892 rows; row 6 holds the link text
+      ("Ринок та оцінка земель") instead of the href. A per-file constant, but
+      sourceUrl is built for it. publisherUrl is defensible because the URL is
+      the publisher's section page.
+  - id: c7
+    header: qualCertSuspensionDate
+    role: property
+    answer: Identification:endDate
+    accept: [Identification:date]
+    why: >-
+      100 % filled, so not the date the certificate was suspended: 1 079 of 2
+      886 values are later than the extraction date, up to 2028-11-04, and
+      none precedes its issue date. It is the date the certificate stops being
+      valid, which endDate covers; date is weaker.
+  - id: c8
+    header: employmentCity
+    role: key+property
+    answer: Address:city
+    accept: [Person:address]
+    why: >-
+      Settlement of employment with its Ukrainian type prefix, м. Київ (539),
+      с. Липини, смт Слобожанське; 403 distinct, 98 rows "null". Address:city
+      is any city, town, village or locality, which is this exactly.
+      Person:address keeps it as loose address text.
+  - id: c9
+    header: employmentRegion
+    role: key+property
+    answer: Address:region
+    why: >-
+      Oblast of employment, 29 distinct: 24 oblasts plus АР Крим and four
+      spelling faults (Чергігівська обл., Віницька обл.,, Волинська обл,,
+      Чернівецька, м.); 81 rows "null". Address:region is the only
+      sub-national slot in FtM that takes a string.

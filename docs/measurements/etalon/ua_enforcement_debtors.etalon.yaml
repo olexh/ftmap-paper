@@ -1,0 +1,152 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_enforcement_debtors_2026-09-02_every200th.csv
+  sha256: 50562a64134ef007c959eb08a82f94f162b16d11d78c542754b4ff2005f360d2
+  sheet: ""
+
+subject:
+  answer: Person
+  accept: [LegalEntity, Company]
+  why: >-
+    One row is one enforcement proceeding against one debtor: 48 575 of 52 737
+    are persons with a birth date and no code, 4 115 are legal entities with a
+    ЄДРПОУ instead, and no kind column tells them apart. Person covers 92 %;
+    LegalEntity or Company are fine.
+
+entities:
+  - key: debtor
+    schema: Person
+    accept: [LegalEntity, Company]
+    keys: [c0]
+    instances: 50388
+    why: >-
+      The debtor, keyed on the name, the only handle present on every row
+      (birth date on 92 %, code on 8 %): 50 388 instances over 52 737 rows. A
+      name key merges homonyms, but adding the birth date would split every
+      company into rows.
+  - key: issuer
+    schema: PublicBody
+    accept: [Organization, LegalEntity]
+    keys: [c3]
+    instances: 12586
+    why: >-
+      The body that issued the enforcement document: courts, the police, tax
+      directorates, notaries. 12 586 distinct over 52 737 rows, mostly state
+      bodies; a notary is a person, so a LegalEntity reading is fine.
+  - key: office
+    schema: PublicBody
+    accept: [Organization]
+    keys: [c4]
+    instances: 1584
+    why: >-
+      The state enforcement office handling the proceeding (a «відділ
+      державної виконавчої служби» of a Ministry of Justice directorate), 1
+      584 distinct. A state body.
+  - key: officer
+    schema: Person
+    accept: []
+    keys: [c6]
+    instances: 8157
+    why: >-
+      The enforcement officer in charge, named in full, 8 157 distinct. «(не
+      діє)» is appended on rows where the officer no longer serves, which a
+      name key keeps as a second person until the suffix is stripped.
+  - key: proceeding
+    schema: Debt
+    accept: []
+    keys: [c9]
+    why: >-
+      The proceeding number is distinct on every row, so one proceeding per
+      row, keyed on it. FtM has no enforcement schema; recovering money from a
+      debtor is a Debt, whose category («стягнення аліментів») says what the
+      debt is. The amount is not in the file.
+
+edges:
+  - key: owes
+    kind: link
+    schema: Debt
+    source: debtor
+    target: issuer
+    why: >-
+      The proceeding as a debt from the debtor to the body whose document is
+      enforced. For state fines and taxes, the majority, that body is the
+      creditor; for a court-ordered private recovery the creditor is absent
+      and the court stands in. No other FtM edge fits.
+  - key: employment
+    kind: link
+    schema: Employment
+    source: officer
+    target: office
+    why: The officer is an employee of the office named beside them.
+
+columns:
+  - id: c0
+    header: DEBTOR_NAME
+    role: key+property
+    answer: Person:name
+    why: The debtor's name; a company name with its legal form on 8 % of rows.
+  - id: c1
+    header: DEBTOR_BIRTHDATE
+    role: property
+    answer: Person:birthDate
+    why: dd.mm.yyyy on the 92 % of rows that are persons.
+  - id: c2
+    header: DEBTOR_CODE
+    role: property
+    answer: Person:registrationNumber
+    accept: [Company:registrationNumber, LegalEntity:registrationNumber]
+    why: >-
+      An 8-digit ЄДРПОУ on the 8 % of rows that are companies. It is the
+      company's registration number; on a Person it can only be said through
+      LegalEntity's inherited property, the one cost of the single-entity
+      reading.
+  - id: c3
+    header: PUBLISHER
+    role: key+property
+    answer: PublicBody:name
+    why: The issuing body's name.
+  - id: c4
+    header: ORG_NAME
+    role: key+property
+    answer: PublicBody:name
+    why: The enforcement office's name.
+  - id: c5
+    header: ORG_PHONE_NUM
+    role: property
+    answer: PublicBody:phone
+    why: >-
+      The office's phones, several per cell separated by commas
+      («(04142) 3-08-30, 3-00-07»), on 95 % of rows.
+  - id: c6
+    header: EMP_FULL_FIO
+    role: key+property
+    answer: Person:name
+    why: The officer's full name, with «(не діє)» packed in on former officers.
+  - id: c7
+    header: EMP_PHONE_NUM
+    role: property
+    answer: Person:phone
+    why: The officer's phone on 55 % of rows, mostly ten digits without a prefix.
+  - id: c8
+    header: EMAIL_ADDR
+    role: property
+    answer: Person:email
+    accept: [PublicBody:email]
+    why: >-
+      On 54 % of rows, an address that is sometimes the officer's own and
+      sometimes the office's mailbox (vdvs.obolon@ukr.net); it sits in the
+      officer's column group and is answered there.
+  - id: c9
+    header: VP_ORDERNUM
+    role: key+property
+    answer: Debt:recordId
+    why: The proceeding number, distinct on every row.
+  - id: c10
+    header: VD_CAT
+    role: property
+    answer: Debt:description
+    accept: [Debt:summary]
+    why: >-
+      The category of the proceeding, 15 values («стягнення коштів на
+      користь держави» 7 125, «стягнення аліментів», …); what the debt is.

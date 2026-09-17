@@ -1,0 +1,99 @@
+{
+ "etalons": [
+  {
+   "file": "ua_aircraft_register_2026-08-20.etalon.yaml",
+   "sha256": "2d16f392dc057a213559eb136053d8dfef5ce7873e6fadbf8cffcfd8efa00a1b",
+   "source": "corpus-external/person-graph/ua_aircraft_register_2026-08-20.xls#Sheet1"
+  },
+  {
+   "file": "ua_annual_procurement_plan_2023q3_sheet1.etalon.yaml",
+   "sha256": "0edb554b3fc2561e6bc53c71586c3117cc03ea144f32f9970bc11d8f888dac84",
+   "source": "corpus-external/person-graph/ua_annual_procurement_plan_2023q3.xlsx#Лист1"
+  },
+  {
+   "file": "ua_court_decisions_2026_every250th.etalon.yaml",
+   "sha256": "4b35b2450d8e041d88c91645ada50ba6e8839a2f0b3f82a76be5a08abd175f90",
+   "source": "corpus-external/person-graph/ua_court_decisions_2026_every250th.csv"
+  },
+  {
+   "file": "ua_court_procurement_2020-12.etalon.yaml",
+   "sha256": "67a13e453da9583c7adeb6d39aaa3d8021a4afed305b396baa2fe996e7fc115b",
+   "source": "corpus-external/person-graph/ua_court_procurement_2020-12.csv"
+  },
+  {
+   "file": "ua_courts_register.etalon.yaml",
+   "sha256": "0257334601aa3c1c62039b57c120d6e646ebdc767e3b2bc61ebd7fe5b6b65042",
+   "source": "corpus-external/person-graph/ua_courts_register.csv"
+  },
+  {
+   "file": "ua_enforcement_debtors.etalon.yaml",
+   "sha256": "6545c9a87f72cf20f93de8737d514a04c8c66c4e42c3c3d5bdad4aaee78c69df",
+   "source": "corpus-external/person-graph/ua_enforcement_debtors_2026-09-02_every200th.csv"
+  },
+  {
+   "file": "ua_land_valuers_register.etalon.yaml",
+   "sha256": "e3534c5f71485851412c2d58f30ae2fcb8e2212e834e978dc55cc3c94d975d37",
+   "source": "corpus-external/person-graph/ua_land_valuers_register.csv"
+  },
+  {
+   "file": "ua_local_deputies_boiarka.etalon.yaml",
+   "sha256": "22c2f2b373adda572bb731919cadb1a7d599ec444994b85a93c647310cc6ef8d",
+   "source": "corpus-external/person-graph/ua_local_deputies_boiarka.csv"
+  },
+  {
+   "file": "ua_local_deputies_ivano-frankivsk.etalon.yaml",
+   "sha256": "b2919a7f8ddefa461d76669ad7f48eee2eb7ff4c414dda58791851aa2b7cbb49",
+   "source": "corpus-external/person-graph/ua_local_deputies_ivano-frankivsk.csv"
+  },
+  {
+   "file": "ua_nazk_corruption_register_court_sentence.etalon.yaml",
+   "sha256": "efbb4bb13145c58e8cf0a0882b9142d0080833d041e6aafc531724c5e259af4e",
+   "source": "corpus-external/person-graph/ua_nazk_corruption_register_2026-09-04.xlsx#COURT_SENTENCE"
+  },
+  {
+   "file": "ua_nazk_corruption_register_disciplinary.etalon.yaml",
+   "sha256": "8963ecabbd935e108713af78448813ab52357f2ade73b9c9d2cb676137e5673d",
+   "source": "corpus-external/person-graph/ua_nazk_corruption_register_2026-09-04.xlsx#DISCIPLINARY_P"
+  },
+  {
+   "file": "ua_rada_mps_ix.etalon.yaml",
+   "sha256": "5c506c153172897a61e343ab5222813eef61f22608745d4881039f493b46da35",
+   "source": "corpus-external/person-graph/ua_rada_mps_ix_2026-09-03.csv"
+  },
+  {
+   "file": "ua_ship_register_2026-07-01_drsu.etalon.yaml",
+   "sha256": "4ee761f839fac6188e46cd49a7249d45e5d26ba860bd7697810e6754adf7da9c",
+   "source": "corpus-external/shape-stress/ua_ship_register_2026-07-01.xlsx#ДРСУ"
+  },
+  {
+   "file": "ua_ship_register_2026-07-01_drsu2020.etalon.yaml",
+   "sha256": "ba11949b6689aa8e7057b631d84a3840a0cb73e544678d4b79eb99d386cd86be",
+   "source": "corpus-external/shape-stress/ua_ship_register_2026-07-01.xlsx#ДРСУ 2020"
+  },
+  {
+   "file": "ua_ship_register_2026-07-01_znachennia.etalon.yaml",
+   "sha256": "f33fb51f693497feb2938d17f195d52c8d07eb1c5de5296dd5a95ce39e0a87a2",
+   "source": "corpus-external/shape-stress/ua_ship_register_2026-07-01.xlsx#Значення"
+  },
+  {
+   "file": "ua_state_owned_enterprises_2026-04-01.etalon.yaml",
+   "sha256": "b492c57e7518822eb12b64e7b03350de87e2d62a07ad4fb0140b82b39b7a1a71",
+   "source": "corpus-external/person-graph/ua_state_owned_enterprises_2026-04-01.csv"
+  },
+  {
+   "file": "ua_state_property_for_lease_2020-01-31.etalon.yaml",
+   "sha256": "a5a1faed75609966179d27166e259fca4ca75d22c7226b57c77332f00cfcc0aa",
+   "source": "corpus-external/shape-stress/ua_state_property_for_lease_2020-01-31.csv"
+  },
+  {
+   "file": "ua_tax_debtors_2022-02-23_every40th.etalon.yaml",
+   "sha256": "861a2a2849f659c04eb1ac9a72ab40d441952782ca65ee23060feb493fd0f482",
+   "source": "corpus-external/person-graph/ua_tax_debtors_2022-02-23_every40th.csv"
+  },
+  {
+   "file": "ua_transport_licences_2024-08-02.etalon.yaml",
+   "sha256": "d659c4be53f7bc51fd4eaa008626ae0e06459696c6056becb98fc1e06d937cfa",
+   "source": "corpus-external/person-graph/ua_transport_licences_2024-08-02.xlsx#Аркуш1"
+  }
+ ]
+}

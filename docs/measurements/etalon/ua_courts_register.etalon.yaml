@@ -1,0 +1,62 @@
+etalon: 2
+
+source:
+  path: corpus-external/person-graph/ua_courts_register.csv
+  sha256: 4a5789993d6d84781e2da8525a905dbddb39a5d69634817265b4f4fbd07f15f0
+  sheet: ""
+
+subject:
+  answer: PublicBody
+  accept: [Organization, LegalEntity]
+  why: >-
+    One row is one permanent state judicial body. Organization and LegalEntity
+    are generalisations of the same reading and lose only specificity;
+    CourtCase is the other side of the join this table exists to serve.
+
+entities:
+  - key: court
+    schema: PublicBody
+    accept: [Organization, LegalEntity]
+    keys: [c0]
+    instances: 843
+    why: >-
+      843 rows but 841 distinct names, because two appellate courts each
+      appear twice under different codes. Keying on the name would merge those
+      rows and break two foreign keys, so the identity is court_code alone.
+
+edges: []
+
+columns:
+  - id: c0
+    header: court_code
+    role: key+property
+    answer: PublicBody:registrationNumber
+    why: >-
+      The decisions register's own identifier for the court rather than its
+      ЄДРПОУ, but still a real identifier issued by a state register, and the
+      join key. idNumber is for national ID cards; okpoCode, innCode and
+      ogrnCode belong to other countries.
+  - id: c1
+    header: name
+    role: property
+    answer: PublicBody:name
+    why: >-
+      The official self-identifying name of a state body. Nothing is packed
+      into it.
+  - id: c2
+    header: instance_code
+    role: property
+    answer: PublicBody:classification
+    accept_decline: true
+    why: >-
+      classification is FtM's slot for a category as the source states it, and
+      judicial tier is that. The label lives in a sibling lookup, so binding
+      stores a bare code such as 3 and declining is equally fine. Instance 1
+      is the highest court.
+  - id: c3
+    header: region_code
+    role: unmappable
+    why: >-
+      FtM has no sub-national region property on LegalEntity; jurisdiction,
+      country and mainCountry are country-typed. The column also mixes kinds:
+      codes 31–34 are military jurisdictions, not oblasts.

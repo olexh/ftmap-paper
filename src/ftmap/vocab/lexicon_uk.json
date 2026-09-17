@@ -1,0 +1,224 @@
+{
+ "_provenance": [
+  "A spelling enters this file only when a header in one of the corpora uses it, or is that header's obvious abbreviation. Synonyms added to improve a score are forbidden: this lexicon is the control for every claim about what the model contributes.",
+  "The English-looking spellings are observed, not imported. familyName, additionalName, birthDate, gender, description: literal column names in deputies/0427f07d-5b47-4d7c-996f-5077ca4b56fe.csv. prefLabel, altLabel, headFn: literal column names in orgbook/0402708c-3d69-4f32-9b48-71dbd97719fd.xlsx.",
+  "A key must be a property a COLUMN can satisfy, so no entity-typed property may appear here: retrieval no longer offers one (vocab/shortlist.py) and the grammar cannot express a binding to one (Catalogue.bindable), which would make such an entry unmatchable and therefore a silent lie about what this file covers. Two were: Membership:organization held фракція, партія, політична партія, підрозділ, структурний підрозділ, and Occupancy:post held посада, должность, займана посада. Those headers name the value of an organization's name and of a position, not the reference to either, so the observed spellings moved to Organization:name and Position:name; посада and должность were already under Person:position and Position:name.",
+  "2026-09-05: header forms observed in the operational corpus under ../data/manual — personnel rosters and establishment tables with Russian headers, and one with Ukrainian ones. рота, отделение, подразделение, войсковая часть (Organization:name); местонахождение (LegalEntity:address); машина (Vehicle:name); позивний, позывной (Thing:alias); личный номер (LegalEntity:idNumber); дата прибытия (Interval:startDate). Headers only; no value was read to write this line.",
+  "2026-09-05, second set: «примечание» (Thing:notes) and «населенный пункт» (Address:city), headers of the regiment's establishment table under ../data/files."
+ ],
+ "Person:name": [
+  "ПІБ",
+  "П.І.Б.",
+  "ПІП",
+  "прізвище, ім'я, по батькові",
+  "ФИО",
+  "ім'я",
+  "повне ім'я",
+  "ПІБ депутата",
+  "ПІБ керівника",
+  "headFn"
+ ],
+ "Person:firstName": [
+  "ім'я",
+  "имя",
+  "name"
+ ],
+ "Person:lastName": [
+  "прізвище",
+  "фамилия",
+  "familyName"
+ ],
+ "Person:fatherName": [
+  "по батькові",
+  "отчество",
+  "additionalName"
+ ],
+ "Person:birthDate": [
+  "дата народження",
+  "дата рождения",
+  "д/н",
+  "рік народження",
+  "birthDate",
+  "народився"
+ ],
+ "Person:gender": [
+  "стать",
+  "пол",
+  "gender"
+ ],
+ "Person:birthPlace": [
+  "місце народження",
+  "место рождения"
+ ],
+ "Person:nationality": [
+  "громадянство",
+  "гражданство"
+ ],
+ "Person:position": [
+  "посада",
+  "должность"
+ ],
+ "Person:education": [
+  "освіта",
+  "образование"
+ ],
+ "Thing:name": [
+  "назва",
+  "найменування",
+  "наименование",
+  "название",
+  "prefLabel",
+  "повна назва"
+ ],
+ "Thing:alias": [
+  "альтернативна назва",
+  "скорочена назва",
+  "altLabel",
+  "коротка назва",
+  "позивний",
+  "позывной"
+ ],
+ "Thing:description": [
+  "опис",
+  "описание",
+  "description"
+ ],
+ "Thing:notes": [
+  "примітки",
+  "примечания",
+  "біографія",
+  "biography",
+  "примечание"
+ ],
+ "Thing:sourceUrl": [
+  "джерело",
+  "посилання",
+  "источник"
+ ],
+ "Organization:name": [
+  "назва установи",
+  "назва організації",
+  "організація",
+  "установа",
+  "юридична особа",
+  "фракція",
+  "партія",
+  "політична партія",
+  "підрозділ",
+  "структурний підрозділ",
+  "рота",
+  "отделение",
+  "подразделение",
+  "войсковая часть"
+ ],
+ "Organization:legalForm": [
+  "організаційно-правова форма",
+  "опф"
+ ],
+ "Company:registrationNumber": [
+  "ЄДРПОУ",
+  "код ЄДРПОУ",
+  "ідентифікаційний код",
+  "ОГРН",
+  "ИНН"
+ ],
+ "LegalEntity:taxNumber": [
+  "ІПН",
+  "РНОКПП",
+  "податковий номер",
+  "ідентифікаційний номер"
+ ],
+ "LegalEntity:phone": [
+  "телефон",
+  "тел.",
+  "номер телефону",
+  "контактний телефон",
+  "телефони",
+  "моб."
+ ],
+ "LegalEntity:email": [
+  "електронна пошта",
+  "e-mail",
+  "email",
+  "ел. пошта"
+ ],
+ "LegalEntity:website": [
+  "веб-сайт",
+  "сайт",
+  "офіційний веб-сайт",
+  "homepage"
+ ],
+ "LegalEntity:address": [
+  "адреса",
+  "адрес",
+  "місцезнаходження",
+  "поштова адреса",
+  "местонахождение"
+ ],
+ "LegalEntity:country": [
+  "країна",
+  "страна",
+  "держава"
+ ],
+ "Address:full": [
+  "адреса",
+  "повна адреса"
+ ],
+ "Address:city": [
+  "місто",
+  "населений пункт",
+  "город",
+  "населенный пункт"
+ ],
+ "Address:region": [
+  "область",
+  "регіон"
+ ],
+ "Address:postalCode": [
+  "індекс",
+  "поштовий індекс"
+ ],
+ "Membership:role": [
+  "роль",
+  "статус членства"
+ ],
+ "Occupancy:startDate": [
+  "дата призначення",
+  "з якого часу"
+ ],
+ "Occupancy:endDate": [
+  "дата звільнення",
+  "по який час"
+ ],
+ "Position:name": [
+  "посада",
+  "назва посади",
+  "займана посада"
+ ],
+ "PublicBody:name": [
+  "орган",
+  "рада",
+  "назва органу"
+ ],
+ "Document:date": [
+  "дата документа",
+  "дата"
+ ],
+ "Event:startDate": [
+  "час прийому",
+  "графік прийому",
+  "дата початку"
+ ],
+ "Person:icijId": [
+  "node_id"
+ ],
+ "Vehicle:name": [
+  "машина"
+ ],
+ "LegalEntity:idNumber": [
+  "личный номер"
+ ],
+ "Interval:startDate": [
+  "дата прибытия"
+ ]
+}
